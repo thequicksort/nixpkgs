@@ -27,8 +27,7 @@ stdenv.mkDerivation rec {
     " src/{startup.c,pcmcia-check-broken-cis.c} # fix-color */
   ''
   + (if firmware == [] then ''sed -i "s,STARTUP = true,STARTUP = false," Makefile'' else "")
-  + (if configOpts == null then "" else ''
-    ln -sf ${configOpts} ./config/config.opts'')
+  + (if configOpts == null then "" else "ln -sf ${configOpts} ./config/config.opts")
   ;
 
   makeFlags = [ "LEX=flex" ];
@@ -43,13 +42,13 @@ stdenv.mkDerivation rec {
     '') firmware;
 
   meta = {
-    homepage = https://www.kernel.org/pub/linux/utils/kernel/pcmcia/;
+    homepage = "https://www.kernel.org/pub/linux/utils/kernel/pcmcia/";
     longDescription = "
       PCMCIAutils contains the initialization tools necessary to allow
       the PCMCIA subsystem to behave (almost) as every other
       hotpluggable bus system.
     ";
-    license = stdenv.lib.licenses.gpl2;
-    platforms = stdenv.lib.platforms.linux;
+    license = lib.licenses.gpl2;
+    platforms = lib.platforms.linux;
   };
 }

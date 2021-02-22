@@ -1,14 +1,14 @@
-{ lib, isPy3k, fetchPypi, fetchpatch, buildPythonPackage
+{ lib, isPy3k, fetchPypi, buildPythonPackage
 , uvloop, postgresql }:
 
 buildPythonPackage rec {
   pname = "asyncpg";
-  version = "0.20.1";
+  version = "0.21.0";
   disabled = !isPy3k;
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "1c4mcjrdbvvq5crrfc3b9m221qb6pxp55yynijihgfnvvndz2jrr";
+    sha256 = "53cb2a0eb326f61e34ef4da2db01d87ce9c0ebe396f65a295829df334e31863f";
   };
 
   checkInputs = [
@@ -16,8 +16,10 @@ buildPythonPackage rec {
     postgresql
   ];
 
+  pythonImportsCheck = [ "asyncpg" ];
+
   meta = with lib; {
-    homepage = https://github.com/MagicStack/asyncpg;
+    homepage = "https://github.com/MagicStack/asyncpg";
     description = "An asyncio PosgtreSQL driver";
     longDescription = ''
       Asyncpg is a database interface library designed specifically for

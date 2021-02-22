@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, openssl, gmp, zlib, iproute, nettools }:
+{ lib, stdenv, fetchurl, openssl, gmp, zlib, iproute, nettools }:
 
 stdenv.mkDerivation rec {
   pname = "gvpe";
@@ -24,9 +24,9 @@ stdenv.mkDerivation rec {
     sed -e 's@/sbin/ifconfig@${nettools}/sbin/ifconfig@g' -i src/device-*.C
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A protected multinode virtual network";
-    homepage = http://software.schmorp.de/pkg/gvpe.html;
+    homepage = "http://software.schmorp.de/pkg/gvpe.html";
     maintainers = [ maintainers.raskin ];
     platforms = with platforms; linux ++ freebsd;
     license = licenses.gpl2;

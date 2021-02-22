@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, libpcap, bison, flex, cyrus_sasl, tcp_wrappers, pkgconfig, perl }:
+{ lib, stdenv, fetchurl, libpcap, bison, flex, cyrus_sasl, tcp_wrappers, pkg-config, perl }:
 
 stdenv.mkDerivation rec {
   pname = "argus-clients";
@@ -18,10 +18,10 @@ stdenv.mkDerivation rec {
 
   configureFlags = [ "--with-perl=${perl}/bin/perl" ];
 
-  nativeBuildInputs = [ pkgconfig ];
+  nativeBuildInputs = [ pkg-config ];
   buildInputs = [ libpcap bison cyrus_sasl tcp_wrappers flex ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Clients for ARGUS";
     longDescription = ''Clients for Audit Record Generation and
     Utilization System (ARGUS). The Argus Project is focused on developing all
@@ -33,7 +33,7 @@ stdenv.mkDerivation rec {
     Operations, Performance and Security Management. If you need to
     know what is going on in your network, right now or historically,
     you will find Argus a useful tool. '';
-    homepage = http://qosient.com/argus;
+    homepage = "http://qosient.com/argus";
     license = licenses.gpl2Plus;
     maintainers = with maintainers; [ leenaars ];
     platforms = platforms.linux;

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, lzma }:
+{ lib, stdenv, fetchurl, lzma }:
 
 stdenv.mkDerivation rec {
   pname = "zimlib";
@@ -13,9 +13,9 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Library for reading and writing ZIM files";
-    homepage =  https://www.openzim.org/wiki/Zimlib;
+    homepage =  "https://www.openzim.org/wiki/Zimlib";
     license = licenses.gpl2;
     maintainers = with maintainers; [ robbinch ];
     platforms = platforms.linux;

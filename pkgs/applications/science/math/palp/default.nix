@@ -1,25 +1,26 @@
-{ stdenv
+{ lib, stdenv
 , fetchurl
 , dimensions ? 6 # works for <= dimensions dimensions, but is only optimized for that exact value
 , doSymlink ? true # symlink the executables to the default location (without dimension postfix)
 }:
 
-stdenv.mkDerivation rec {
-  version = "2.1";
+let
   dim = toString dimensions;
-  name = "palp-${dim}d-${version}";
+in
+stdenv.mkDerivation rec {
+  pname = "palp";
+  version = "2.11";
 
   src = fetchurl {
     url = "http://hep.itp.tuwien.ac.at/~kreuzer/CY/palp/palp-${version}.tar.gz";
-    sha256 = "1s7s2lc5f0ig1yy7ygsh3sddm3sbq4mxwybqsj8lp9wjdxs7qfrs";
+    sha256 = "00jpm73fw9jjq58z6rysr1mwv489j6rpfqqlhm9ab0dln4kyhh05";
   };
 
   hardeningDisable = [
     "format"
-    "strictoverflow" # causes runtime failure (tested in checkPhase)
   ];
 
-  patchPhase = stdenv.lib.optionalString stdenv.isDarwin ''
+  patchPhase = lib.optionalString stdenv.isDarwin ''
     substituteInPlace GNUmakefile --replace gcc cc
   '';
 
@@ -45,14 +46,14 @@ stdenv.mkDerivation rec {
     for file in poly class cws nef mori; do
         cp -p $file.x "$out/bin/$file-${dim}d.x"
     done
-  '' + stdenv.lib.optionalString doSymlink ''
+  '' + lib.optionalString doSymlink ''
     cd "$out/bin"
     for file in poly class cws nef mori; do
         ln -sf $file-6d.x $file.x
     done
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A Package for Analyzing Lattice Polytopes";
     longDescription = ''
       A Package for Analyzing Lattice Polytopes (PALP) is a set of C
@@ -75,12 +76,15 @@ stdenv.mkDerivation rec {
       algorithms work in any dimension and our key routine for vertex and
       facet enumeration compares well with existing packages.
     '';
-    homepage = http://hep.itp.tuwien.ac.at/~kreuzer/CY/CYpalp.html;
+    homepage = "http://hep.itp.tuwien.ac.at/~kreuzer/CY/CYpalp.html";
+    # Not really a changelog, but a one-line summary of each update that should
+    # be reviewed on update.
+    changelog = "http://hep.itp.tuwien.ac.at/~kreuzer/CY/CYpalp.html";
     # Just a link on the website pointing to gpl -- now gplv3. When the last
     # version was released that pointed to gplv2 however, so thats probably
     # the right license.
     license = licenses.gpl2;
-    maintainers = with maintainers; [ timokau ];
+    maintainers = teams.sage.members;
     platforms = platforms.unix;
   };
 }

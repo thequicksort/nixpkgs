@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub }:
+{ lib, stdenv, fetchFromGitHub }:
 stdenv.mkDerivation rec {
     pname = "dejsonlz4";
     version = "1.1";
@@ -18,9 +18,9 @@ stdenv.mkDerivation rec {
       cp dejsonlz4 $out/bin/
     '';
 
-    meta = with stdenv.lib; {
+    meta = with lib; {
       description = "Decompress Mozilla Firefox bookmarks backup files";
-      homepage = https://github.com/avih/dejsonlz4;
+      homepage = "https://github.com/avih/dejsonlz4";
       license = licenses.bsd2;
       maintainers = with maintainers; [ mt-caret ];
       platforms = platforms.linux;

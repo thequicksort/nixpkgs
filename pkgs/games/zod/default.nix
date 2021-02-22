@@ -1,4 +1,4 @@
-{ fetchurl, stdenv, unrar, unzip, SDL, SDL_image, SDL_ttf, SDL_mixer
+{ lib, fetchurl, stdenv, unrar, unzip, SDL, SDL_image, SDL_ttf, SDL_mixer
 , libmysqlclient, makeWrapper }:
 
 stdenv.mkDerivation {
@@ -39,7 +39,7 @@ stdenv.mkDerivation {
 
   meta = {
     description = "Multiplayer remake of ZED";
-    homepage = http://zod.sourceforge.net/;
-    license = stdenv.lib.licenses.gpl3Plus; /* Says the web */
+    homepage = "http://zod.sourceforge.net/";
+    license = lib.licenses.gpl3Plus; /* Says the web */
   };
 }

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "pcapfix-1.1.4";
@@ -10,8 +10,8 @@ stdenv.mkDerivation rec {
 
   postPatch = ''sed -i "s|/usr|$out|" Makefile'';
 
-  meta = with stdenv.lib; {
-    homepage = https://f00l.de/pcapfix/;
+  meta = with lib; {
+    homepage = "https://f00l.de/pcapfix/";
     description = "Repair your broken pcap and pcapng files";
     license = licenses.gpl3;
     maintainers = [ maintainers.ehmry ];

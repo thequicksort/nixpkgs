@@ -19,8 +19,8 @@ stdenv.mkDerivation {
   '';
 
   meta = {
-    homepage = https://github.com/keplerproject/luafilesystem;
-    hydraPlatforms = stdenv.lib.platforms.linux;
+    homepage = "https://github.com/keplerproject/luafilesystem";
+    hydraPlatforms = lib.platforms.linux;
     maintainers = [ ];
   };
 }

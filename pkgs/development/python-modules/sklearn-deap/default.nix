@@ -1,4 +1,4 @@
-{ stdenv, buildPythonPackage, fetchFromGitHub, fetchpatch, numpy, scipy, deap, scikitlearn, python }:
+{ lib, buildPythonPackage, fetchFromGitHub, fetchpatch, numpy, scipy, deap, scikitlearn, python }:
 
 buildPythonPackage rec {
   pname = "sklearn-deap";
@@ -26,9 +26,9 @@ buildPythonPackage rec {
     ${python.interpreter} test.py
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Use evolutionary algorithms instead of gridsearch in scikit-learn";
-    homepage = https://github.com/rsteca/sklearn-deap;
+    homepage = "https://github.com/rsteca/sklearn-deap";
     license = licenses.lgpl3;
     maintainers = with maintainers; [ psyanticy ];
   };

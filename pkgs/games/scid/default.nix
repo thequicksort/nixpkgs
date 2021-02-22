@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, tcl, tk, libX11, zlib, makeWrapper }:
+{ lib, stdenv, fetchurl, tcl, tk, libX11, zlib, makeWrapper }:
 
 stdenv.mkDerivation {
   pname = "scid";
@@ -51,7 +51,7 @@ stdenv.mkDerivation {
 
   meta = {
     description = "Chess database with play and training functionality";
-    homepage = http://scid.sourceforge.net/;
-    license = stdenv.lib.licenses.gpl2;
+    homepage = "http://scid.sourceforge.net/";
+    license = lib.licenses.gpl2;
   };
 }

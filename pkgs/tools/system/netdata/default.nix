@@ -1,6 +1,7 @@
-{ stdenv, callPackage, fetchFromGitHub, autoreconfHook, pkgconfig
+{ lib, stdenv, callPackage, fetchFromGitHub, autoreconfHook, pkg-config
 , CoreFoundation, IOKit, libossp_uuid
-, curl, libcap,  libuuid, lm_sensors, zlib, fetchpatch
+, curl, libcap,  libuuid, lm_sensors, zlib
+, nixosTests
 , withCups ? false, cups
 , withDBengine ? true, libuv, lz4, judy
 , withIpmi ? (!stdenv.isDarwin), freeipmi
@@ -9,22 +10,22 @@
 , withDebug ? false
 }:
 
-with stdenv.lib;
+with lib;
 
 let
   go-d-plugin = callPackage ./go.d.plugin.nix {};
 in stdenv.mkDerivation rec {
-  version = "1.20.0";
+  version = "1.29.2";
   pname = "netdata";
 
   src = fetchFromGitHub {
     owner = "netdata";
     repo = "netdata";
     rev = "v${version}";
-    sha256 = "0g7iv5w14wndl5iv2q81dppgwq09sm93vpnyq7p49nl7q1dsz1d6";
+    sha256 = "sha256-Y949jHIX3VOwaxeaBqqTZUx66Sd0s27kMCCjcnJORO4=";
   };
 
-  nativeBuildInputs = [ autoreconfHook pkgconfig ];
+  nativeBuildInputs = [ autoreconfHook pkg-config ];
   buildInputs = [ curl.dev zlib.dev ]
     ++ optionals stdenv.isDarwin [ CoreFoundation IOKit libossp_uuid ]
     ++ optionals (!stdenv.isDarwin) [ libcap.dev libuuid.dev ]
@@ -35,19 +36,16 @@ in stdenv.mkDerivation rec {
     ++ optionals withSsl [ openssl.dev ];
 
   patches = [
+    # required to prevent plugins from relying on /etc
+    # and /var
     ./no-files-in-etc-and-var.patch
-    # part of the next release
-    (fetchpatch {
-      url = "https://github.com/netdata/netdata/commit/5c992b7d92cf008ce91627efccf8644732db1f87.patch";
-      sha256 = "1nvbmhy5rir4kw77dhx1qr0l0wcspakr7z7ivva1ilz1aml8nbnm";
-    })
   ];
 
   NIX_CFLAGS_COMPILE = optionalString withDebug "-O1 -ggdb -DNETDATA_INTERNAL_CHECKS=1";
 
   postInstall = ''
-    ln -s ${go-d-plugin.bin}/lib/netdata/conf.d/* $out/lib/netdata/conf.d
-    ln -s ${go-d-plugin.bin}/bin/godplugin $out/libexec/netdata/plugins.d/go.d.plugin
+    ln -s ${go-d-plugin}/lib/netdata/conf.d/* $out/lib/netdata/conf.d
+    ln -s ${go-d-plugin}/bin/godplugin $out/libexec/netdata/plugins.d/go.d.plugin
   '' + optionalString (!stdenv.isDarwin) ''
     # rename this plugin so netdata will look for setuid wrapper
     mv $out/libexec/netdata/plugins.d/apps.plugin \
@@ -76,12 +74,13 @@ in stdenv.mkDerivation rec {
     rm -r $out/sbin
   '';
 
+  passthru.tests.netdata = nixosTests.netdata;
+
   meta = {
     description = "Real-time performance monitoring tool";
-    homepage = https://my-netdata.io/;
-    license = licenses.gpl3;
+    homepage = "https://www.netdata.cloud/";
+    license = licenses.gpl3Plus;
     platforms = platforms.unix;
     maintainers = [ maintainers.lethalman ];
   };
-
 }

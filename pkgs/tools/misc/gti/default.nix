@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub }:
+{ lib, stdenv, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
   pname = "gti";
@@ -17,8 +17,8 @@ stdenv.mkDerivation rec {
     cp gti.6 $out/share/man/man6
   '';
 
-  meta = with stdenv.lib; {
-    homepage = http://r-wos.org/hacks/gti;
+  meta = with lib; {
+    homepage = "http://r-wos.org/hacks/gti";
     license = licenses.mit;
     description = "Humorous typo-based git runner; drives a car over the terminal";
     maintainers = with maintainers; [ fadenb ];

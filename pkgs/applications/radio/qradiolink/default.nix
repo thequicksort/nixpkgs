@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, alsaLib, boost
+{ lib, stdenv, fetchFromGitHub, alsaLib, boost
 , qt4, libpulseaudio, codec2, libconfig
 , gnuradio, gr-osmosdr, gsm
 , libopus, libjpeg, protobuf, qwt, speex
@@ -50,9 +50,9 @@ in stdenv.mkDerivation {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "SDR transceiver application for analog and digital modes";
-    homepage = http://qradiolink.org/;
+    homepage = "http://qradiolink.org/";
     license = licenses.agpl3;
     maintainers = [ maintainers.markuskowa ];
     platforms = platforms.linux;

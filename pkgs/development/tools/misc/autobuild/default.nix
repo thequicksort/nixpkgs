@@ -1,4 +1,4 @@
-{ fetchurl, stdenv, makeWrapper, perl, openssh, rsync }:
+{ fetchurl, lib, stdenv, makeWrapper, perl, openssh, rsync }:
 
 stdenv.mkDerivation rec {
   name = "autobuild-5.3";
@@ -28,7 +28,7 @@ stdenv.mkDerivation rec {
       summary of the build status, after reading the manual.
     '';
 
-    homepage = https://josefsson.org/autobuild/;
-    license = stdenv.lib.licenses.gpl2Plus;
+    homepage = "https://josefsson.org/autobuild/";
+    license = lib.licenses.gpl2Plus;
   };
 }

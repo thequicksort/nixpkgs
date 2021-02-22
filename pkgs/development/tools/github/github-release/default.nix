@@ -1,4 +1,4 @@
-{ stdenv, system, fetchurl }:
+{ lib, stdenv, system, fetchurl }:
 
 let
   linuxPredicate = system == "x86_64-linux";
@@ -36,7 +36,7 @@ in stdenv.mkDerivation rec {
     cp "${metadata.archiveBinaryPath}/github-release" "$out/bin/"
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Commandline app to create and edit releases on Github (and upload artifacts)";
     longDescription = ''
       A small commandline app written in Go that allows you to easily create and
@@ -45,7 +45,7 @@ in stdenv.mkDerivation rec {
     '';
 
     license = licenses.mit;
-    homepage = https://github.com/aktau/github-release;
+    homepage = "https://github.com/aktau/github-release";
     maintainers = with maintainers; [ ardumont ];
     platforms = with platforms; unix;
   };

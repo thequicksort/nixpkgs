@@ -1,13 +1,13 @@
-{ stdenv, fetchurl, rpmextract, makeWrapper, patchelf, qt4, zlib, libX11, libXt, libSM, libICE, libXext, libGLU, libGL }:
+{ lib, stdenv, fetchurl, rpmextract, makeWrapper, patchelf, qt4, zlib, libX11, libXt, libSM, libICE, libXext, libGLU, libGL }:
 
-with stdenv.lib;
+with lib;
 stdenv.mkDerivation {
   pname = "aliza";
-  version = "1.48.10";
+  version = "1.98.43";
   src = fetchurl {
     # See https://www.aliza-dicom-viewer.com/download
-    url = "https://drive.google.com/uc?export=download&id=16WEScARaSrzJpJkyGuOUxDF95eUwGyET";
-    sha256 = "1ls16cwd0fmb5axxmy9lgf8cqrf7g7swm26f0gr2vqp4z9bw6qn3";
+    url = "https://drive.google.com/uc?export=download&id=1HiDYUVN30oSWZWt3HBp7gNRBCLLtJM1I";
+    sha256 = "0d70q67j2q0wdn4m2fxljqb97jwmscqgg3rm1rkb77fi2ik206ra";
     name = "aliza.rpm";
   };
 
@@ -27,7 +27,7 @@ stdenv.mkDerivation {
   '';
 
   postInstall = let
-    libs = stdenv.lib.makeLibraryPath [ qt4 zlib stdenv.cc.cc libSM libICE libX11 libXext libXt libGLU libGL ];
+    libs = lib.makeLibraryPath [ qt4 zlib stdenv.cc.cc libSM libICE libX11 libXext libXt libGLU libGL ];
   in ''
     ${patchelf}/bin/patchelf \
       --interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" \
@@ -46,7 +46,7 @@ stdenv.mkDerivation {
 
   meta = {
     description = "Medical imaging software with 2D, 3D and 4D capabilities";
-    homepage = https://www.aliza-dicom-viewer.com;
+    homepage = "https://www.aliza-dicom-viewer.com";
     license = licenses.unfreeRedistributable;
     maintainers = with maintainers; [ mounium ];
     platforms = platforms.linux;

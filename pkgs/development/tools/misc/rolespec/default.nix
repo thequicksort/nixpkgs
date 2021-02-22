@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, makeWrapper }:
+{ lib, stdenv, fetchFromGitHub, makeWrapper }:
 
 stdenv.mkDerivation rec {
 
@@ -32,8 +32,8 @@ stdenv.mkDerivation rec {
   dontPatchELF = true;
   dontStrip = true;
 
-  meta = with stdenv.lib; {
-    homepage = https://github.com/nickjj/rolespec;
+  meta = with lib; {
+    homepage = "https://github.com/nickjj/rolespec";
     description = "A test library for testing Ansible roles";
     longDescription = ''
       A shell based test library for Ansible that works both locally and over

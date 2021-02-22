@@ -1,4 +1,4 @@
-{stdenv, fetchFromGitHub, python27, htslib, zlib, makeWrapper}:
+{lib, stdenv, fetchFromGitHub, python27, htslib, zlib, makeWrapper}:
 
 let python = python27.withPackages (ps: with ps; [ cython ]);
 
@@ -28,10 +28,10 @@ in stdenv.mkDerivation {
     makeWrapper ${python}/bin/python $out/bin/platypus --add-flags "$out/libexec/platypus/bin/Platypus.py"
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "The Platypus variant caller";
     license = licenses.gpl3;
-    homepage = https://github.com/andyrimmer/Platypus;
+    homepage = "https://github.com/andyrimmer/Platypus";
     maintainers = with maintainers; [ jbedo ];
     platforms = platforms.x86_64;
   };

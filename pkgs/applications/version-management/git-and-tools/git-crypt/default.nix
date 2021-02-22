@@ -1,4 +1,4 @@
-{ fetchFromGitHub, git, gnupg, makeWrapper, openssl, stdenv
+{ fetchFromGitHub, git, gnupg, makeWrapper, openssl, lib, stdenv
 , libxslt, docbook_xsl
 }:
 
@@ -32,8 +32,8 @@ stdenv.mkDerivation rec {
     wrapProgram $out/bin/git-crypt --prefix PATH : $out/bin:${git}/bin:${gnupg}/bin
   '';
 
-  meta = with stdenv.lib; {
-    homepage = https://www.agwa.name/projects/git-crypt;
+  meta = with lib; {
+    homepage = "https://www.agwa.name/projects/git-crypt";
     description = "Transparent file encryption in git";
     longDescription = ''
       git-crypt enables transparent encryption and decryption of files in a git

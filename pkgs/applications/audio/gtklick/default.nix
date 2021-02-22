@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, pythonPackages, gettext, klick}:
+{ lib, fetchurl, pythonPackages, gettext, klick}:
 
 pythonPackages.buildPythonApplication rec {
   pname = "gtklick";
@@ -27,8 +27,8 @@ pythonPackages.buildPythonApplication rec {
   '';
 
   meta = {
-    homepage = http://das.nasophon.de/gtklick/;
+    homepage = "http://das.nasophon.de/gtklick/";
     description = "Simple metronome with an easy-to-use GTK interface";
-    license = stdenv.lib.licenses.gpl2Plus;
+    license = lib.licenses.gpl2Plus;
   };
 }

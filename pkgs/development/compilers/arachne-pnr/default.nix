@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, icestorm }:
+{ lib, stdenv, fetchFromGitHub, icestorm }:
 
 with builtins;
 
@@ -36,9 +36,9 @@ stdenv.mkDerivation rec {
       is a textual bitstream representation for assembly by
       the IceStorm [2] icepack command.
     '';
-    homepage = https://github.com/cseed/arachne-pnr;
-    license = stdenv.lib.licenses.mit;
-    maintainers = with stdenv.lib.maintainers; [ shell thoughtpolice ];
-    platforms = stdenv.lib.platforms.linux;
+    homepage = "https://github.com/cseed/arachne-pnr";
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ shell thoughtpolice ];
+    platforms = lib.platforms.linux;
   };
 }

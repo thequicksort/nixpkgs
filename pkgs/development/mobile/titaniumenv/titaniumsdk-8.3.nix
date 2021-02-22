@@ -1,10 +1,10 @@
-{stdenv, fetchurl, unzip, makeWrapper}:
+{stdenv, lib, fetchurl, unzip, makeWrapper}:
 
 let
   # Gradle is a build system that bootstraps itself. This is what it actually
   # downloads in the bootstrap phase.
   gradleAllZip = fetchurl {
-    url = http://services.gradle.org/distributions/gradle-4.1-all.zip;
+    url = "http://services.gradle.org/distributions/gradle-4.1-all.zip";
     sha256 = "1rcrh263vq7a0is800y5z36jj97p67c6zpqzzfcbr7r0qaxb61sw";
   };
 
@@ -55,11 +55,11 @@ in
 stdenv.mkDerivation {
   name = "mobilesdk-8.3.2.GA";
   src = if (stdenv.system == "i686-linux" || stdenv.system == "x86_64-linux") then fetchurl {
-    url = https://builds.appcelerator.com/mobile/8_3_X/mobilesdk-8.3.2.v20200117111803-linux.zip;
+    url = "https://builds.appcelerator.com/mobile/8_3_X/mobilesdk-8.3.2.v20200117111803-linux.zip";
     sha256 = "04pfw21jrx9w259lphynwykqjk4c9hm0zix4d40s7mf8mmh3xdx9";
   }
   else if stdenv.system == "x86_64-darwin" then fetchurl {
-    url = https://builds.appcelerator.com/mobile/8_3_X/mobilesdk-8.3.2.v20200117111803-osx.zip;
+    url = "https://builds.appcelerator.com/mobile/8_3_X/mobilesdk-8.3.2.v20200117111803-osx.zip";
     sha256 = "1zflq5hc96lrriw71ya623kkskkisi9yayg8qs03zimi0gksizxw";
   }
   else throw "Platform: ${stdenv.system} not supported!";
@@ -87,7 +87,7 @@ stdenv.mkDerivation {
     # Patch maven central repository with our own local directory. This prevents the builder from downloading Maven artifacts
     sed -i -e 's|mavenCentral()|maven { url "${fakeMavenRepo}" }|' android/templates/build/proguard.gradle
 
-    ${stdenv.lib.optionalString (stdenv.system == "x86_64-darwin") ''
+    ${lib.optionalString (stdenv.system == "x86_64-darwin") ''
       # Patch the strip frameworks script in the iPhone build template to not let
       # it skip the strip phase. This is caused by an assumption on the file
       # permissions in which Nix deviates from the standard.

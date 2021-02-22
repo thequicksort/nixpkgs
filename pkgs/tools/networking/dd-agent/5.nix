@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, python
+{ lib, stdenv, fetchFromGitHub, python
 , unzip, makeWrapper }:
 let
   python' = python.override {
@@ -104,9 +104,9 @@ in stdenv.mkDerivation rec {
       Event collector for the DataDog analysis service
       -- v5 Python implementation
     '';
-    homepage    = https://www.datadoghq.com;
-    license     = stdenv.lib.licenses.bsd3;
-    platforms   = stdenv.lib.platforms.all;
-    maintainers = with stdenv.lib.maintainers; [ thoughtpolice domenkozar ];
+    homepage    = "https://www.datadoghq.com";
+    license     = lib.licenses.bsd3;
+    platforms   = lib.platforms.all;
+    maintainers = with lib.maintainers; [ thoughtpolice domenkozar ];
   };
 }

@@ -1,4 +1,4 @@
-{ stdenv, jdk, jre, coursier, makeWrapper }:
+{ lib, stdenv, jdk, jre, coursier, makeWrapper }:
 
 let
   baseName = "scalafix";
@@ -34,9 +34,9 @@ stdenv.mkDerivation {
     $out/bin/${baseName} --version | grep -q "${version}"
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Refactoring and linting tool for Scala";
-    homepage = https://scalacenter.github.io/scalafix/;
+    homepage = "https://scalacenter.github.io/scalafix/";
     license = licenses.bsd3;
     maintainers = [ maintainers.tomahna ];
   };

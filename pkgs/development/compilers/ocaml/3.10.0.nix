@@ -25,10 +25,10 @@ stdenv.mkDerivation (rec {
   '';
 
   meta = {
-    homepage = http://caml.inria.fr/ocaml;
-    license = with stdenv.lib.licenses; [ qpl lgpl2 ];
+    homepage = "http://caml.inria.fr/ocaml";
+    license = with lib.licenses; [ qpl lgpl2 ];
     description = "Most popular variant of the Caml language";
-    platforms = stdenv.lib.platforms.linux;
+    platforms = lib.platforms.linux;
   };
 
 })

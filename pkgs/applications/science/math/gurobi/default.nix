@@ -6,7 +6,7 @@ in stdenv.mkDerivation rec {
   pname = "gurobi";
   version = "${majorVersion}.0";
 
-  src = with stdenv.lib; fetchurl {
+  src = with lib; fetchurl {
     url = "http://packages.gurobi.com/${versions.majorMinor version}/gurobi${version}_linux64.tar.gz";
     sha256 = "1yjqbzqnq4jjkjm616d36bgd3rmqr0a1ii17n0prpdjzmdlq63dz";
   };
@@ -48,9 +48,9 @@ in stdenv.mkDerivation rec {
 
   passthru.libSuffix = lib.replaceStrings ["."] [""] majorVersion;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Optimization solver for mathematical programming";
-    homepage = https://www.gurobi.com;
+    homepage = "https://www.gurobi.com";
     license = licenses.unfree;
     platforms = [ "x86_64-linux" ];
     maintainers = with maintainers; [ jfrankenau ];

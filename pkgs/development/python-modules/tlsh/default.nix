@@ -1,4 +1,4 @@
-{ stdenv
+{ lib
 , buildPythonPackage
 , fetchFromGitHub
 , cmake
@@ -24,9 +24,9 @@ buildPythonPackage {
     cd ../py_ext
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Trend Micro Locality Sensitive Hash";
-    homepage = https://github.com/trendmicro/tlsh;
+    homepage = "https://github.com/trendmicro/tlsh";
     license = licenses.asl20;
     platforms = platforms.unix;
   };

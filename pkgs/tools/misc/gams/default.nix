@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, unzip, file, licenseFile ? null, optgamsFile ? null}:
+{ lib, stdenv, fetchurl, unzip, file, licenseFile ? null, optgamsFile ? null}:
 
 assert licenseFile != null;
 
@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
     cp -a * "$out/share/gams"
 
     cp ${licenseFile} $out/share/gams/gamslice.txt
-  '' + stdenv.lib.optionalString (optgamsFile != null) ''
+  '' + lib.optionalString (optgamsFile != null) ''
     cp ${optgamsFile} $out/share/gams/optgams.def
     ln -s $out/share/gams/optgams.def $out/bin/optgams.def
   '';
@@ -35,13 +35,13 @@ stdenv.mkDerivation rec {
     done
   '';
 
-  meta = with stdenv.lib;{
+  meta = with lib;{
     description = "General Algebraic Modeling System";
     longDescription = ''
       The General Algebraic Modeling System is a high-level modeling system for mathematical optimization.
       GAMS is designed for modeling and solving linear, nonlinear, and mixed-integer optimization problems.
     '';
-    homepage = https://www.gams.com/;
+    homepage = "https://www.gams.com/";
     license = licenses.unfree;
     maintainers = [ maintainers.Scriptkiddi ];
     platforms = platforms.linux;

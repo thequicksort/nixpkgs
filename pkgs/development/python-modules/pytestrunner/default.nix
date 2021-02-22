@@ -1,4 +1,4 @@
-{ stdenv, buildPythonPackage, fetchPypi, setuptools_scm, pytest }:
+{ lib, buildPythonPackage, fetchPypi, setuptools_scm, pytest }:
 
 buildPythonPackage rec {
   pname = "pytest-runner";
@@ -22,9 +22,9 @@ buildPythonPackage rec {
   # Fixture not found
   doCheck = false;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Invoke py.test as distutils command with dependency resolution";
-    homepage = https://github.com/pytest-dev/pytest-runner;
+    homepage = "https://github.com/pytest-dev/pytest-runner";
     license = licenses.mit;
   };
 }

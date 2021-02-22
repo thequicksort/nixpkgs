@@ -1,19 +1,19 @@
 { lib, fetchurl, appimageTools }:
-
 let
   pname = "deltachat-electron";
-  version = "1.1.0";
+  version = "1.14.1";
   name = "${pname}-${version}";
 
   src = fetchurl {
     url =
-      "https://download.delta.chat/desktop/r${version}/DeltaChat-${version}.AppImage";
-    sha256 = "0pbn45cyv0h3fp7s9v9q93v12ah2gj7daaq0r3z140im6zv0rkrc";
+      "https://download.delta.chat/desktop/v${version}/DeltaChat-${version}.AppImage";
+    sha256 = "0w00qr8wwrxwa2g71biyz42k8y5y766m6k876bnzq927vcjilq6b";
   };
 
   appimageContents = appimageTools.extract { inherit name src; };
 
-in appimageTools.wrapType2 {
+in
+appimageTools.wrapType2 {
   inherit name src;
 
   extraInstallCommands = ''

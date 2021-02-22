@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, jre, makeWrapper }:
+{ lib, stdenv, fetchurl, jre, makeWrapper }:
 
 let version = "0.4.4"; in
 
@@ -24,7 +24,7 @@ stdenv.mkDerivation {
 
   meta = {
     description = "A lightweight IDE for Clojure";
-    homepage = https://github.com/arthuredelstein/clooj;
-    license = stdenv.lib.licenses.bsd3;
+    homepage = "https://github.com/arthuredelstein/clooj";
+    license = lib.licenses.bsd3;
   };
 }

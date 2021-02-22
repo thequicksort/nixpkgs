@@ -34,7 +34,7 @@ stdenv.mkDerivation rec {
   buildPhase = lib.optionalString (!stdenv.isDarwin) ''
     patchelf \
       --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" \
-      --set-rpath "${stdenv.lib.makeLibraryPath [ freetype fontconfig stdenv.cc.cc stdenv.cc.cc openssl ]}" \
+      --set-rpath "${lib.makeLibraryPath [ freetype fontconfig stdenv.cc.cc stdenv.cc.cc openssl ]}" \
       bin/phantomjs
   '';
 
@@ -61,7 +61,7 @@ stdenv.mkDerivation rec {
       - Network Monitoring
     '';
 
-    homepage = https://phantomjs.org/;
+    homepage = "https://phantomjs.org/";
     license = lib.licenses.bsd3;
 
     maintainers = [ lib.maintainers.bluescreen303 ];

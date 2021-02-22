@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, perl, unzip }:
+{ lib, stdenv, fetchFromGitHub, perl, unzip }:
 
 stdenv.mkDerivation rec {
   pname = "zpaq";
@@ -27,9 +27,9 @@ stdenv.mkDerivation rec {
 
   installFlags = [ "PREFIX=$(out)" ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Incremental journaling backup utility and archiver";
-    homepage = http://mattmahoney.net/dc/zpaq.html;
+    homepage = "http://mattmahoney.net/dc/zpaq.html";
     license = licenses.gpl3Plus ;
     maintainers = with maintainers; [ raskin ];
     platforms = platforms.linux;

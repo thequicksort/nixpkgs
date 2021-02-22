@@ -1,4 +1,4 @@
-{ stdenv, buildPackages, autoreconfHook, fetchurl, fetchpatch }:
+{ lib, stdenv, buildPackages, autoreconfHook, fetchurl, fetchpatch }:
 
 stdenv.mkDerivation rec {
   name = "alsa-firmware-1.2.1";
@@ -32,9 +32,9 @@ stdenv.mkDerivation rec {
   '';
 
   meta = {
-    homepage = http://www.alsa-project.org/;
+    homepage = "http://www.alsa-project.org/";
     description = "Soundcard firmwares from the alsa project";
-    license = stdenv.lib.licenses.gpl2Plus;
-    platforms = stdenv.lib.platforms.linux;
+    license = lib.licenses.gpl2Plus;
+    platforms = lib.platforms.linux;
   };
 }

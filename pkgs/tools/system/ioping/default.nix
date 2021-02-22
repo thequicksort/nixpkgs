@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, fetchpatch }:
+{ lib, stdenv, fetchFromGitHub, fetchpatch }:
 
 stdenv.mkDerivation rec {
   pname = "ioping";
@@ -21,11 +21,11 @@ stdenv.mkDerivation rec {
 
   makeFlags = [ "PREFIX=$(out)" ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Disk I/O latency measuring tool";
     maintainers = with maintainers; [ raskin ];
     platforms = platforms.unix;
     license = licenses.gpl3Plus;
-    homepage = https://github.com/koct9i/ioping;
+    homepage = "https://github.com/koct9i/ioping";
   };
 }

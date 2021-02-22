@@ -1,5 +1,7 @@
 { fetchurl
-, stdenv
+, fetchFromGitLab
+, fetchpatch
+, lib, stdenv
 , substituteAll
 , accountsservice
 , adwaita-icon-theme
@@ -20,7 +22,6 @@
 , gnome-color-manager
 , gnome-desktop
 , gnome-online-accounts
-, gnome-session
 , gnome-settings-daemon
 , gnome3
 , grilo
@@ -50,7 +51,7 @@
 , networkmanagerapplet
 , libnma
 , ninja
-, pkgconfig
+, pkg-config
 , polkit
 , python3
 , samba
@@ -60,21 +61,24 @@
 , tzdata
 , udisks2
 , upower
-, vino
+, epoxy
 , gnome-user-share
 , gnome-remote-desktop
-, shadow
 , wrapGAppsHook
 }:
 
 stdenv.mkDerivation rec {
   pname = "gnome-control-center";
-  version = "3.34.4";
+  version = "3.38.1";
 
   src = fetchurl {
-    url = "mirror://gnome/sources/${pname}/${stdenv.lib.versions.majorMinor version}/${pname}-${version}.tar.xz";
-    sha256 = "0bi7lsmr5hcf0v17brsa8j33p6i0wnh620bzwycmxryfp6s6vshp";
+    url = "mirror://gnome/sources/${pname}/${lib.versions.majorMinor version}/${pname}-${version}.tar.xz";
+    sha256 = "09i011hf23s2i4wim43vjys7y4y43cxl3kyvrnrwqvqgc5n0144d";
   };
+  # See https://mail.gnome.org/archives/distributor-list/2020-September/msg00001.html
+  prePatch = (import ../gvc-with-ucm-prePatch.nix {
+    inherit fetchFromGitLab;
+  });
 
   nativeBuildInputs = [
     docbook_xsl
@@ -82,7 +86,7 @@ stdenv.mkDerivation rec {
     libxslt
     meson
     ninja
-    pkgconfig
+    pkg-config
     python3
     shared-mime-info
     wrapGAppsHook
@@ -133,17 +137,27 @@ stdenv.mkDerivation rec {
     tracker
     udisks2
     upower
-    vino
+    epoxy
   ];
 
   patches = [
     (substituteAll {
       src = ./paths.patch;
       gcm = gnome-color-manager;
-      usermod = "${shadow}/bin/usermod";
       gnome_desktop = gnome-desktop;
       inherit glibc libgnomekbd tzdata;
       inherit cups networkmanagerapplet;
+    })
+
+    # Fix double free when leaving user accounts panel.
+    # https://gitlab.gnome.org/GNOME/gnome-control-center/merge_requests/853
+    (fetchpatch {
+      url = "https://gitlab.gnome.org/GNOME/gnome-control-center/commit/e80b4b5f58f448c5a3d38721f7bba32c413d46e7.patch";
+      sha256 = "GffsSU/uNS0Fg2lXbOuD/BrWBT4D2VKgWNGifG0FBUw=";
+    })
+    (fetchpatch {
+      url = "https://gitlab.gnome.org/GNOME/gnome-control-center/commit/64686cfee330849945f6ff4dcc43393eb1a6e59c.patch";
+      sha256 = "4VJU0q6qOtGzd/hmDncckInfEjCkC8+lXmDgxwc4VJU=";
     })
   ];
 
@@ -151,10 +165,6 @@ stdenv.mkDerivation rec {
     chmod +x build-aux/meson/meson_post_install.py # patchShebangs requires executable file
     patchShebangs build-aux/meson/meson_post_install.py
   '';
-
-  mesonFlags = [
-    "-Dgnome_session_libexecdir=${gnome-session}/libexec"
-  ];
 
   preFixup = ''
     gappsWrapperArgs+=(
@@ -177,10 +187,10 @@ stdenv.mkDerivation rec {
     };
   };
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Utilities to configure the GNOME desktop";
     license = licenses.gpl2Plus;
-    maintainers = gnome3.maintainers;
+    maintainers = teams.gnome.members;
     platforms = platforms.linux;
   };
 }

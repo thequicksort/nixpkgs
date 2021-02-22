@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, unzip, SDL, libGLU, libGL, openal, curl, libXxf86vm }:
+{ lib, stdenv, fetchurl, unzip, SDL, libGLU, libGL, openal, curl, libXxf86vm }:
 
 stdenv.mkDerivation rec {
   pname = "urbanterror";
@@ -56,7 +56,7 @@ stdenv.mkDerivation rec {
 
   hardeningDisable = [ "format" ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A multiplayer tactical FPS on top of Quake 3 engine";
     longDescription = ''
       Urban Terror is a free multiplayer first person shooter developed by
@@ -65,7 +65,7 @@ stdenv.mkDerivation rec {
       tactical shooter; somewhat realism based, but the motto is "fun over
       realism". This results in a very unique, enjoyable and addictive game.
     '';
-    homepage = http://www.urbanterror.info;
+    homepage = "http://www.urbanterror.info";
     license = licenses.unfreeRedistributable;
     maintainers = with maintainers; [ astsmtl fpletz ];
     platforms = platforms.linux;

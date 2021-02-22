@@ -1,4 +1,4 @@
-{ stdenv, autoreconfHook, fetchFromGitHub, fetchpatch }:
+{ lib, stdenv, autoreconfHook, fetchFromGitHub, fetchpatch }:
 
 stdenv.mkDerivation rec {
   pname = "inotify-tools";
@@ -20,8 +20,8 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ autoreconfHook ];
 
-  meta = with stdenv.lib; {
-    homepage = https://github.com/rvoicilas/inotify-tools/wiki;
+  meta = with lib; {
+    homepage = "https://github.com/rvoicilas/inotify-tools/wiki";
     license = licenses.gpl2;
     maintainers = with maintainers; [ marcweber pSub ];
     platforms = platforms.linux;

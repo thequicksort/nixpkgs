@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation {
   name = "clean-3.0";
@@ -44,9 +44,9 @@ stdenv.mkDerivation {
       and generic functions.
     '';
 
-    homepage = http://wiki.clean.cs.ru.nl/Clean;
-    license = stdenv.lib.licenses.lgpl21;
-    maintainers = [ stdenv.lib.maintainers.kkallio ];
+    homepage = "http://wiki.clean.cs.ru.nl/Clean";
+    license = lib.licenses.lgpl21;
+    maintainers = [ lib.maintainers.kkallio ];
     platforms = [ "i686-linux" "x86_64-linux" ];
   };
 }

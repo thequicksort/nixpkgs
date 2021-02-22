@@ -34,9 +34,9 @@ in stdenv.mkDerivation {
     --prefix PATH : ${lib.makeBinPath runtime_bins}
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Command line tool for unpacking archives easily";
-    homepage = https://packages.qa.debian.org/u/unp.html;
+    homepage = "https://packages.qa.debian.org/u/unp.html";
     license = with licenses; [ gpl2 ];
     maintainers = [ maintainers.timor ];
     platforms = platforms.all;

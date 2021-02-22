@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, unzip }:
+{ lib, stdenv, fetchurl, unzip }:
 
 stdenv.mkDerivation {
   name = "boost-process-0.5";
@@ -21,8 +21,8 @@ stdenv.mkDerivation {
     cp -r boost $out/include
   '';
 
-  meta = with stdenv.lib; {
-    homepage = http://www.highscore.de/boost/process0.5/;
+  meta = with lib; {
+    homepage = "http://www.highscore.de/boost/process0.5/";
     description = "Library to manage system processes";
     license = licenses.boost;
     platforms = platforms.unix;

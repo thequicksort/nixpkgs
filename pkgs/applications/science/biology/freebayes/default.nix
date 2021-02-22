@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, zlib, bzip2, lzma }:
+{ lib, stdenv, fetchFromGitHub, zlib, bzip2, lzma }:
 
 stdenv.mkDerivation rec {
   pname = "freebayes";
@@ -19,10 +19,10 @@ stdenv.mkDerivation rec {
     install -vD bin/freebayes bin/bamleftalign scripts/* -t $out/bin
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Bayesian haplotype-based polymorphism discovery and genotyping";
     license     = licenses.mit;
-    homepage    = https://github.com/ekg/freebayes;
+    homepage    = "https://github.com/ekg/freebayes";
     maintainers = with maintainers; [ jdagilliland ];
     platforms = [ "x86_64-linux" ];
   };

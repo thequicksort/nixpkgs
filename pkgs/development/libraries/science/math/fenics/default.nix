@@ -1,4 +1,4 @@
-{ stdenv
+{ lib, stdenv
 , fetchurl
 , fetchpatch
 , boost
@@ -24,6 +24,8 @@
 , suitesparse
 , swig
 , zlib
+, blas
+, lapack
 }:
 let
   version = "2019.1.0";
@@ -47,9 +49,9 @@ let
     '';
     meta = {
       description = "Distributed just-in-time shared library building";
-      homepage = https://fenicsproject.org/;
-      platforms = stdenv.lib.platforms.all;
-      license = stdenv.lib.licenses.lgpl3;
+      homepage = "https://fenicsproject.org/";
+      platforms = lib.platforms.all;
+      license = lib.licenses.lgpl3;
     };
   };
 
@@ -77,9 +79,9 @@ let
     '';
     meta = {
       description = "Automatic generation of finite element basis functions";
-      homepage = https://fenicsproject.org/;
-      platforms = stdenv.lib.platforms.all;
-      license = stdenv.lib.licenses.lgpl3;
+      homepage = "https://fenicsproject.org/";
+      platforms = lib.platforms.all;
+      license = lib.licenses.lgpl3;
     };
   };
 
@@ -99,9 +101,9 @@ let
     '';
     meta = {
       description = "A domain-specific language for finite element variational forms";
-      homepage = https://fenicsproject.org/;
-      platforms = stdenv.lib.platforms.all;
-      license = stdenv.lib.licenses.lgpl3;
+      homepage = "https://fenicsproject.org/";
+      platforms = lib.platforms.all;
+      license = lib.licenses.lgpl3;
     };
   };
 
@@ -136,9 +138,9 @@ let
     '';
     meta = {
       description = "A compiler for finite element variational forms";
-      homepage = https://fenicsproject.org/;
-      platforms = stdenv.lib.platforms.all;
-      license = stdenv.lib.licenses.lgpl3;
+      homepage = "https://fenicsproject.org/";
+      platforms = lib.platforms.all;
+      license = lib.licenses.lgpl3;
     };
   };
   dolfin = stdenv.mkDerivation {
@@ -176,13 +178,14 @@ let
       hdf5
       mpi
       numpy
-      (numpy.blas)
+      blas
+      lapack
       ply
       python
       scotch
       six
       sphinx
-      (suitesparse.override { openblas = numpy.blas; })
+      suitesparse
       swig
       sympy
       ufl
@@ -211,8 +214,8 @@ let
     '';
     meta = {
       description = "The FEniCS Problem Solving Environment in Python and C++";
-      homepage = https://fenicsproject.org/;
-      license = stdenv.lib.licenses.lgpl3;
+      homepage = "https://fenicsproject.org/";
+      license = lib.licenses.lgpl3;
     };
   };
   python-dolfin = pythonPackages.buildPythonPackage rec {
@@ -230,8 +233,8 @@ let
       export CMAKE_PREFIX_PATH=${pybind11}/share/cmake/pybind11:$CMAKE_PREFIX_PATH
       substituteInPlace setup.py --replace "pybind11==2.2.4" "pybind11"
       substituteInPlace dolfin/jit/jit.py \
-        --replace 'pkgconfig.exists("dolfin")' 'pkgconfig.exists("${dolfin}/lib/pkgconfig/dolfin.pc")' \
-        --replace 'pkgconfig.parse("dolfin")' 'pkgconfig.parse("${dolfin}/lib/pkgconfig/dolfin.pc")'
+        --replace 'pkg-config.exists("dolfin")' 'pkg-config.exists("${dolfin}/lib/pkgconfig/dolfin.pc")' \
+        --replace 'pkg-config.parse("dolfin")' 'pkg-config.parse("${dolfin}/lib/pkgconfig/dolfin.pc")'
     '';
     buildInputs = [
       dolfin
@@ -250,9 +253,9 @@ let
     doCheck = false; # Tries to orte_ess_init and call ssh to localhost
     meta = {
       description = "Python bindings for the DOLFIN FEM compiler";
-      homepage = https://fenicsproject.org/;
-      platforms = stdenv.lib.platforms.all;
-      license = stdenv.lib.licenses.lgpl3;
+      homepage = "https://fenicsproject.org/";
+      platforms = lib.platforms.all;
+      license = lib.licenses.lgpl3;
     };
   };
 in python-dolfin

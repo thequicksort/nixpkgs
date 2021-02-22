@@ -33,8 +33,8 @@ buildPythonPackage rec {
       name = "conftest-astropy-3-fix.patch";
       url = "https://github.com/astropy/pyregion/pull/136.patch";
       sha256 = "13yxjxiqnhjy9gh24hvv6pnwx7qic2mcx3ccr1igjrc3f881d59m";
-	  })
-	];
+    })
+  ];
 
   nativeBuildInputs = [ astropy-helpers ];
 
@@ -53,7 +53,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "Python parser for ds9 region files";
-    homepage = https://github.com/astropy/pyregion;
+    homepage = "https://github.com/astropy/pyregion";
     license = licenses.mit;
     maintainers = [ maintainers.smaret ];
   };

@@ -1,5 +1,6 @@
-{ stdenv
+{ lib
 , fetchurl
+, nix-update-script
 , python3Packages
 , gdk-pixbuf
 , glib
@@ -17,18 +18,18 @@
 , librsvg
 }:
 
-python3Packages.buildPythonApplication rec  {
+python3Packages.buildPythonApplication rec {
   pname = "ulauncher";
-  version = "5.6.1";
+  version = "5.9.0";
 
   disabled = python3Packages.isPy27;
 
   src = fetchurl {
     url = "https://github.com/Ulauncher/Ulauncher/releases/download/${version}/ulauncher_${version}.tar.gz";
-    sha256 = "14k68lp58wldldhaq4cf0ffkhi81czv4ps9xa86iw1j5b1gd2vbl";
+    sha256 = "sha256-jRCrkJcjUHDd3wF+Hkxg0QaW7YgIh7zM/KZ4TAH84/U=";
   };
 
-  nativeBuildInputs = with python3Packages;  [
+  nativeBuildInputs = with python3Packages; [
     distutils_extra
     intltool
     wrapGAppsHook
@@ -65,13 +66,11 @@ python3Packages.buildPythonApplication rec  {
     mock
     pytest
     pytest-mock
-    pytestpep8
     xvfb_run
   ];
 
   patches = [
     ./fix-path.patch
-    ./fix-permissions.patch # ulauncher PR #523
     ./0001-Adjust-get_data_path-for-NixOS.patch
     ./fix-extensions.patch
   ];
@@ -95,18 +94,25 @@ python3Packages.buildPythonApplication rec  {
     # skip tests in invocation that handle paths that
     # aren't nix friendly (i think)
     xvfb-run -s '-screen 0 1024x768x16' \
-      pytest -k 'not TestPath and not test_handle_key_press_event' --pep8 tests
+      pytest -k 'not TestPath and not test_handle_key_press_event' tests
 
     runHook postCheck
   '';
 
   preFixup = ''
-    gappsWrapperArgs+=(--prefix PATH : "${stdenv.lib.makeBinPath [ wmctrl ]}")
+    gappsWrapperArgs+=(--prefix PATH : "${lib.makeBinPath [ wmctrl ]}")
   '';
 
-  meta = with stdenv.lib; {
+  passthru = {
+    updateScript = nix-update-script {
+      attrPath = pname;
+    };
+  };
+
+
+  meta = with lib; {
     description = "A fast application launcher for Linux, written in Python, using GTK";
-    homepage = https://ulauncher.io/;
+    homepage = "https://ulauncher.io/";
     license = licenses.gpl3;
     platforms = platforms.linux;
     maintainers = with maintainers; [ aaronjanse worldofpeace ];

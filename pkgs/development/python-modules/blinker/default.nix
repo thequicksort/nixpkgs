@@ -1,4 +1,4 @@
-{ stdenv, buildPythonPackage, fetchPypi }:
+{ lib, buildPythonPackage, fetchPypi }:
 
 buildPythonPackage rec {
   pname = "blinker";
@@ -9,8 +9,8 @@ buildPythonPackage rec {
     sha256 = "1dpq0vb01p36jjwbhhd08ylvrnyvcc82yxx3mwjx6awrycjyw6j7";
   };
 
-  meta = with stdenv.lib; {
-    homepage = https://pythonhosted.org/blinker/;
+  meta = with lib; {
+    homepage = "https://pythonhosted.org/blinker/";
     description = "Fast, simple object-to-object and broadcast signaling";
     license = licenses.mit;
     maintainers = with maintainers; [ ];

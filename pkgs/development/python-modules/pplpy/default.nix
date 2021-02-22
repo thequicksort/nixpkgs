@@ -55,8 +55,8 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "A Python wrapper for ppl";
-    homepage = https://gitlab.com/videlec/pplpy;
-    maintainers = with maintainers; [ timokau ];
+    homepage = "https://gitlab.com/videlec/pplpy";
+    maintainers = teams.sage.members;
     license = licenses.gpl3;
   };
 }

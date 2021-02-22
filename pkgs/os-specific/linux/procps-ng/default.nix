@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchurl, ncurses, pkgconfig
+{ lib, stdenv, fetchurl, fetchpatch, ncurses, pkg-config
 
 # `ps` with systemd support is able to properly report different
 # attributes like unit name, so we want to have it on linux.
@@ -22,9 +22,17 @@ stdenv.mkDerivation rec {
     sha256 = "1br0g93ysqhlv13i1k4lfbimsgxnpy5rgs4lxfc9rkzdbpbaqplj";
   };
 
+  patches = [
+    (fetchpatch {
+      url = "https://gitlab.com/procps-ng/procps/-/commit/bb96fc42956c9ed926a1b958ab715f8b4a663dec.diff";
+      sha256 = "0fzsb6ns3fvrszyzsz28qvbmcn135ilr4nwh2z1a0vlpl2fw961z";
+      name = "sysconf-argmax-sanity.patch";
+    })
+  ];
+
   buildInputs = [ ncurses ]
     ++ lib.optional withSystemd systemd;
-  nativeBuildInputs = [ pkgconfig ];
+  nativeBuildInputs = [ pkg-config ];
 
   makeFlags = [ "usrbin_execdir=$(out)/bin" ]
     ++ lib.optionals watchOnly [ "watch" "PKG_LDFLAGS="];
@@ -44,7 +52,7 @@ stdenv.mkDerivation rec {
   '' else null;
 
   meta = {
-    homepage = https://gitlab.com/procps-ng/procps;
+    homepage = "https://gitlab.com/procps-ng/procps";
     description = "Utilities that give information about processes using the /proc filesystem";
     priority = 11; # less than coreutils, which also provides "kill" and "uptime"
     license = lib.licenses.gpl2;

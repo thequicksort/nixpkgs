@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   pname = "libnatpmp";
@@ -12,8 +12,8 @@ stdenv.mkDerivation rec {
 
   makeFlags = [ "INSTALLPREFIX=$(out)" ];
 
-  meta = with stdenv.lib; {
-    homepage = http://miniupnp.free.fr/libnatpmp.html;
+  meta = with lib; {
+    homepage = "http://miniupnp.free.fr/libnatpmp.html";
     description = "NAT-PMP client";
     license = licenses.bsd3;
     maintainers = with maintainers; [ orivej ];

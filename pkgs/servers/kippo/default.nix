@@ -25,7 +25,7 @@
 #
 # Use this package at your own risk.
 
-{stdenv, fetchurl, pythonPackages }:
+{lib, stdenv, fetchurl, pythonPackages }:
 
 let
 
@@ -48,8 +48,8 @@ let
     # details.
     postInstall = "$out/bin/twistd --help > /dev/null";
 
-    meta = with stdenv.lib; {
-      homepage = https://twistedmatrix.com/;
+    meta = with lib; {
+      homepage = "https://twistedmatrix.com/";
       description = "Twisted, an event-driven networking engine written in Python";
       longDescription = ''
         Twisted is an event-driven networking engine written in Python
@@ -85,8 +85,8 @@ in stdenv.mkDerivation rec {
 
     passthru.twisted = twisted_13;
 
-    meta = with stdenv.lib; {
-      homepage = https://github.com/desaster/kippo;
+    meta = with lib; {
+      homepage = "https://github.com/desaster/kippo";
       description = "SSH Honeypot";
       longDescription = ''
         Default port is 2222. Recommend using something like this for port redirection to default SSH port:

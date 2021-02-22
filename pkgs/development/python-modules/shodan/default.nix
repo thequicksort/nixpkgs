@@ -10,11 +10,11 @@
 
 buildPythonPackage rec {
   pname = "shodan";
-  version = "1.22.0";
+  version = "1.25.0";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "0pgkd0pngmygafld283zfx7whlv6yp3ldgd4sjv8bxjcsb19iw59";
+    sha256 = "sha256-fivdvBtgv2IAQtABD0t2KoC0MRHb6pwEHXLUMl4mDCM=";
   };
 
   propagatedBuildInputs = [
@@ -27,6 +27,7 @@ buildPythonPackage rec {
 
   # The tests require a shodan api key, so skip them.
   doCheck = false;
+  pythonImportsCheck = [ "shodan" ];
 
   meta = with lib; {
     description = "Python library and command-line utility for Shodan";

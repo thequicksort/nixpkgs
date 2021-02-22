@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchFromGitHub, cmake, pkgconfig, wrapQtAppsHook, boost, libGL
+{ lib, stdenv, fetchFromGitHub, cmake, pkg-config, wrapQtAppsHook, boost, libGL
 , qtbase}:
 
 stdenv.mkDerivation rec {
@@ -33,7 +33,7 @@ stdenv.mkDerivation rec {
     optionToFlag = name: value: "-D${name}=${value}";
   in lib.mapAttrsToList optionToFlag options;
 
-  nativeBuildInputs = [ cmake pkgconfig wrapQtAppsHook ];
+  nativeBuildInputs = [ cmake pkg-config wrapQtAppsHook ];
   buildInputs = [ boost libGL qtbase ];
 
   buildPhase = ''
@@ -53,7 +53,7 @@ stdenv.mkDerivation rec {
   meta = {
     inherit version;
     description = "Wallet for Nano cryptocurrency";
-    homepage = https://nano.org/en/wallet/;
+    homepage = "https://nano.org/en/wallet/";
     license = lib.licenses.bsd2;
     # Fails on Darwin. See:
     # https://github.com/NixOS/nixpkgs/pull/39295#issuecomment-386800962

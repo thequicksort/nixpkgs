@@ -1,35 +1,47 @@
-{ stdenv, fetchFromGitHub, rustPlatform, pkg-config, openssl
-, libiconv, Security }:
+{ lib
+, stdenv
+, fetchFromGitHub
+, rustPlatform
+, pkg-config
+, openssl
+, installShellFiles
+, libiconv
+, Security
+}:
 
 rustPlatform.buildRustPackage rec {
   pname = "starship";
-  version = "0.38.1";
+  version = "0.50.0";
 
   src = fetchFromGitHub {
     owner = "starship";
     repo = pname;
     rev = "v${version}";
-    sha256 = "0qp3y2wcpj1r07v1r2y42zrzkl13j0vlinjx05gfmrmapcls41gi";
+    sha256 = "1bnnqrxsmp3z2qksd8h4lfbq4kxxy1cg4yynadz66lxyzabv2v21";
   };
 
-  nativeBuildInputs = stdenv.lib.optionals stdenv.isLinux [ pkg-config ];
+  nativeBuildInputs = [ installShellFiles ] ++ lib.optionals stdenv.isLinux [ pkg-config ];
 
-  buildInputs = stdenv.lib.optionals stdenv.isLinux [ openssl ]
-    ++ stdenv.lib.optionals stdenv.isDarwin [ libiconv Security ];
+  buildInputs = lib.optionals stdenv.isLinux [ openssl ]
+    ++ lib.optionals stdenv.isDarwin [ libiconv Security ];
 
-  postPatch = ''
-    substituteInPlace src/utils.rs \
-      --replace "/bin/echo" "echo"
+  postInstall = ''
+    for shell in bash fish zsh; do
+      STARSHIP_CACHE=$TMPDIR $out/bin/starship completions $shell > starship.$shell
+      installShellCompletion starship.$shell
+    done
   '';
 
-  cargoSha256 = "11492fv2isw2prfcgxq0wrbln1n6xdi9209cifjf25nnw2aq2csn";
-  checkPhase = "cargo test -- --skip directory::home_directory --skip directory::directory_in_root";
+  cargoSha256 = "0plk47i2xrn3x5yr3gw3pq74maqf4krb8d6i4sf8gil4mnpcgxir";
 
-  meta = with stdenv.lib; {
+  preCheck = ''
+    HOME=$TMPDIR
+  '';
+
+  meta = with lib; {
     description = "A minimal, blazing fast, and extremely customizable prompt for any shell";
     homepage = "https://starship.rs";
     license = licenses.isc;
-    maintainers = with maintainers; [ bbigras davidtwco filalex77 ];
-    platforms = platforms.all;
+    maintainers = with maintainers; [ bbigras davidtwco Br1ght0ne Frostman marsam ];
   };
 }

@@ -1,4 +1,4 @@
-{ stdenv, fetchPypi, buildPythonPackage }:
+{ lib, fetchPypi, buildPythonPackage }:
 
 buildPythonPackage rec {
   pname = "easygui";
@@ -11,9 +11,9 @@ buildPythonPackage rec {
 
   doCheck = false; # No tests available
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Very simple, very easy GUI programming in Python";
-    homepage = https://github.com/robertlugg/easygui;
+    homepage = "https://github.com/robertlugg/easygui";
     license = licenses.bsd3;
     maintainers = with maintainers; [ jfrankenau ];
   };

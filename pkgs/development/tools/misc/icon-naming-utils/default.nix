@@ -1,4 +1,4 @@
-{stdenv, fetchurl, perlPackages, librsvg}:
+{lib, stdenv, fetchurl, perlPackages, librsvg}:
 
 stdenv.mkDerivation rec {
   name = "icon-naming-utils-0.8.90";
@@ -17,8 +17,8 @@ stdenv.mkDerivation rec {
           --replace '/bin/perl' '/bin/perl -I${perlPackages.XMLSimple}/${perlPackages.perl.libPrefix}'
     '';
 
-  meta = with stdenv.lib; {
-    homepage = http://tango.freedesktop.org/Standard_Icon_Naming_Specification;
+  meta = with lib; {
+    homepage = "http://tango.freedesktop.org/Standard_Icon_Naming_Specification";
     platforms = with platforms; linux ++ darwin;
     license = licenses.gpl2;
   };

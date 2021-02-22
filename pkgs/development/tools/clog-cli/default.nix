@@ -1,4 +1,4 @@
-{ fetchFromGitHub, rustPlatform, stdenv }:
+{ fetchFromGitHub, rustPlatform, lib }:
 
 with rustPlatform;
 
@@ -17,9 +17,9 @@ buildRustPackage rec {
 
   meta = {
     description = "Generate changelogs from local git metadata";
-    homepage = https://github.com/clog-tool/clog-cli;
-    license = stdenv.lib.licenses.mit;
-    platforms = stdenv.lib.platforms.unix;
-    maintainers = [stdenv.lib.maintainers.nthorne];
+    homepage = "https://github.com/clog-tool/clog-cli";
+    license = lib.licenses.mit;
+    platforms = lib.platforms.unix;
+    maintainers = [lib.maintainers.nthorne];
   };
 }

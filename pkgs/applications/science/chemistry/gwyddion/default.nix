@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, gtk2, pkg-config, fftw, file,
+{ lib, stdenv, fetchurl, gtk2, pkg-config, fftw, file,
   pythonSupport ? false, pythonPackages ? null,
   gnome2 ? null,
   openexrSupport ? true, openexr ? null,
@@ -12,7 +12,7 @@
   zlibSupport ? true, zlib ? null,
   libuniqueSupport ? true, libunique ? null,
   libpngSupport ? true, libpng ? null,
-  openglSupport ? true
+  openglSupport ? !stdenv.isDarwin
 }:
 
 assert openexrSupport -> openexr != null;
@@ -35,17 +35,17 @@ in
 
 stdenv.mkDerivation rec {
   pname = "gwyddion";
-   version = "2.55";
+   version = "2.56";
   src = fetchurl {
     url = "mirror://sourceforge/gwyddion/gwyddion-${version}.tar.xz";
-    sha256 = "0l00zszvginpriv12idc0y1x28qmicdmrwkqa007srkxvrdgxwdi";
+    sha256 = "0z83p3ifdkv5dds8s6fqqbycql1zmgppdc7ygqmm12z5zlrl9p12";
   };
-  
+
   nativeBuildInputs = [ pkg-config file ];
-  
-  buildInputs = with stdenv.lib;
+
+  buildInputs = with lib;
     [ gtk2 fftw ] ++
-    optionals openglSupport [gnome2.gtkglext] ++
+    optional openglSupport gnome2.gtkglext ++
     optional openexrSupport openexr ++
     optional libXmuSupport xorg.libXmu ++
     optional fitsSupport cfitsio ++
@@ -57,7 +57,7 @@ stdenv.mkDerivation rec {
     optional libuniqueSupport libunique ++
     optional libzipSupport libzip;
 
-  propagatedBuildInputs = with stdenv.lib;
+  propagatedBuildInputs = with lib;
     optionals pythonSupport [ pygtk pygobject2 python gnome2.gtksourceview ];
 
   # This patch corrects problems with python support, but should apply cleanly
@@ -65,7 +65,7 @@ stdenv.mkDerivation rec {
   # it is disabled.
   patches = [ ./codegen.patch ];
   meta = {
-    homepage = http://gwyddion.net/;
+    homepage = "http://gwyddion.net/";
 
     description = "Scanning probe microscopy data visualization and analysis";
 
@@ -79,8 +79,8 @@ stdenv.mkDerivation rec {
       analysis of profilometry data or thickness maps from imaging
       spectrophotometry.
     '';
-    license = stdenv.lib.licenses.gpl2;
-    platforms = stdenv.lib.platforms.linux;
-    maintainers = [ stdenv.lib.maintainers.cge ];
+    license = lib.licenses.gpl2;
+    platforms = with lib.platforms; linux ++ darwin;
+    maintainers = [ lib.maintainers.cge ];
   };
 }

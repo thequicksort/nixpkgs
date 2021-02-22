@@ -1,7 +1,7 @@
-{ stdenv
+{ lib, stdenv
 , fetchurl
 , gettext
-, pkgconfig
+, pkg-config
 , wrapGAppsHook
 , anthy
 , ibus
@@ -34,7 +34,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [
     gettext
     gobject-introspection
-    pkgconfig
+    pkg-config
     wrapGAppsHook
   ];
 
@@ -46,10 +46,10 @@ stdenv.mkDerivation rec {
     substituteInPlace $out/share/ibus/component/anthy.xml --replace \$\{exec_prefix\} $out
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     isIbusEngine = true;
     description = "IBus interface to the anthy input method";
-    homepage = https://github.com/fujiwarat/ibus-anthy;
+    homepage = "https://github.com/fujiwarat/ibus-anthy";
     license = licenses.gpl2Plus;
     platforms = platforms.linux;
     maintainers = with maintainers; [ gebner ericsagnes ];

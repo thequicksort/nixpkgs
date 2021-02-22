@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, jre, unzip, makeWrapper }:
+{ lib, stdenv, fetchurl, jre, unzip, makeWrapper }:
 
 # Note:
 # - User config dir is hard coded by upstream to $HOME/.imagej on linux systems
@@ -31,8 +31,8 @@ let
       makeWrapper ${jre}/bin/java $out/bin/imagej \
         --add-flags "-jar $out/share/java/ij.jar -ijpath $out/share"
     '';
-    meta = with stdenv.lib; {
-      homepage = https://imagej.nih.gov/ij/;
+    meta = with lib; {
+      homepage = "https://imagej.nih.gov/ij/";
       description = "Image processing and analysis in Java";
       longDescription = ''
         ImageJ is a public domain Java image processing program

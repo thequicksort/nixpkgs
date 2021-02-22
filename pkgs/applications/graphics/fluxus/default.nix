@@ -1,4 +1,4 @@
-{ stdenv
+{ lib, stdenv
 , fetchFromGitLab
 , alsaLib
 , bzip2
@@ -18,7 +18,7 @@
 , openal
 , openssl
 , racket
-, scons
+, sconsPackages
 , zlib
 }:
 let
@@ -69,14 +69,14 @@ stdenv.mkDerivation rec {
     openssl.dev
     racket
   ];
-  nativeBuildInputs = [ scons ];
+  nativeBuildInputs = [ sconsPackages.scons_3_1_2 ];
 
   patches = [ ./fix-build.patch ];
   sconsFlags = [
     "RacketPrefix=${racket}"
     "RacketInclude=${racket}/include/racket"
     "RacketLib=${racket}/lib/racket"
-    "LIBPATH=${stdenv.lib.makeLibraryPath libs}"
+    "LIBPATH=${lib.makeLibraryPath libs}"
     "DESTDIR=build"
   ];
   configurePhase = ''
@@ -87,10 +87,10 @@ stdenv.mkDerivation rec {
     cp -r build$out/* $out/
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Livecoding environment for 3D graphics, sound, and games";
     license = licenses.gpl2;
-    homepage = http://www.pawfal.org/fluxus/;
+    homepage = "http://www.pawfal.org/fluxus/";
     maintainers = [ maintainers.brainrape ];
   };
 }

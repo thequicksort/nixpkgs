@@ -1,4 +1,4 @@
-{ stdenv, socat, fetchFromGitHub, makeWrapper }:
+{ lib, stdenv, socat, fetchFromGitHub, makeWrapper }:
 
 stdenv.mkDerivation {
   name = "mpvc-unstable-2017-03-18";
@@ -19,9 +19,9 @@ stdenv.mkDerivation {
 
   buildInputs = [ socat makeWrapper ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A mpc-like control interface for mpv";
-    homepage = https://github.com/wildefyr/mpvc;
+    homepage = "https://github.com/wildefyr/mpvc";
     license = licenses.mit;
     maintainers = [ maintainers.neeasade ];
     platforms = platforms.linux;

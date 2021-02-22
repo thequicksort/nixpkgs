@@ -1,4 +1,4 @@
-{ stdenv
+{ lib
 , buildPythonPackage
 , fetchPypi
 , mock
@@ -15,9 +15,9 @@ buildPythonPackage rec {
 
   buildInputs = [ mock ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Python job scheduling for humans";
-    homepage = https://github.com/dbader/schedule;
+    homepage = "https://github.com/dbader/schedule";
     license = licenses.mit;
   };
 

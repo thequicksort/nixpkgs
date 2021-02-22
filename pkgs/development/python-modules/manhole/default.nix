@@ -1,4 +1,4 @@
-{ stdenv
+{ lib, stdenv
 , buildPythonPackage
 , fetchPypi
 , pytest
@@ -38,8 +38,8 @@ buildPythonPackage rec {
     py.test -vv -k "not test_uwsgi"
   '';
 
-  meta = with stdenv.lib; {
-    homepage = https://github.com/ionelmc/python-manhole;
+  meta = with lib; {
+    homepage = "https://github.com/ionelmc/python-manhole";
     description = "Debugging manhole for Python applications";
     license = licenses.bsd2;
     maintainers = with maintainers; [ ivan ];

@@ -1,4 +1,4 @@
-{ stdenv, buildPythonPackage, fetchPypi, fetchpatch
+{ lib, buildPythonPackage, fetchPypi, fetchpatch
 , pytest, pytestrunner, hypothesis }:
 
 buildPythonPackage rec {
@@ -20,8 +20,8 @@ buildPythonPackage rec {
 
   checkInputs = [ pytest pytestrunner hypothesis ];
 
-  meta = with stdenv.lib; {
-    homepage = https://github.com/chardet/chardet;
+  meta = with lib; {
+    homepage = "https://github.com/chardet/chardet";
     description = "Universal encoding detector";
     license = licenses.lgpl2;
     maintainers = with maintainers; [ domenkozar ];

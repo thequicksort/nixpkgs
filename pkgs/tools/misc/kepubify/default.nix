@@ -2,20 +2,20 @@
 
 buildGoModule rec {
   pname = "kepubify";
-  version = "3.1.0";
+  version = "3.1.6";
 
   src = fetchFromGitHub {
-    owner = "geek1011";
+    owner = "pgaskin";
     repo = pname;
     rev = "v${version}";
-    sha256 = "17zhfq1nfdas4k5yzyr82zs3r3mm4n8f907ih1ckx081hy4g7a2p";
+    sha256 = "129izxgvhcybipfgcwzzwsir9zhi7axxadnw822zy5rk2ky4zjpk";
   };
 
-  modSha256 = "18q9ywsjc2v1bsmw7307dpd4v5m7v80hbhijkfrkcyqzj34jrq43";
+  vendorSha256 = "0vwzm1c4kada7mqdkr444gj8c2vkvz7av9wkpgdpjrq0v2h0hpcc";
 
   buildFlagsArray = [ "-ldflags=-s -w -X main.version=${version}" ];
 
-  subPackages = [ "." "covergen" "seriesmeta" ];
+  excludedPackages = [ "kobotest" ];
 
   meta = with lib; {
     description = "EPUB to KEPUB converter";

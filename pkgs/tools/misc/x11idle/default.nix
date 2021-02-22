@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, libXScrnSaver, libX11 }:
+{ lib, stdenv, fetchurl, libXScrnSaver, libX11 }:
 
 stdenv.mkDerivation rec {
 
@@ -19,14 +19,14 @@ stdenv.mkDerivation rec {
     gcc -lXss -lX11 $src -o $out/bin/x11idle
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = ''
       Compute consecutive idle time for current X11 session with millisecond resolution
     '';
     longDescription = ''
       Idle time passes when the user does not act, i.e. when the user doesn't move the mouse or use the keyboard.
     '';
-    homepage = https://orgmode.org/;
+    homepage = "https://orgmode.org/";
     license = licenses.gpl3;
     platforms = platforms.linux;
     maintainers = [ maintainers.swflint ];

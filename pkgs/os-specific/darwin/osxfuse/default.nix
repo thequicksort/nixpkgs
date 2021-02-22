@@ -1,4 +1,4 @@
-{ stdenv, runCommand, fetchFromGitHub, autoreconfHook }:
+{ lib, stdenv, runCommand, fetchFromGitHub, autoreconfHook }:
 
 let
   version = "3.8.3";
@@ -39,8 +39,8 @@ stdenv.mkDerivation {
   nativeBuildInputs = [ autoreconfHook ];
   buildInputs = [ headers ];
 
-  meta = with stdenv.lib; {
-    homepage = https://osxfuse.github.io;
+  meta = with lib; {
+    homepage = "https://osxfuse.github.io";
     description = "C-based FUSE for macOS SDK";
     platforms = platforms.darwin;
     license = licenses.gpl2;

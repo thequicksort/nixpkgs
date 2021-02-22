@@ -1,4 +1,4 @@
-{ stdenv
+{ lib
 , fetchPypi
 , buildPythonPackage
 , zope_interface
@@ -17,9 +17,9 @@ buildPythonPackage rec {
 
   propagatedBuildInputs = [ zope_interface mock ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Transaction management";
-    homepage = https://pypi.python.org/pypi/transaction;
+    homepage = "https://pypi.python.org/pypi/transaction";
     license = licenses.zpl20;
   };
 }

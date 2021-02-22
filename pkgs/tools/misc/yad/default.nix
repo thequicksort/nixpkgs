@@ -1,15 +1,15 @@
-{ stdenv, fetchFromGitHub, pkgconfig, intltool, autoreconfHook, wrapGAppsHook
+{ lib, stdenv, fetchFromGitHub, pkg-config, intltool, autoreconfHook, wrapGAppsHook
 , gtk3, hicolor-icon-theme, netpbm }:
 
 stdenv.mkDerivation rec {
   pname = "yad";
-  version = "5.0";
+  version = "7.2";
 
   src = fetchFromGitHub {
     owner = "v1cont";
     repo = "yad";
     rev = "v${version}";
-    sha256 = "07rd61hvilsxxrj7lf8c9k0a8glj07s48m7ya8d45030r90g3lvc";
+    sha256 = "0ih97hrcra2bg8q19b8819hip1p424z1vj61cl1ym5p477rp37yx";
   };
 
   configureFlags = [
@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
 
   buildInputs = [ gtk3 hicolor-icon-theme ];
 
-  nativeBuildInputs = [ autoreconfHook pkgconfig intltool wrapGAppsHook ];
+  nativeBuildInputs = [ autoreconfHook pkg-config intltool wrapGAppsHook ];
 
   postPatch = ''
     sed -i src/file.c -e '21i#include <glib/gprintf.h>'
@@ -34,8 +34,8 @@ stdenv.mkDerivation rec {
     intltoolize
   '';
 
-  meta = with stdenv.lib; {
-    homepage = https://sourceforge.net/projects/yad-dialog/;
+  meta = with lib; {
+    homepage = "https://sourceforge.net/projects/yad-dialog/";
     description = "GUI dialog tool for shell scripts";
     longDescription = ''
       Yad (yet another dialog) is a GUI dialog tool for shell scripts. It is a

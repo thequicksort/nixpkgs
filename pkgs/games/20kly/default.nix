@@ -1,4 +1,4 @@
-{ stdenv
+{ lib
 , fetchurl
 , python }:
 
@@ -30,9 +30,9 @@ python.pkgs.buildPythonApplication rec {
     install -Dm755 lightyears "$out/bin/lightyears"
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A steampunk-themed strategy game where you have to manage a steam supply network";
-    homepage = http://jwhitham.org.uk/20kly/;
+    homepage = "http://jwhitham.org.uk/20kly/";
     license = licenses.gpl2;
     maintainers = with maintainers; [ fgaz ];
   };

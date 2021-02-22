@@ -1,4 +1,4 @@
-{ stdenv
+{ lib
 , buildPythonPackage
 , fetchPypi
 , mock
@@ -23,8 +23,8 @@ buildPythonPackage rec {
   # on Hydra: https://hydra.nixos.org/build/84374861
   doCheck = false;
 
-  meta = with stdenv.lib; {
-    homepage = https://github.com/giampaolo/pyftpdlib/;
+  meta = with lib; {
+    homepage = "https://github.com/giampaolo/pyftpdlib/";
     description = "Very fast asynchronous FTP server library";
     license = licenses.mit;
     maintainers = [ maintainers.costrouc ];

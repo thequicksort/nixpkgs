@@ -47,9 +47,9 @@ def write_loader_conf(profile, generation):
         if "@timeout@" != "":
             f.write("timeout @timeout@\n")
         if profile:
-            f.write("default nixos-%s-generation-%d\n" % (profile, generation))
+            f.write("default nixos-%s-generation-%d.conf\n" % (profile, generation))
         else:
-            f.write("default nixos-generation-%d\n" % (generation))
+            f.write("default nixos-generation-%d.conf\n" % (generation))
         if not @editor@:
             f.write("editor 0\n");
         f.write("console-mode @consoleMode@\n");
@@ -101,7 +101,7 @@ def write_entry(profile, generation, machine_id):
         entry_file = "@efiSysMountPoint@/loader/entries/nixos-generation-%d.conf" % (generation)
     generation_dir = os.readlink(system_dir(profile, generation))
     tmp_path = "%s.tmp" % (entry_file)
-    kernel_params = "systemConfig=%s init=%s/init " % (generation_dir, generation_dir)
+    kernel_params = "init=%s/init " % generation_dir
 
     with open("%s/kernel-params" % (generation_dir)) as params_file:
         kernel_params = kernel_params + params_file.read()
@@ -197,6 +197,22 @@ def main():
             subprocess.check_call(["@systemd@/bin/bootctl", "--path=@efiSysMountPoint@", "install"])
         else:
             subprocess.check_call(["@systemd@/bin/bootctl", "--path=@efiSysMountPoint@", "--no-variables", "install"])
+    else:
+        # Update bootloader to latest if needed
+        systemd_version = subprocess.check_output(["@systemd@/bin/bootctl", "--version"], universal_newlines=True).split()[1]
+        sdboot_status = subprocess.check_output(["@systemd@/bin/bootctl", "--path=@efiSysMountPoint@", "status"], universal_newlines=True)
+
+        # See status_binaries() in systemd bootctl.c for code which generates this
+        m = re.search("^\W+File:.*/EFI/(BOOT|systemd)/.*\.efi \(systemd-boot (\d+)\)$",
+                      sdboot_status, re.IGNORECASE | re.MULTILINE)
+        if m is None:
+            print("could not find any previously installed systemd-boot")
+        else:
+            sdboot_version = m.group(2)
+            if systemd_version > sdboot_version:
+                print("updating systemd-boot from %s to %s" % (sdboot_version, systemd_version))
+                subprocess.check_call(["@systemd@/bin/bootctl", "--path=@efiSysMountPoint@", "update"])
+
 
     mkdir_p("@efiSysMountPoint@/efi/nixos")
     mkdir_p("@efiSysMountPoint@/loader/entries")

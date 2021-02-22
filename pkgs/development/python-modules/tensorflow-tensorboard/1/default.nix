@@ -20,8 +20,7 @@ buildPythonPackage rec {
 
   src = fetchPypi ({
     pname = "tensorboard";
-    inherit version;
-    format = "wheel";
+    inherit version format;
   } // (if isPy3k then {
     python = "py3";
     sha256 = "1g62i3nrgp8q9wfsyqqjkkfnsz7x2k018c26kdh527h1yrjjrbac";
@@ -59,7 +58,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "TensorFlow's Visualization Toolkit";
-    homepage = http://tensorflow.org;
+    homepage = "http://tensorflow.org";
     license = licenses.asl20;
     maintainers = with maintainers; [ abbradar ];
   };

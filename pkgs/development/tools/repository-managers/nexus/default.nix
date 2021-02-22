@@ -1,12 +1,12 @@
-{ stdenv, fetchurl, makeWrapper, jre_headless, gawk }:
+{ lib, stdenv, fetchurl, makeWrapper, jre_headless, gawk }:
 
 stdenv.mkDerivation rec {
   pname = "nexus";
-  version = "3.20.1-01";
+  version = "3.29.2-02";
 
   src = fetchurl {
     url = "https://sonatype-download.global.ssl.fastly.net/nexus/3/nexus-${version}-unix.tar.gz";
-    sha256 = "0l8fwcnpbc35lqadyrsljvr4rr5kp9gkx5dxs9i35mg2f0z9bagv";
+    sha256 = "sha256-vHy7V32xlYaPJdc8oi3j98weOdc4R5S64Dwo9YI8o6c=";
   };
 
   preferLocalBuild = true;
@@ -33,14 +33,14 @@ stdenv.mkDerivation rec {
     wrapProgram $out/bin/nexus \
       --set JAVA_HOME ${jre_headless} \
       --set ALTERNATIVE_NAME "nexus" \
-      --prefix PATH "${stdenv.lib.makeBinPath [ gawk ]}"
+      --prefix PATH "${lib.makeBinPath [ gawk ]}"
 
     runHook postInstall
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Repository manager for binary software components";
-    homepage = http://www.sonatype.org/nexus;
+    homepage = "http://www.sonatype.org/nexus";
     license = licenses.epl10;
     platforms = platforms.all;
     maintainers = with maintainers; [ aespinosa ironpinguin zaninime ];

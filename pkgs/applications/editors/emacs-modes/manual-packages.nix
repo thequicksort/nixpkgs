@@ -52,10 +52,23 @@
     };
   };
 
+  agda-input = self.trivialBuild {
+    pname = "agda-input";
+
+    inherit (external.Agda) src version;
+
+    postUnpack = "mv $sourceRoot/src/data/emacs-mode/agda-input.el $sourceRoot";
+
+    meta = {
+      description = "Standalone package providing the agda-input method without building Agda.";
+      inherit (external.Agda.meta) homepage license;
+    };
+  };
+
+  emacspeak = callPackage ./emacspeak {};
+
   ess-R-object-popup =
     callPackage ./ess-R-object-popup { };
-
-  filesets-plus = callPackage ./filesets-plus { };
 
   font-lock-plus = callPackage ./font-lock-plus { };
 
@@ -85,7 +98,7 @@
       sha256 = "09b7bg2s9aa4s8f2kdqs4xps3jxkq5wsvbi87ih8b6id38blhf78";
     };
     recipe = pkgs.writeText "recipe" ''
-      (haskell-unicode-input-method
+      (emacs-haskell-unicode-input-method
        :repo "roelvandijk/emacs-haskell-unicode-input-method"
        :fetcher github)
     '';
@@ -96,19 +109,40 @@
     };
   };
 
-  hexrgb = callPackage ./hexrgb { };
-
-  header2 = callPackage ./header2 { };
-
   helm-words = callPackage ./helm-words { };
 
-  icicles = callPackage ./icicles { };
+  jam-mode = callPackage ./jam-mode { };
 
-  lib-requires =
-    callPackage ./lib-requires { };
+  llvm-mode = trivialBuild {
+    pname = "llvm-mode";
+    inherit (external.llvmPackages.llvm) src version;
+
+    dontConfigure = true;
+    buildPhase = ''
+      cp utils/emacs/*.el .
+    '';
+
+    meta = {
+      inherit (external.llvmPackages.llvm.meta) homepage license;
+      description = "Major mode for the LLVM assembler language.";
+    };
+  };
 
   org-mac-link =
     callPackage ./org-mac-link { };
+
+  ott-mode = self.trivialBuild {
+    pname = "ott-mod";
+
+    inherit (external.ott) src version;
+
+    postUnpack = "mv $sourceRoot/emacs/ott-mode.el $sourceRoot";
+
+    meta = {
+      description = "Standalone package providing ott-mode without building ott and with compiled bytecode.";
+      inherit (external.Agda.meta) homepage license;
+    };
+  };
 
   perl-completion =
     callPackage ./perl-completion { };
@@ -121,11 +155,7 @@
 
   sv-kalender = callPackage ./sv-kalender { };
 
-  thingatpt-plus = callPackage ./thingatpt-plus { };
-
   tramp = callPackage ./tramp { };
-
-  yaoddmuse = callPackage ./yaoddmuse { };
 
   zeitgeist = callPackage ./zeitgeist { };
 
@@ -135,9 +165,7 @@
   colorThemeSolarized = callPackage ./color-theme-solarized { };
   emacsSessionManagement = callPackage ./session-management-for-emacs { };
   hsc3-mode = callPackage ./hsc3 { };
-  hol_light_mode = callPackage ./hol_light { };
   ido-ubiquitous = callPackage ./ido-ubiquitous { };
-  ocaml-mode = callPackage ./ocaml { };
   prolog-mode = callPackage ./prolog { };
   rectMark = callPackage ./rect-mark { };
   sunriseCommander = callPackage ./sunrise-commander { };
@@ -147,7 +175,6 @@
   #
   # Ideally this should be dropped some time during/after 20.03
   bbdb3 = self.melpaStablePackages.bbdb;
-  ocamlMode = self.ocaml-mode;
   jade = self.jade-mode;
   # scalaMode2 = null;  # No clear mapping as of now
   flymakeCursor = self.melpaStablePackages.flymake-cursor;

@@ -1,4 +1,4 @@
-{ stdenv
+{ lib, stdenv
 , buildPythonPackage
 , fetchFromGitHub
 , numpy
@@ -35,7 +35,7 @@ buildPythonPackage rec {
   ];
 
   checkPhase = ''
-    ${stdenv.lib.optionalString (stdenv.isDarwin) ''
+    ${lib.optionalString (stdenv.isDarwin) ''
     # specifically needed for darwin
     export HOME=$(mktemp -d)
     mkdir -p $HOME/.matplotlib
@@ -49,9 +49,9 @@ buildPythonPackage rec {
                    --ignore trackpy/tests/test_legacy_linking.py
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Particle-tracking toolkit";
-    homepage = https://github.com/soft-matter/trackpy;
+    homepage = "https://github.com/soft-matter/trackpy";
     license = licenses.bsd3;
     maintainers = [ maintainers.costrouc ];
     broken = true; # not compatible with latest pandas

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, fetchpatch, python }:
+{ lib, stdenv, fetchurl, fetchpatch, python }:
 
 stdenv.mkDerivation rec {
   name = "clearsilver-0.10.5";
@@ -35,9 +35,9 @@ stdenv.mkDerivation rec {
     })
   ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Fast, powerful, and language-neutral HTML template system";
-    homepage = http://www.clearsilver.net/;
+    homepage = "http://www.clearsilver.net/";
     license = licenses.free;
   };
 }

@@ -1,5 +1,5 @@
 { lib, fetchFromGitHub, rustPlatform
-, openssl, zeromq, czmq, pkgconfig, cmake, zlib }:
+, openssl, zeromq, czmq, pkg-config, cmake, zlib }:
 
 with rustPlatform;
 
@@ -18,14 +18,14 @@ buildRustPackage rec {
 
   buildInputs = [ openssl zeromq czmq zlib ];
 
-  nativeBuildInputs = [ pkgconfig cmake ];
+  nativeBuildInputs = [ pkg-config cmake ];
 
   # Needed for tests
   USER = "$(whoami)";
 
   meta = with lib; {
     description = "A developer friendly, language agnostic configuration management tool for server systems";
-    homepage = https://intecture.io;
+    homepage = "https://intecture.io";
     license = licenses.mpl20;
     maintainers = [ maintainers.rushmorem ];
   };

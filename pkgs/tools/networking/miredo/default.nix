@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, nettools, iproute, judy }:
+{ lib, stdenv, fetchurl, nettools, iproute, judy }:
 
 stdenv.mkDerivation rec {
   version = "1.2.6";
@@ -24,9 +24,9 @@ stdenv.mkDerivation rec {
     rm -rf $out/lib/systemd $out/var $out/etc/miredo/miredo.conf
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Teredo IPv6 Tunneling Daemon";
-    homepage = https://www.remlab.net/miredo/;
+    homepage = "https://www.remlab.net/miredo/";
     license = licenses.gpl2;
     maintainers = [ maintainers.volth ];
     platforms = platforms.unix;

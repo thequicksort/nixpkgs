@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, acl, attr, zlib }:
+{ lib, stdenv, fetchurl, acl, attr, zlib }:
 
 stdenv.mkDerivation rec {
   pname = "libisofs";
@@ -12,8 +12,8 @@ stdenv.mkDerivation rec {
   buildInputs = [ attr zlib ];
   propagatedBuildInputs = [ acl ];
 
-  meta = with stdenv.lib; {
-    homepage = http://libburnia-project.org/;
+  meta = with lib; {
+    homepage = "http://libburnia-project.org/";
     description = "A library to create an ISO-9660 filesystem with extensions like RockRidge or Joliet";
     license = licenses.gpl2Plus;
     maintainers = with maintainers; [ abbradar vrthra ];

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, perlPackages, makeWrapper, openssl }:
+{ lib, stdenv, fetchurl, perlPackages, makeWrapper, openssl }:
 
 stdenv.mkDerivation rec {
   name = "sslmate-1.7.1";
@@ -22,8 +22,8 @@ stdenv.mkDerivation rec {
       --prefix PATH : "${openssl.bin}/bin"
   '';
 
-  meta = with stdenv.lib; {
-    homepage = https://sslmate.com;
+  meta = with lib; {
+    homepage = "https://sslmate.com";
     maintainers = [ maintainers.domenkozar ];
     description = "Easy to buy, deploy, and manage your SSL certs";
     platforms = platforms.unix;

@@ -1,4 +1,4 @@
-{ stdenv
+{ lib
 , buildPythonPackage
 , fetchPypi
 , pytest
@@ -19,8 +19,8 @@ buildPythonPackage rec {
     py.test -k "not test_tilde_path_expansion"
   '';
 
-  meta = with stdenv.lib; {
-    homepage = http://www.python-excel.org/;
+  meta = with lib; {
+    homepage = "http://www.python-excel.org/";
     description = "Library for developers to extract data from Microsoft Excel (tm) spreadsheet files";
     license = licenses.bsd0;
   };

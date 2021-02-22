@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitLab, buildEnv, makeWrapper, lua, luajit, readline
+{ lib, stdenv, fetchFromGitLab, buildEnv, makeWrapper, lua, luajit, readline
 , useLuaJit ? false
 , extraLibraries ? []
 }:
@@ -17,7 +17,7 @@ let
               [ lua ];
   };
 
-  inherit (stdenv.lib) optionalString concatMapStringsSep;
+  inherit (lib) optionalString concatMapStringsSep;
 in
 
 stdenv.mkDerivation {
@@ -48,8 +48,8 @@ stdenv.mkDerivation {
       --prefix LD_LIBRARY_PATH : ${urn-rt}/lib/
   '';
 
-  meta = with stdenv.lib; {
-    homepage = https://urn-lang.com;
+  meta = with lib; {
+    homepage = "https://urn-lang.com";
     description = "Yet another Lisp variant which compiles to Lua";
     license = licenses.bsd3;
     maintainers = with maintainers; [ CrazedProgrammer ];

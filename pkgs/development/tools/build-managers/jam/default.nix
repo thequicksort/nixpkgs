@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, yacc }:
+{ lib, stdenv, fetchurl, yacc }:
 
 stdenv.mkDerivation rec {
   name = "jam-2.6.1";
@@ -26,8 +26,8 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  meta = with stdenv.lib; {
-    homepage = https://www.perforce.com/resources/documentation/jam;
+  meta = with lib; {
+    homepage = "https://www.perforce.com/resources/documentation/jam";
     license = licenses.free;
     description = "Just Another Make";
     maintainers = with maintainers; [ orivej ];

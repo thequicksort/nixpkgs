@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, xz }:
+{ lib, stdenv, fetchurl, xz }:
 
 stdenv.mkDerivation rec {
   pname = "autoconf-archive";
@@ -11,9 +11,9 @@ stdenv.mkDerivation rec {
 
   buildInputs = [ xz ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Archive of autoconf m4 macros";
-    homepage = https://www.gnu.org/software/autoconf-archive/;
+    homepage = "https://www.gnu.org/software/autoconf-archive/";
     license = licenses.gpl3;
     platforms = platforms.unix;
   };

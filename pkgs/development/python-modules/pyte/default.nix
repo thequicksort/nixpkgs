@@ -1,4 +1,4 @@
-{ stdenv, buildPythonPackage, fetchPypi, pytest, pytestrunner, wcwidth }:
+{ lib, buildPythonPackage, fetchPypi, pytest, pytestrunner, wcwidth }:
 
 buildPythonPackage rec {
   pname = "pyte";
@@ -17,9 +17,9 @@ buildPythonPackage rec {
     py.test -k "not test_input_output"
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Simple VTXXX-compatible linux terminal emulator";
-    homepage = https://github.com/selectel/pyte;
+    homepage = "https://github.com/selectel/pyte";
     license = licenses.lgpl3;
     maintainers = with maintainers; [ flokli ];
   };

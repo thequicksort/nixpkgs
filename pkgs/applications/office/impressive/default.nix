@@ -59,11 +59,11 @@ in stdenv.mkDerivation {
         to make a slideshow with your favorite photos.
       '';
 
-      homepage = http://impressive.sourceforge.net/;
+      homepage = "http://impressive.sourceforge.net/";
 
-      license = stdenv.lib.licenses.gpl2;
+      license = lib.licenses.gpl2;
 
       maintainers = with lib.maintainers; [ lheckemann ];
-      platforms = stdenv.lib.platforms.mesaPlatforms;
+      platforms = lib.platforms.mesaPlatforms;
     };
   }

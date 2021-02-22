@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, jre8, unzip }:
+{ lib, stdenv, fetchurl, jre8, unzip }:
 
 stdenv.mkDerivation rec {
   pname = "galen";
@@ -23,8 +23,8 @@ stdenv.mkDerivation rec {
   cp galen.jar $out/bin
   '';
 
-  meta = with stdenv.lib; {
-    homepage = http://galenframework.com;
+  meta = with lib; {
+    homepage = "http://galenframework.com";
     description = "Automated layout testing for websites";
     license = licenses.asl20;
     maintainers = [ ];

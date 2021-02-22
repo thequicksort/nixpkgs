@@ -1,7 +1,7 @@
 { lib
 , stdenv
 , fetchFromGitHub
-, pkgconfig
+, pkg-config
 , meson
 , ninja
 , libX11
@@ -58,7 +58,7 @@ in stdenv.mkDerivation rec {
   nativeBuildInputs = [
     meson
     ninja
-    pkgconfig
+    pkg-config
   ];
 
   buildInputs = [
@@ -71,7 +71,7 @@ in stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "The EGLStream-based Wayland external platform";
-    homepage = https://github.com/NVIDIA/egl-wayland/;
+    homepage = "https://github.com/NVIDIA/egl-wayland/";
     license = licenses.mit;
     platforms = platforms.linux;
     maintainers = with maintainers; [ hedning ];

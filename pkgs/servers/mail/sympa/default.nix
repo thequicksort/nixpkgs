@@ -1,5 +1,4 @@
-{ stdenv, perl, fetchFromGitHub, autoreconfHook
-}:
+{ lib, stdenv, perl, fetchFromGitHub, autoreconfHook, nixosTests }:
 
 let
   dataDir = "/var/lib/sympa";
@@ -64,16 +63,17 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "sympa";
-  version = "6.2.52";
+  version = "6.2.60";
 
   src = fetchFromGitHub {
     owner = "sympa-community";
     repo = pname;
     rev = version;
-    sha256 = "071kx6ryifs2f6fhfky9g297frzp5584kn444af1vb2imzydsbnh";
+    sha256 = "0mnpmkvxf3bmrmahkf3d0i5r6sj7xb1yca5v7xdnwnh5wh9vlx7v";
   };
 
   configureFlags = [
+    "--enable-fhs"
     "--without-initdir"
     "--without-unitsdir"
     "--without-smrshdir"
@@ -106,7 +106,11 @@ stdenv.mkDerivation rec {
     rm -rf "$TMP/bin"
   '';
 
-  meta = with stdenv.lib; {
+  passthru.tests = {
+    inherit (nixosTests) sympa;
+  };
+
+  meta = with lib; {
     description = "Open source mailing list manager";
     homepage = "https://www.sympa.org";
     license = licenses.gpl2;

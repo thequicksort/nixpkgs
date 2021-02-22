@@ -1,8 +1,8 @@
-{ stdenv, fetchFromGitHub, bash, makeWrapper, git, mysql, diffutils, which, coreutils, procps, nettools
+{ lib, stdenv, fetchFromGitHub, bash, makeWrapper, git, mysql, diffutils, which, coreutils, procps, nettools
 ,supportOpenstack ? true
 }:
 
-with stdenv.lib;
+with lib;
 
 stdenv.mkDerivation rec {
   pname = "snabb";
@@ -46,7 +46,7 @@ stdenv.mkDerivation rec {
   enableParallelBuilding = false;
 
   meta =  {
-    homepage = https://github.com/SnabbCo/snabbswitch;
+    homepage = "https://github.com/SnabbCo/snabbswitch";
     description = "Simple and fast packet networking toolkit";
     longDescription = ''
       Snabb Switch is a LuaJIT-based toolkit for writing high-speed

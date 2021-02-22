@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   name = "tidyp-1.04";
@@ -10,9 +10,9 @@ stdenv.mkDerivation rec {
 
   hardeningDisable = [ "format" ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A program that can validate your HTML, as well as modify it to be more clean and standard";
-    homepage = http://tidyp.com/;
+    homepage = "http://tidyp.com/";
     platforms = platforms.linux;
     maintainers = with maintainers; [ pSub ];
     license = licenses.bsd3;

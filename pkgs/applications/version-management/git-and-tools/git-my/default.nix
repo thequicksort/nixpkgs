@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub }:
+{ lib, stdenv, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
   pname = "git-my";
@@ -17,10 +17,10 @@ stdenv.mkDerivation rec {
     install -Dm755 -t "$out"/bin ./git-my
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description =
       "List remote branches if they're merged and/or available locally";
-    homepage = https://github.com/davidosomething/git-my;
+    homepage = "https://github.com/davidosomething/git-my";
     license = licenses.free;
     maintainers = with maintainers; [ bb010g ];
     platforms = platforms.all;

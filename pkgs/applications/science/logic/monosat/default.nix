@@ -1,9 +1,9 @@
-{ stdenv, fetchpatch, fetchFromGitHub, cmake, zlib, gmp, jdk8,
+{ lib, stdenv, fetchpatch, fetchFromGitHub, cmake, zlib, gmp, jdk8,
   # The JDK we use on Darwin currenly makes extensive use of rpaths which are
   # annoying and break the python library, so let's not bother for now
   includeJava ? !stdenv.hostPlatform.isDarwin, includeGplCode ? true }:
 
-with stdenv.lib;
+with lib;
 
 let
   boolToCmake = x: if x then "ON" else "OFF";
@@ -23,7 +23,7 @@ let
   patches = [
     # Python 3.8 compatibility
     (fetchpatch {
-      url = https://github.com/sambayless/monosat/commit/a5079711d0df0451f9840f3a41248e56dbb03967.patch;
+      url = "https://github.com/sambayless/monosat/commit/a5079711d0df0451f9840f3a41248e56dbb03967.patch";
       sha256 = "1p2y0jw8hb9c90nbffhn86k1dxd6f6hk5v70dfmpzka3y6g1ksal";
     })
   ];
@@ -31,7 +31,8 @@ let
   core = stdenv.mkDerivation {
     name = "${pname}-${version}";
     inherit src patches;
-    buildInputs = [ cmake zlib gmp jdk8 ];
+    nativeBuildInputs = [ cmake ];
+    buildInputs = [ zlib gmp jdk8 ];
 
     cmakeFlags = [
       "-DBUILD_STATIC=OFF"
@@ -50,7 +51,7 @@ let
       description = "SMT solver for Monotonic Theories";
       platforms   = platforms.unix;
       license     = if includeGplCode then licenses.gpl2 else licenses.mit;
-      homepage    = https://github.com/sambayless/monosat;
+      homepage    = "https://github.com/sambayless/monosat";
       maintainers = [ maintainers.acairncross ];
     };
   };

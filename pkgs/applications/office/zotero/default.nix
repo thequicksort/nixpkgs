@@ -1,6 +1,7 @@
-{ stdenv, fetchurl, wrapGAppsHook, makeDesktopItem
+{ lib, stdenv, fetchurl, wrapGAppsHook, makeDesktopItem
 , atk
 , cairo
+, coreutils
 , curl
 , cups
 , dbus-glib
@@ -35,21 +36,22 @@
 
 stdenv.mkDerivation rec {
   pname = "zotero";
-  version = "5.0.83";
+  version = "5.0.89";
 
   src = fetchurl {
     url = "https://download.zotero.org/client/release/${version}/Zotero-${version}_linux-x86_64.tar.bz2";
-    sha256 = "1abkwxdi154hnry8nsvxbklvbsnvd7cs2as0041h2kbiz824pv31";
+    sha256 = "18p4qnnfx9f2frk7f2nk1d7jr4cjzg9z7lfzrk7vq11qgbjdpqbl";
   };
 
-  buildInputs= [ wrapGAppsHook gsettings-desktop-schemas gtk3 gnome3.adwaita-icon-theme dconf ];
+  nativeBuildInputs = [ wrapGAppsHook ];
+  buildInputs= [ gsettings-desktop-schemas glib gtk3 gnome3.adwaita-icon-theme dconf ];
 
-  phases = [ "unpackPhase" "patchPhase" "installPhase" "fixupPhase" ];
-
+  dontConfigure = true;
+  dontBuild = true;
   dontStrip = true;
   dontPatchELF = true;
 
-  libPath = stdenv.lib.makeLibraryPath
+  libPath = lib.makeLibraryPath
     [ stdenv.cc.cc
       atk
       cairo
@@ -80,7 +82,7 @@ stdenv.mkDerivation rec {
       nspr
       nss
       pango
-    ] + ":" + stdenv.lib.makeSearchPathOutput "lib" "lib64" [
+    ] + ":" + lib.makeSearchPathOutput "lib" "lib64" [
       stdenv.cc.cc
     ];
 
@@ -130,7 +132,13 @@ stdenv.mkDerivation rec {
          "$out/usr/lib/zotero-bin-${version}/{}" \;
   '';
 
-  meta = with stdenv.lib; {
+  preFixup = ''
+    gappsWrapperArgs+=(
+      --prefix PATH : ${lib.makeBinPath [ coreutils ]}
+    )
+  '';
+
+  meta = with lib; {
     homepage = "https://www.zotero.org";
     description = "Collect, organize, cite, and share your research sources";
     license = licenses.agpl3;

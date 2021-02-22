@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, pythonPackages }:
+{ lib, fetchFromGitHub, pythonPackages }:
 
 let
   inherit (pythonPackages) python;
@@ -40,10 +40,10 @@ pythonPackages.buildPythonApplication rec {
     runHook postCheck
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "A Python clone of Foreman, a tool for managing Procfile-based applications";
     license = licenses.mit;
-    homepage = https://github.com/nickstenning/honcho;
+    homepage = "https://github.com/nickstenning/honcho";
     maintainers = with maintainers; [ benley ];
     platforms = platforms.unix;
   };

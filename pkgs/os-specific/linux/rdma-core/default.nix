@@ -1,10 +1,10 @@
-{ stdenv, fetchFromGitHub, cmake, pkgconfig, docutils
+{ lib, stdenv, fetchFromGitHub, cmake, pkg-config, docutils
 , pandoc, ethtool, iproute, libnl, udev, python, perl
 , makeWrapper
 } :
 
 let
-  version = "27.0";
+  version = "33.1";
 
 in stdenv.mkDerivation {
   pname = "rdma-core";
@@ -14,10 +14,10 @@ in stdenv.mkDerivation {
     owner = "linux-rdma";
     repo = "rdma-core";
     rev = "v${version}";
-    sha256 = "04mhcrcmbwxcjhswlkhnr6m5nl2389jgjv6aqhd4v0x555cwnfvw";
+    sha256 = "1p97r8ngfx1d9aq8p3f027323m7kgmk30kfrikf3jlkpr30rksbv";
   };
 
-  nativeBuildInputs = [ cmake pkgconfig pandoc docutils makeWrapper ];
+  nativeBuildInputs = [ cmake pkg-config pandoc docutils makeWrapper ];
   buildInputs = [ libnl ethtool iproute udev python perl ];
 
   cmakeFlags = [
@@ -26,11 +26,6 @@ in stdenv.mkDerivation {
   ];
 
   postPatch = ''
-    substituteInPlace providers/rxe/rxe_cfg.in \
-      --replace ethtool "${ethtool}/bin/ethtool" \
-      --replace 'ip addr' "${iproute}/bin/ip addr" \
-      --replace 'ip link' "${iproute}/bin/ip link"
-
     substituteInPlace srp_daemon/srp_daemon.sh.in \
       --replace /bin/rm rm
   '';
@@ -48,10 +43,10 @@ in stdenv.mkDerivation {
     done
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "RDMA Core Userspace Libraries and Daemons";
-    homepage = https://github.com/linux-rdma/rdma-core;
-    license = licenses.gpl2;
+    homepage = "https://github.com/linux-rdma/rdma-core";
+    license = licenses.gpl2Only;
     platforms = platforms.linux;
     maintainers = with maintainers; [ markuskowa ];
   };

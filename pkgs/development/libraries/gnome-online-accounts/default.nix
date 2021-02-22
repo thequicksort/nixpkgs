@@ -1,6 +1,6 @@
-{ stdenv
+{ lib, stdenv
 , fetchFromGitLab
-, pkgconfig
+, pkg-config
 , vala
 , glib
 , meson
@@ -18,7 +18,7 @@
 , icu
 , glib-networking
 , libsoup
-, docbook_xsl
+, docbook-xsl-nons
 , docbook_xml_dtd_412
 , gnome3
 , gcr
@@ -30,7 +30,7 @@
 
 stdenv.mkDerivation rec {
   pname = "gnome-online-accounts";
-  version = "3.34.1";
+  version = "3.38.0";
 
   # https://gitlab.gnome.org/GNOME/gnome-online-accounts/issues/87
   src = fetchFromGitLab {
@@ -38,7 +38,7 @@ stdenv.mkDerivation rec {
     owner = "GNOME";
     repo = "gnome-online-accounts";
     rev = version;
-    sha256 = "0ry06qw068rqn4y42953kwl6fkxpgfya58y87cd3zink6gj7q0fm";
+    sha256 = "sha256-NRGab/CMJxe31rr20+5wYZF2rOzoSNdztfNVojBd5ag=";
   };
 
   outputs = [ "out" "man" "dev" "devdoc" ];
@@ -52,16 +52,16 @@ stdenv.mkDerivation rec {
   ];
 
   nativeBuildInputs = [
-    dbus # used for checks and pkgconfig to install dbus service/s
+    dbus # used for checks and pkg-config to install dbus service/s
     docbook_xml_dtd_412
-    docbook_xsl
+    docbook-xsl-nons
     gettext
     gobject-introspection
     gtk-doc
     libxslt
     meson
     ninja
-    pkgconfig
+    pkg-config
     python3
     vala
     wrapGAppsHook
@@ -92,15 +92,14 @@ stdenv.mkDerivation rec {
   passthru = {
     updateScript = gnome3.updateScript {
       packageName = pname;
-      attrPath = "gnome3.${pname}";
     };
   };
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     homepage = "https://wiki.gnome.org/Projects/GnomeOnlineAccounts";
     description = "Single sign-on framework for GNOME";
     platforms = platforms.linux;
     license = licenses.lgpl2Plus;
-    maintainers = gnome3.maintainers;
+    maintainers = teams.gnome.members;
   };
 }

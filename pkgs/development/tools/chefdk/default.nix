@@ -1,7 +1,7 @@
 { lib, bundlerEnv, bundlerUpdateScript, ruby, perl, autoconf }:
 
 bundlerEnv {
-  name = "chef-dk-4.7.73";
+  name = "chef-dk-4.13.3";
 
   inherit ruby;
   gemdir = ./.;
@@ -12,7 +12,7 @@ bundlerEnv {
 
   meta = with lib; {
     description = "A streamlined development and deployment workflow for Chef platform";
-    homepage    = https://downloads.chef.io/chef-dk/;
+    homepage    = "https://downloads.chef.io/chef-dk/";
     license     = licenses.asl20;
     maintainers = with maintainers; [ offline nicknovitski ];
     platforms   = platforms.unix;

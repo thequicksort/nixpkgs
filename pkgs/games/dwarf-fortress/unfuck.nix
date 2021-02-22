@@ -79,16 +79,14 @@ stdenv.mkDerivation {
     install -D -m755 ../build/libgraphics.so $out/lib/libgraphics.so
   '';
 
-  enableParallelBuilding = true;
-
   # Breaks dfhack because of inlining.
   hardeningDisable = [ "fortify" ];
 
   passthru = { inherit dfVersion; };
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Unfucked multimedia layer for Dwarf Fortress";
-    homepage = https://github.com/svenstaro/dwarf_fortress_unfuck;
+    homepage = "https://github.com/svenstaro/dwarf_fortress_unfuck";
     license = licenses.free;
     platforms = platforms.linux;
     maintainers = with maintainers; [ abbradar numinit ];

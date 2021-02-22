@@ -1,4 +1,4 @@
-{ fetchurl, stdenv }:
+{ fetchurl, lib, stdenv }:
 
 stdenv.mkDerivation rec {
   name = "mpage-2.5.7";
@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
     '';
 
     license = "liberal";  # a non-copyleft license, see `Copyright' file
-    homepage = http://www.mesa.nl/pub/mpage/;
-    platforms = stdenv.lib.platforms.linux;
+    homepage = "http://www.mesa.nl/pub/mpage/";
+    platforms = lib.platforms.linux;
   };
 }

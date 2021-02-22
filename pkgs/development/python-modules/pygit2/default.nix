@@ -2,11 +2,11 @@
 
 buildPythonPackage rec {
   pname = "pygit2";
-  version = "1.1.1";
+  version = "1.4.0";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "klXVB9XYe/It/VeZeniQgBAzH8IfmoPsoSGlP2V76zw=";
+    sha256 = "cbeb38ab1df9b5d8896548a11e63aae8a064763ab5f1eabe4475e6b8a78ee1c8";
   };
 
   preConfigure = lib.optionalString stdenv.isDarwin ''
@@ -46,7 +46,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "A set of Python bindings to the libgit2 shared library";
-    homepage = https://pypi.python.org/pypi/pygit2;
+    homepage = "https://pypi.python.org/pypi/pygit2";
     license = licenses.gpl2;
   };
 }

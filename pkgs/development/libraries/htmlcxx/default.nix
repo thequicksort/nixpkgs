@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   pname = "htmlcxx";
@@ -11,8 +11,8 @@ stdenv.mkDerivation rec {
 
   patches = [ ./ptrdiff.patch ];
 
-  meta = with stdenv.lib; {
-    homepage = http://htmlcxx.sourceforge.net/;
+  meta = with lib; {
+    homepage = "http://htmlcxx.sourceforge.net/";
     description = "A simple non-validating css1 and html parser for C++";
     license = licenses.lgpl2;
     platforms = platforms.linux;

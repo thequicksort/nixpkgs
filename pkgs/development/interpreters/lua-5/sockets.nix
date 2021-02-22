@@ -18,8 +18,8 @@ stdenv.mkDerivation rec {
   buildInputs = [ lua5 ];
 
   meta = {
-    homepage = http://w3.impa.br/~diego/software/luasocket/;
-    hydraPlatforms = stdenv.lib.platforms.linux;
+    homepage = "http://w3.impa.br/~diego/software/luasocket/";
+    hydraPlatforms = lib.platforms.linux;
     maintainers = [ ];
   };
 }

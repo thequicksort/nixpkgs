@@ -1,14 +1,14 @@
-{ stdenv, fetchurl, pkgconfig, atk, cairo, glib, gtk3, pango, fribidi, vala
+{ lib, stdenv, fetchurl, pkg-config, atk, cairo, glib, gtk3, pango, fribidi, vala
 , libxml2, perl, gettext, gnome3, gobject-introspection, dbus, xvfb_run, shared-mime-info
 , meson, ninja }:
 
 stdenv.mkDerivation rec {
   pname = "gtksourceview";
-  version = "4.4.0";
+  version = "4.8.0";
 
   src = fetchurl {
-    url = "mirror://gnome/sources/gtksourceview/${stdenv.lib.versions.majorMinor version}/${pname}-${version}.tar.xz";
-    sha256 = "16k8kqw9w775f1ijsk898hp210an5mv4yfyrmik9m8khxx593nwx";
+    url = "mirror://gnome/sources/${pname}/${lib.versions.majorMinor version}/${pname}-${version}.tar.xz";
+    sha256 = "06jfbfbi73j9i3qsr7sxg3yl3643bn3aydbzx6xg3v8ca0hr3880";
   };
 
   propagatedBuildInputs = [
@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
 
   outputs = [ "out" "dev" ];
 
-  nativeBuildInputs = [ meson ninja pkgconfig gettext perl gobject-introspection vala ];
+  nativeBuildInputs = [ meson ninja pkg-config gettext perl gobject-introspection vala ];
 
   checkInputs = [ xvfb_run dbus ];
 
@@ -45,10 +45,10 @@ stdenv.mkDerivation rec {
     };
   };
 
-  meta = with stdenv.lib; {
-    homepage = https://wiki.gnome.org/Projects/GtkSourceView;
+  meta = with lib; {
+    homepage = "https://wiki.gnome.org/Projects/GtkSourceView";
     platforms = with platforms; linux ++ darwin;
     license = licenses.lgpl21;
-    maintainers = gnome3.maintainers;
+    maintainers = teams.gnome.members;
   };
 }

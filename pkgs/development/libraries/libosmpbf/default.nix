@@ -1,4 +1,4 @@
-{stdenv, fetchurl, protobuf}:
+{lib, stdenv, fetchurl, protobuf}:
 
 stdenv.mkDerivation {
   name = "libosmpbf-1.3.3";
@@ -15,9 +15,9 @@ stdenv.mkDerivation {
   installFlags = [ "PREFIX=$(out)" ];
 
   meta = {
-    homepage = https://github.com/scrosby/OSM-binary;
+    homepage = "https://github.com/scrosby/OSM-binary";
     description = "C library to read and write OpenStreetMap PBF files";
-    license = stdenv.lib.licenses.lgpl3;
-    platforms = stdenv.lib.platforms.unix;
+    license = lib.licenses.lgpl3;
+    platforms = lib.platforms.unix;
   };
 }

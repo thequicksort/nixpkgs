@@ -1,4 +1,4 @@
-{ stdenv
+{ lib
 , buildPythonPackage
 , isPyPy
 , pkgs
@@ -18,10 +18,10 @@ buildPythonPackage rec {
 
   buildInputs = [ pkgs.libuv ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Python interface for libuv";
-    homepage = https://github.com/saghul/pyuv;
-    repositories.git = git://github.com/saghul/pyuv.git;
+    homepage = "https://github.com/saghul/pyuv";
+    repositories.git = "git://github.com/saghul/pyuv.git";
     license = licenses.mit;
   };
 

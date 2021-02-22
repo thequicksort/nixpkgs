@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, cmake
+{ lib, stdenv, fetchurl, cmake
 , alsaLib, fftwSinglePrec, libjack2, libpulseaudio, libvorbis, soundtouch, qtbase
 }:
 
@@ -21,9 +21,11 @@ stdenv.mkDerivation rec {
     "-DENABLE_PULSEAUDIO=ON"
   ];
 
-  meta = with stdenv.lib; {
+  dontWrapQtApps = true;
+
+  meta = with lib; {
     description = "Application for practicing playing musical scores and ear training";
-    homepage = https://nootka.sourceforge.io/;
+    homepage = "https://nootka.sourceforge.io/";
     license = licenses.gpl3Plus;
     maintainers = with maintainers; [ orivej ];
     platforms = platforms.linux;

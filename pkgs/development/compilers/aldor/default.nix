@@ -1,4 +1,4 @@
-{ fetchgit, stdenv, gmp, which, flex, bison, makeWrapper
+{ fetchgit, lib, stdenv, gmp, which, flex, bison, makeWrapper
 , autoconf, automake, libtool, jdk, perl }:
 
 stdenv.mkDerivation {
@@ -30,9 +30,9 @@ stdenv.mkDerivation {
   meta = {
     # Please become a maintainer to fix this package
     broken = true;
-    homepage = http://www.aldor.org/;
+    homepage = "http://www.aldor.org/";
     description = "Programming language with an expressive type system";
-    license = stdenv.lib.licenses.asl20;
+    license = lib.licenses.asl20;
 
     longDescription = ''
       Aldor is a programming language with an expressive type system well-suited
@@ -47,6 +47,6 @@ stdenv.mkDerivation {
       and powerful properties of functional, object-oriented and aspect-oriented styles.
     '';
 
-    platforms = stdenv.lib.platforms.linux;
+    platforms = lib.platforms.linux;
   };
 }

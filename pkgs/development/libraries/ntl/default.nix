@@ -48,7 +48,7 @@ stdenv.mkDerivation rec {
       else
         "generic" # "chooses options that should be OK for most platforms"
     }"
-    "CXX=c++"
+    "CXX=${stdenv.cc.targetPrefix}c++"
   ] ++ lib.optionals withGf2x [
     "NTL_GF2X_LIB=on"
     "GF2X_PREFIX=${gf2x}"
@@ -66,10 +66,10 @@ stdenv.mkDerivation rec {
     '';
     # Upstream contact: maintainer is victorshoup on GitHub. Alternatively the
     # email listed on the homepage.
-    homepage = http://www.shoup.net/ntl/;
+    homepage = "http://www.shoup.net/ntl/";
     # also locally at "${src}/doc/tour-changes.html";
     changelog = "https://www.shoup.net/ntl/doc/tour-changes.html";
-    maintainers = with maintainers; [ timokau ];
+    maintainers = teams.sage.members;
     license = licenses.gpl2Plus;
     platforms = platforms.all;
   };

@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   pname = "tinyscheme";
@@ -19,13 +19,13 @@ stdenv.mkDerivation rec {
     cp scheme $out/bin/tinyscheme
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Lightweight Scheme implementation";
     longDescription = ''
       TinyScheme is a lightweight Scheme interpreter that implements as large a
       subset of R5RS as was possible without getting very large and complicated.
     '';
-    homepage = http://tinyscheme.sourceforge.net/;
+    homepage = "http://tinyscheme.sourceforge.net/";
     license = licenses.bsdOriginal;
     maintainers = [ maintainers.ebzzry ];
     platforms = platforms.unix;
