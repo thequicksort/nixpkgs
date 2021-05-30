@@ -27,13 +27,13 @@
 
 stdenv.mkDerivation rec {
   pname = "waybar";
-  version = "0.9.5";
+  version = "0.9.7";
 
   src = fetchFromGitHub {
     owner = "Alexays";
     repo = "Waybar";
     rev = version;
-    sha256 = "1kzrgqaclfk6gcwhknxn28xl74gm5swipgn8kk8avacb4nsw1l9q";
+    sha256 = "17cn4d3dx92v40jd9vl41smp8hh3gf5chd1j2f7l1lrpfpnllg5x";
   };
 
   nativeBuildInputs = [
@@ -82,7 +82,7 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     description = "Highly customizable Wayland bar for Sway and Wlroots based compositors";
     license = licenses.mit;
-    maintainers = with maintainers; [ FlorianFranzen minijackson synthetica ];
+    maintainers = with maintainers; [ FlorianFranzen minijackson synthetica lovesegfault ];
     platforms = platforms.unix;
     homepage = "https://github.com/alexays/waybar";
   };

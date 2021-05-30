@@ -5,13 +5,13 @@
 
 import ./generic.nix (rec {
   pname = "Pillow";
-  version = "8.0.1";
+  version = "8.2.0";
 
   disabled = !isPy3k;
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "11c5c6e9b02c9dac08af04f093eb5a2f84857df70a7d4a6a6ad461aca803fb9e";
+    sha256 = "1qf3bz1sfz58ff6hclg8phgqyy210x3aqdk5yzjr8m5vsw8ap1x7";
   };
 
   meta = with lib; {
@@ -23,7 +23,7 @@ import ./generic.nix (rec {
       supports many file formats, and provides powerful image
       processing and graphics capabilities.
     '';
-    license = "http://www.pythonware.com/products/pil/license.htm";
+    license = licenses.hpnd;
     maintainers = with maintainers; [ goibhniu prikhi SuperSandro2000 ];
   };
 } // args )

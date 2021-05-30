@@ -21,17 +21,9 @@ buildRustPackage rec {
 
   SODIUM_USE_PKG_CONFIG = "yes";
 
-  installPhase = ''
-    runHook preInstall
-
-    install -D $releaseDir/tox-node $out/bin/tox-node
-
-    runHook postInstall
-  '';
-
   doCheck = false;
 
-  cargoSha256 = "sha256-kCT2ulB+c2OlsABkyXyzrHfD/G92EPCdTO34FR5oSws=";
+  cargoSha256 = "sha256-J/0KO33vZmOvm6V7qCXInuAJTbRqyy5/qj6p6dEmoas=";
 
   meta = with lib; {
     description = "A server application to run tox node written in pure Rust";

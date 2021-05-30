@@ -7,7 +7,7 @@
   , patches ? [ ]
 }:
 { stdenv, lib, fetchurl, fetchpatch, ncurses, xlibsWrapper, libXaw, libXpm
-, Xaw3d, libXcursor,  pkg-config, gettext, libXft, dbus, libpng, libjpeg, libungif
+, Xaw3d, libXcursor,  pkg-config, gettext, libXft, dbus, libpng, libjpeg, giflib
 , libtiff, librsvg, gconf, libxml2, imagemagick, gnutls, libselinux
 , alsaLib, cairo, acl, gpm, AppKit, GSS, ImageIO, m17n_lib, libotf
 , jansson, harfbuzz
@@ -63,6 +63,12 @@ let emacs = stdenv.mkDerivation (lib.optionalAttrs nativeComp {
       rm -fr .git
     '')
 
+    # Reduce closure size by cleaning the environment of the emacs dumper
+    ''
+      substituteInPlace src/Makefile.in \
+        --replace 'RUN_TEMACS = ./temacs' 'RUN_TEMACS = env -i ./temacs'
+    ''
+
     ''
     substituteInPlace lisp/international/mule-cmds.el \
       --replace /usr/share/locale ${gettext}/share/locale
@@ -88,8 +94,8 @@ let emacs = stdenv.mkDerivation (lib.optionalAttrs nativeComp {
         ]));
     in ''
       substituteInPlace lisp/emacs-lisp/comp.el --replace \
-        "(defcustom comp-native-driver-options nil" \
-        "(defcustom comp-native-driver-options '(${backendPath})"
+        "(defcustom native-comp-driver-options nil" \
+        "(defcustom native-comp-driver-options '(${backendPath})"
     ''))
     ""
   ];
@@ -102,7 +108,7 @@ let emacs = stdenv.mkDerivation (lib.optionalAttrs nativeComp {
     [ ncurses gconf libxml2 gnutls alsaLib acl gpm gettext jansson harfbuzz.dev ]
     ++ lib.optionals stdenv.isLinux [ dbus libselinux systemd ]
     ++ lib.optionals withX
-      [ xlibsWrapper libXaw Xaw3d libXpm libpng libjpeg libungif libtiff libXft
+      [ xlibsWrapper libXaw Xaw3d libXpm libpng libjpeg giflib libtiff libXft
         gconf cairo ]
     ++ lib.optionals (withX || withNS) [ librsvg ]
     ++ lib.optionals withImageMagick [ imagemagick ]
@@ -130,7 +136,7 @@ let emacs = stdenv.mkDerivation (lib.optionalAttrs nativeComp {
       else [ "--with-x=no" "--with-xpm=no" "--with-jpeg=no" "--with-png=no"
              "--with-gif=no" "--with-tiff=no" ])
     ++ lib.optional withXwidgets "--with-xwidgets"
-    ++ lib.optional nativeComp "--with-nativecomp"
+    ++ lib.optional nativeComp "--with-native-compilation"
     ++ lib.optional withImageMagick "--with-imagemagick"
     ;
 
@@ -169,7 +175,7 @@ let emacs = stdenv.mkDerivation (lib.optionalAttrs nativeComp {
           (comp-trampoline-compile (intern (pop argv))))"
     mkdir -p $out/share/emacs/native-lisp
     $out/bin/emacs --batch \
-      --eval "(add-to-list 'comp-eln-load-path \"$out/share/emacs/native-lisp\")" \
+      --eval "(add-to-list 'native-comp-eln-load-path \"$out/share/emacs/native-lisp\")" \
       -f batch-native-compile $out/share/emacs/site-lisp/site-start.el
   '';
 

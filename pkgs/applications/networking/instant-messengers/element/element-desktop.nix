@@ -8,12 +8,12 @@
 
 let
   executableName = "element-desktop";
-  version = "1.7.21";
+  version = "1.7.29";
   src = fetchFromGitHub {
     owner = "vector-im";
     repo = "element-desktop";
     rev = "v${version}";
-    sha256 = "sha256-tpFiKaJB6KN97ipN3OCTyxpiS0b980MQ1Ynxj8CjCuI=";
+    sha256 = "sha256-nCtgVVOdjZ/OK8gMInBbNeuJadchDYUO2UQxEmcOm4s=";
   };
 in mkYarnPackage rec {
   name = "element-desktop-${version}";
@@ -73,6 +73,7 @@ in mkYarnPackage rec {
   meta = with lib; {
     description = "A feature-rich client for Matrix.org";
     homepage = "https://element.io/";
+    changelog = "https://github.com/vector-im/element-desktop/blob/v${version}/CHANGELOG.md";
     license = licenses.asl20;
     maintainers = teams.matrix.members;
     inherit (electron.meta) platforms;

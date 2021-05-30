@@ -3,12 +3,12 @@
  } :
 
 stdenv.mkDerivation rec {
-  version = "20200929";
+  version = "20210328";
   pname = "mbuffer";
 
   src = fetchurl {
     url = "http://www.maier-komor.de/software/mbuffer/mbuffer-${version}.tgz";
-    sha256 = "1s6lxbqba2hwnvrdrwk0fpnff62gv0ynah4ql0c9y14s9v0y79jk";
+    sha256 = "sha256-UbW42EiJkaVf4d/OkBMPnke8HOKGugO09ijAS3hP3F0=";
   };
 
   buildInputs = [ openssl ];

@@ -9,13 +9,13 @@
 # again so that a selection of them can be embedded into the fishnet binary.
 stdenv.mkDerivation rec {
   pname = "fishnet-assets";
-  version = "unstable-2020-01-30";
+  version = "unstable-2020-03-27";
 
   src = fetchFromGitHub {
     owner = "niklasf";
     repo = pname;
-    rev = "b4fa30e57ec8976fb1c10bd36737bc784351b93e";
-    sha256 = "0gfs9lm4ih3h3fmgqylw05ii1h0d6mpjfxadnw3wymnjsspfb0m4";
+    rev = "a1fe3ec6074ad9dc43e6d46e0d42fab5d7cce12c";
+    sha256 = "1548wj2bs89b5w42z3c98hpnbln5w8p1909wyl7a63d8vkvnyn5l";
   };
 
   relAssetsPath = "share/${pname}";
@@ -53,5 +53,6 @@ stdenv.mkDerivation rec {
     homepage = "https://github.com/niklasf/fishnet-assets";
     license = licenses.gpl3Only;
     maintainers = with maintainers; [ tu-maurice ];
+    platforms = [ "x86_64-linux" ];
   };
 }

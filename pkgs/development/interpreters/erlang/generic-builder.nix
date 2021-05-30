@@ -5,6 +5,8 @@
 , libGL ? null, libGLU ? null, wxGTK ? null, wxmac ? null, xorg ? null
 , parallelBuild ? false
 , systemd, wxSupport ? true
+# updateScript deps
+, writeScript, common-updater-scripts, coreutils, git
 }:
 { baseName ? "erlang"
 , version
@@ -57,19 +59,12 @@ in stdenv.mkDerivation ({
     ++ optionals odbcSupport odbcPackages
     ++ optionals javacSupport javacPackages
     ++ optional withSystemd systemd
-    ++ optionals stdenv.isDarwin (with pkgs.darwin.apple_sdk.frameworks; [ Carbon Cocoa ]);
+    ++ optionals stdenv.isDarwin (with pkgs.darwin.apple_sdk.frameworks; [ AGL Carbon Cocoa WebKit ]);
 
   debugInfo = enableDebugInfo;
 
   # On some machines, parallel build reliably crashes on `GEN    asn1ct_eval_ext.erl` step
   enableParallelBuilding = parallelBuild;
-
-  # Clang 4 (rightfully) thinks signed comparisons of pointers with NULL are nonsense
-  prePatch = ''
-    substituteInPlace lib/wx/c_src/wxe_impl.cpp --replace 'temp > NULL' 'temp != NULL'
-
-    ${prePatch}
-  '';
 
   postPatch = ''
     patchShebangs make
@@ -81,7 +76,8 @@ in stdenv.mkDerivation ({
     ./otp_build autoconf
   '';
 
-  configureFlags = [ "--with-ssl=${lib.getDev opensslPackage}" ]
+  configureFlags = [ "--with-ssl=${lib.getOutput "out" opensslPackage}" ]
+    ++ [ "--with-ssl-incl=${lib.getDev opensslPackage}" ] # This flag was introduced in R24
     ++ optional enableThreads "--enable-threads"
     ++ optional enableSmpSupport "--enable-smp-support"
     ++ optional enableKernelPoll "--enable-kernel-poll"
@@ -110,6 +106,24 @@ in stdenv.mkDerivation ({
 
   setupHook = ./setup-hook.sh;
 
+  passthru = {
+    updateScript =
+      let major = builtins.head (builtins.splitVersion version);
+      in writeScript "update.sh" ''
+      #!${stdenv.shell}
+      set -ox errexit
+      PATH=${lib.makeBinPath [ common-updater-scripts coreutils git gnused ]}
+      latest=$(list-git-tags https://github.com/erlang/otp.git | sed -n 's/^OTP-${major}/${major}/p' | sort -V | tail -1)
+      if [ "$latest" != "${version}" ]; then
+        nixpkgs="$(git rev-parse --show-toplevel)"
+        nix_file="$nixpkgs/pkgs/development/interpreters/erlang/R${major}.nix"
+        update-source-version ${baseName}R${major} "$latest" --version-key=version --print-changes --file="$nix_file"
+      else
+        echo "${baseName}R${major} is already up-to-date"
+      fi
+    '';
+  };
+
   meta = with lib; ({
     homepage = "https://www.erlang.org/";
     downloadPage = "https://www.erlang.org/download.html";
@@ -132,6 +146,7 @@ in stdenv.mkDerivation ({
 // optionalAttrs (preUnpack != "")      { inherit preUnpack; }
 // optionalAttrs (postUnpack != "")     { inherit postUnpack; }
 // optionalAttrs (patches != [])        { inherit patches; }
+// optionalAttrs (prePatch != "")       { inherit prePatch; }
 // optionalAttrs (patchPhase != "")     { inherit patchPhase; }
 // optionalAttrs (configurePhase != "") { inherit configurePhase; }
 // optionalAttrs (preConfigure != "")   { inherit preConfigure; }

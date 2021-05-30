@@ -39,12 +39,12 @@ in
 
 stdenv.mkDerivation rec {
   pname = "go2-unstable";
-  version = "2020-12-08";
+  version = "2021-04-13";
 
   src = fetchgit {
     url = https://go.googlesource.com/go;
-    rev = "abe4d3dce12252ed09216eaa67b7dab8c8922537";
-    sha256 = "sha256:1d46w8426148q81fvrifx9glgn402jvf29n44i8j8g1pvzkfckh6";
+    rev = "9cd52cf2a93a958e8e001aea36886e7846c91f2f";
+    sha256 = "sha256:0hybm93y4i4j7bs86y7h73nc1wqnspkq75if7n1032zf9bs8sm96";
   };
 
   # perl is used for testing go vet
@@ -154,7 +154,7 @@ stdenv.mkDerivation rec {
     ./creds-test.patch
     ./go-1.9-skip-flaky-19608.patch
     ./go-1.9-skip-flaky-20072.patch
-    ./skip-external-network-tests-1.15.patch
+    ./skip-external-network-tests-1.16.patch
     ./skip-nohup-tests.patch
     ./skip-cgo-tests-1.15.patch
   ] ++ [
@@ -188,7 +188,7 @@ stdenv.mkDerivation rec {
       null;
 
   GOARM = toString (lib.intersectLists [(stdenv.hostPlatform.parsed.cpu.version or "")] ["5" "6" "7"]);
-  GO386 = 387; # from Arch: don't assume sse2 on i686
+  GO386 = "softfloat"; # from Arch: don't assume sse2 on i686
   CGO_ENABLED = 1;
   # Hopefully avoids test timeouts on Hydra
   GO_TEST_TIMEOUT_SCALE = 3;

@@ -103,7 +103,7 @@ supported Qt version.
 ### Example adding a Qt library {#qt-library-all-packages-nix}
 
 The following represents the contents of `qt5-packages.nix`.
-```
+```nix
 {
   # ...
 
@@ -121,7 +121,7 @@ Use the `meta.broken` attribute to disable the package for unsupported Qt versio
 
 stdenv.mkDerivation {
   # ...
-  # Disable this library with Qt &lt; 5.9.0
+  # Disable this library with Qt < 5.9.0
   meta.broken = lib.versionOlder qtbase.version "5.9.0";
 }
 ```
@@ -133,7 +133,7 @@ to select the Qt 5 version used for the application.
 ### Example adding a Qt application {#qt-application-all-packages-nix}
 
 The following represents the contents of `qt5-packages.nix`.
-```
+```nix
 {
   # ...
 
@@ -144,7 +144,7 @@ The following represents the contents of `qt5-packages.nix`.
 ```
 
 The following represents the contents of `all-packages.nix`.
-```
+```nix
 {
   # ...
 

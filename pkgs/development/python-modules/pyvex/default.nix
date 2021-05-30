@@ -1,21 +1,26 @@
 { lib
+, stdenv
 , archinfo
 , bitstring
-, fetchPypi
-, cffi
 , buildPythonPackage
+, cffi
+, fetchPypi
 , future
 , pycparser
 }:
 
 buildPythonPackage rec {
   pname = "pyvex";
-  version = "9.0.5739";
+  version = "9.0.7491";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "1jwxxw2kw7wkz7kh8m8vbavzw6m5k6xph7mazfn3k2qbsshh3lk3";
+    sha256 = "sha256-tKfOkW1mLa4gCweF5bGVwnS7E+dRdc/PiuOfT7AgKNo=";
   };
+
+  postPatch = lib.optionalString stdenv.isDarwin ''
+    substituteInPlace vex/Makefile-gcc --replace '/usr/bin/ar' 'ar'
+  '';
 
   propagatedBuildInputs = [
     archinfo
@@ -24,6 +29,11 @@ buildPythonPackage rec {
     future
     pycparser
   ];
+
+  preBuild = ''
+    export CC=${stdenv.cc.targetPrefix}cc
+    substituteInPlace pyvex_c/Makefile --replace 'AR=ar' 'AR=${stdenv.cc.targetPrefix}ar'
+  '';
 
   # No tests are available on PyPI, GitHub release has tests
   # Switch to GitHub release after all angr parts are present
@@ -35,5 +45,7 @@ buildPythonPackage rec {
     homepage = "https://github.com/angr/pyvex";
     license = with licenses; [ bsd2 gpl3Plus lgpl3Plus ];
     maintainers = with maintainers; [ fab ];
+    # ERROR: pyvex-X-py3-none-manylinux1_aarch64.whl is not a supported wheel on this platform.
+    broken = stdenv.isAarch64;
   };
 }

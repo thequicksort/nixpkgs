@@ -61,7 +61,7 @@
 , alsaSupport ? stdenv.isLinux, alsaLib
 , pulseaudioSupport ? stdenv.isLinux, libpulseaudio
 , gtk3Support ? true, gtk2, gtk3, wrapGAppsHook
-, waylandSupport ? true
+, waylandSupport ? true, libdrm
 , libxkbcommon, calendarSupport ? true
 
 # Use official trademarked branding.  Permission obtained at:
@@ -73,13 +73,13 @@ assert waylandSupport -> gtk3Support == true;
 
 stdenv.mkDerivation rec {
   pname = "thunderbird";
-  version = "78.7.1";
+  version = "78.10.2";
 
   src = fetchurl {
     url =
       "mirror://mozilla/thunderbird/releases/${version}/source/thunderbird-${version}.source.tar.xz";
     sha512 =
-      "328p14mgcam4dxx0asbgp4v2v559bwbw7z2kxd5yfwkna040r9ccrkkirma5580z9vkwb0rcjlmai9wrbacxrg8hg65d8vylvnkampy";
+      "3sc6n3n9bqnsq9qn9myanvxpgdx20c803prla3p236hwidz7snmyp2097ggn42xp765km55n11drxalnslsxdypgjikbfdqal05hf5r";
   };
 
   nativeBuildInputs = [
@@ -99,6 +99,7 @@ stdenv.mkDerivation rec {
     rustc
     which
     yasm
+    unzip
   ] ++ lib.optional gtk3Support wrapGAppsHook;
 
   buildInputs = [
@@ -126,7 +127,6 @@ stdenv.mkDerivation rec {
     pango
     perl
     sqlite
-    unzip
     xorg.libX11
     xorg.libXScrnSaver
     xorg.libXcursor
@@ -137,12 +137,13 @@ stdenv.mkDerivation rec {
     xorg.libXt
     xorg.pixman
     xorg.xorgproto
+    xorg.libXdamage
     zip
     zlib
   ] ++ lib.optional alsaSupport alsaLib
     ++ lib.optional gtk3Support gtk3
     ++ lib.optional pulseaudioSupport libpulseaudio
-    ++ lib.optional waylandSupport libxkbcommon;
+    ++ lib.optionals waylandSupport [ libxkbcommon libdrm ];
 
   NIX_CFLAGS_COMPILE =[
     "-I${glib.dev}/include/gio-unix-2.0"
@@ -241,7 +242,7 @@ stdenv.mkDerivation rec {
     "--enable-strip"
   ]) ++ lib.optionals (!stdenv.hostPlatform.isi686) [
     # on i686-linux: --with-libclang-path is not available in this configuration
-    "--with-libclang-path=${llvmPackages.libclang}/lib"
+    "--with-libclang-path=${llvmPackages.libclang.lib}/lib"
     "--with-clang-path=${llvmPackages.clang}/bin/clang"
   ] ++ lib.optional alsaSupport "--enable-alsa"
   ++ lib.optional calendarSupport "--enable-calendar"

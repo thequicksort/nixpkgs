@@ -10,11 +10,11 @@
 
 buildPythonPackage rec {
   pname = "awkward";
-  version = "1.0.2";
+  version = "1.2.3";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "3468cb80cab51252a1936e5e593c7df4588ea0e18dcb6fb31e3d2913ba883928";
+    sha256 = "7d727542927a926f488fa62d04e2c5728c72660f17f822e627f349285f295063";
   };
 
   nativeBuildInputs = [ cmake ];
@@ -25,6 +25,7 @@ buildPythonPackage rec {
 
   checkInputs = [ pytestCheckHook numba ];
   dontUseSetuptoolsCheck = true;
+  disabledTestPaths = [ "tests-cuda" ];
 
   meta = with lib; {
     description = "Manipulate JSON-like data with NumPy-like idioms";

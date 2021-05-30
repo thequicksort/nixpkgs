@@ -27,7 +27,8 @@
 
 buildPythonPackage rec {
   pname = "qiskit-aer";
-  version = "0.7.4";
+  version = "0.8.0";
+  format = "pyproject";
 
   disabled = pythonOlder "3.6";
 
@@ -35,7 +36,7 @@ buildPythonPackage rec {
     owner = "Qiskit";
     repo = "qiskit-aer";
     rev = version;
-    sha256 = "sha256-o6c1ZcGFZ3pwinzMTif1nqF29Wq0Nog1++ZoJGuiKxo=";
+    hash = "sha256-CWF3ehLs0HBXnYH11r+2CQwIcxddAfQm3ulAf1agl/o=";
   };
 
   nativeBuildInputs = [
@@ -60,10 +61,12 @@ buildPythonPackage rec {
     pybind11
   ];
 
+  # tries to install pypi cmake package, not needed
   postPatch = ''
     substituteInPlace setup.py --replace "'cmake!=3.17,!=3.17.0'," ""
   '';
 
+  # Disable using conan for build
   preBuild = ''
     export DISABLE_CONAN=1
   '';
@@ -81,6 +84,17 @@ buildPythonPackage rec {
   disabledTests = [
     "test_paulis_1_and_2_qubits"
     "test_3d_oscillator"
+    "_057"
+    "_136"
+    "_137"
+    "_139"
+    "_138"
+    "_140"
+    "_141"
+    "_143"
+    "_144"
+    "test_sparse_output_probabilities"
+    "test_reset_2_qubit"
   ];
   checkInputs = [
     pytestCheckHook

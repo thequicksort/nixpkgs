@@ -2,16 +2,17 @@
 
 stdenv.mkDerivation rec {
   pname = "ckan";
-  version = "1.29.2";
+  version = "1.30.2";
 
   src = fetchurl {
     url = "https://github.com/KSP-CKAN/CKAN/releases/download/v${version}/ckan.exe";
-    sha256 = "10vd61mw2y7vmbnp6nd7b2sq22ixqd7zmd278z210w4njmvqn97h";
+    sha256 = "sha256-ggmUsJb3xKpI3ygTmzR5f3na/oU4OEa3r3edjlN5R+Q=";
   };
 
   dontUnpack = true;
 
-  buildInputs = [ makeWrapper mono ];
+  nativeBuildInputs = [ makeWrapper ];
+  buildInputs = [ mono ];
 
   libraries = lib.makeLibraryPath [ gtk2 curl ];
 

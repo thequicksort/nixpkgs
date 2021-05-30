@@ -31,6 +31,7 @@
 , CoreServices
 , CoreText
 , Foundation
+, libiconv
 , OpenGL
 }:
 let
@@ -52,16 +53,16 @@ let
 in
 rustPlatform.buildRustPackage rec {
   pname = "alacritty";
-  version = "0.7.2";
+  version = "0.8.0";
 
   src = fetchFromGitHub {
     owner = "alacritty";
     repo = pname;
     rev = "v${version}";
-    sha256 = "sha256-VXV6w4OnhJBmvMKl7CynbhI9LclTKaSr+5DhHXMwSsc=";
+    sha256 = "sha256-9pQqnsLMkzhKTs7WGhf6lac/LGot6EmJQxgFBTrHA4E=";
   };
 
-  cargoSha256 = "sha256-PWnNTMNZKxsfS1OAXe4G3zjfg5gK1SMTc0JJrW90iSM=";
+  cargoSha256 = "sha256-NtDeXS2g+5RzKHJdDrbzL5oReS42SzuEubkfZ4gbkFc=";
 
   nativeBuildInputs = [
     cmake
@@ -80,22 +81,18 @@ rustPlatform.buildRustPackage rec {
     CoreServices
     CoreText
     Foundation
+    libiconv
     OpenGL
   ];
 
   outputs = [ "out" "terminfo" ];
 
   postPatch = ''
-    substituteInPlace alacritty/src/config/mouse.rs \
+    substituteInPlace alacritty/src/config/ui_config.rs \
       --replace xdg-open ${xdg-utils}/bin/xdg-open
   '';
 
-  installPhase = ''
-    runHook preInstall
-
-    install -D $releaseDir/alacritty $out/bin/alacritty
-
-  '' + (
+  postInstall = (
     if stdenv.isDarwin then ''
       mkdir $out/Applications
       cp -r extra/osx/Alacritty.app $out/Applications
@@ -126,8 +123,6 @@ rustPlatform.buildRustPackage rec {
     tic -xe alacritty,alacritty-direct -o "$terminfo/share/terminfo" extra/alacritty.info
     mkdir -p $out/nix-support
     echo "$terminfo" >> $out/nix-support/propagated-user-env-packages
-
-    runHook postInstall
   '';
 
   dontPatchELF = true;
@@ -138,5 +133,6 @@ rustPlatform.buildRustPackage rec {
     license = licenses.asl20;
     maintainers = with maintainers; [ Br1ght0ne mic92 cole-h ma27 ];
     platforms = platforms.unix;
+    changelog = "https://github.com/alacritty/alacritty/blob/v${version}/CHANGELOG.md";
   };
 }

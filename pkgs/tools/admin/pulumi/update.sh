@@ -3,31 +3,33 @@
 
 # Version of Pulumi from
 # https://www.pulumi.com/docs/get-started/install/versions/
-VERSION="2.19.0"
+VERSION="3.3.0"
 
 # Grab latest release ${VERSION} from
 # https://github.com/pulumi/pulumi-${NAME}/releases
 plugins=(
-    "auth0=1.5.2"
-    "aws=3.25.1"
-    "cloudflare=2.11.1"
-    "consul=2.7.0"
-    "datadog=2.15.0"
-    "digitalocean=3.3.0"
-    "docker=2.7.0"
-    "gcp=4.9.0"
-    "github=2.5.1"
-    "gitlab=3.5.0"
-    "hcloud=0.5.1"
-    "kubernetes=2.7.8"
-    "mailgun=2.3.2"
-    "mysql=2.3.3"
-    "openstack=2.11.0"
+    "auth0=2.1.0"
+    "aws=4.5.1"
+    "cloudflare=3.0.0"
+    "consul=3.1.0"
+    "datadog=3.2.0"
+    "digitalocean=4.2.0"
+    "docker=3.0.0"
+    "equinix-metal=2.0.0"
+    "gcp=5.4.0"
+    "github=4.0.2"
+    "gitlab=4.0.0"
+    "hcloud=1.0.0"
+    "kubernetes=3.2.0"
+    "linode=3.1.0"
+    "mailgun=3.1.0"
+    "mysql=3.0.0"
+    "openstack=3.2.0"
     "packet=3.2.2"
-    "postgresql=2.5.3"
-    "random=3.0.1"
-    "vault=3.3.0"
-    "vsphere=2.11.4"
+    "postgresql=3.0.1"
+    "random=4.1.1"
+    "vault=4.1.0"
+    "vsphere=3.1.0"
 )
 
 function genMainSrc() {
@@ -56,7 +58,8 @@ function genSrcs() {
     done
 }
 
-cat <<EOF                     > data.nix
+{
+  cat <<EOF
 # DO NOT EDIT! This file is generated automatically by update.sh
 { }:
 {
@@ -64,14 +67,14 @@ cat <<EOF                     > data.nix
   pulumiPkgs = {
     x86_64-linux = [
 EOF
-genMainSrc "linux"           >> data.nix
-genSrcs "linux"              >> data.nix
-echo "    ];"                >> data.nix
+  genMainSrc "linux"
+  genSrcs "linux"
+  echo "    ];"
+  echo "    x86_64-darwin = ["
 
-echo "    x86_64-darwin = [" >> data.nix
-genMainSrc "darwin"          >> data.nix
-genSrcs "darwin"             >> data.nix
-echo "    ];"                >> data.nix
-echo "  };"                  >> data.nix
-echo "}"                     >> data.nix
-
+  genMainSrc "darwin"
+  genSrcs "darwin"
+  echo "    ];"
+  echo "  };"
+  echo "}"
+} > data.nix

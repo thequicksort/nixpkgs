@@ -10,23 +10,24 @@
 , pcre
 , SDL2
 , AppKit
+, zlib
 }:
 
 stdenv.mkDerivation rec {
   pname = "lagrange";
-  version = "1.1.1";
+  version = "1.4.0";
 
   src = fetchFromGitHub {
     owner = "skyjake";
     repo = "lagrange";
     rev = "v${version}";
-    sha256 = "0c7w4a19cwx3bkmbhc9c1wx0zmqd3a1grrj4ffifdic95wdihv7x";
+    sha256 = "sha256-l8k81w+ilkOk8iQTc46+HK40JQZ0dCYVAvkGTrEpZSQ=";
     fetchSubmodules = true;
   };
 
   nativeBuildInputs = [ cmake pkg-config ];
 
-  buildInputs = [ libunistring mpg123 openssl pcre SDL2 ]
+  buildInputs = [ libunistring mpg123 openssl pcre SDL2 zlib ]
     ++ lib.optional stdenv.isDarwin AppKit;
 
   hardeningDisable = lib.optional (!stdenv.cc.isClang) "format";

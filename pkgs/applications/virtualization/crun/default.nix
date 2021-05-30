@@ -28,6 +28,7 @@ let
     "test_pid_file.py"
     "test_preserve_fds.py"
     "test_resources"
+    "test_seccomp"
     "test_start.py"
     "test_uid_gid.py"
     "test_update.py"
@@ -37,13 +38,13 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "crun";
-  version = "0.17";
+  version = "0.19.1";
 
   src = fetchFromGitHub {
     owner = "containers";
     repo = pname;
     rev = version;
-    sha256 = "sha256-OdB7UXLG99ErbfSCvq87LxBy5EYkUvTfyQNG70RFbl4=";
+    sha256 = "sha256-v5uESTEspIc8rhZXrQqLEVMDvvPcfHuFoj6lI4M5z70=";
     fetchSubmodules = true;
   };
 

@@ -1,18 +1,19 @@
-{ lib, stdenv, buildPythonPackage, isPyPy, fetchPypi, libffi, pycparser, pytest }:
+{ lib, stdenv, buildPythonPackage, isPyPy, fetchPypi, libffi, pycparser, pytestCheckHook }:
 
 if isPyPy then null else buildPythonPackage rec {
   pname = "cffi";
-  version = "1.14.4";
+  version = "1.14.5";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "1a465cbe98a7fd391d47dce4b8f7e5b921e6cd805ef421d04f5f66ba8f06086c";
+    sha256 = "fd78e5fee591709f32ef6edb9a015b4aa1a5022598e36227500c8f4e02328d9c";
   };
 
   outputs = [ "out" "dev" ];
 
-  propagatedBuildInputs = [ libffi pycparser ];
-  checkInputs = [ pytest ];
+  buildInputs = [ libffi ];
+
+  propagatedBuildInputs = [ pycparser ];
 
   # On Darwin, the cffi tests want to hit libm a lot, and look for it in a global
   # impure search path. It's obnoxious how much repetition there is, and how difficult
@@ -33,9 +34,8 @@ if isPyPy then null else buildPythonPackage rec {
     "-Wno-unused-command-line-argument -Wno-unreachable-code";
 
   doCheck = !stdenv.hostPlatform.isMusl && !stdenv.isDarwin; # TODO: Investigate
-  checkPhase = ''
-    py.test -k "not test_char_pointer_conversion"
-  '';
+
+  checkInputs = [ pytestCheckHook ];
 
   meta = with lib; {
     maintainers = with maintainers; [ domenkozar lnl7 ];

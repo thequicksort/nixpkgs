@@ -4,1731 +4,1803 @@
 
 {
   akonadi = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/akonadi-20.08.3.tar.xz";
-      sha256 = "1hwaan45cyw2nmfmdp5pbhvm00xdxy9la68ms3sa8a67zcsfljhl";
-      name = "akonadi-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/akonadi-21.04.0.tar.xz";
+      sha256 = "1ka1cxwqvcdyy9i1p7v7vrcrs9d1kx892wzq1dw3jrq9x57l5drz";
+      name = "akonadi-21.04.0.tar.xz";
     };
   };
   akonadi-calendar = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/akonadi-calendar-20.08.3.tar.xz";
-      sha256 = "18rwvn5i6i4ng335rxpwx3a2m4vyq96w9m3fa1gvmr8ls7vkaqrk";
-      name = "akonadi-calendar-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/akonadi-calendar-21.04.0.tar.xz";
+      sha256 = "1yf92jx7x19cp95c8nbkgmz5q1cg7096gdwy525df56h3pgbm651";
+      name = "akonadi-calendar-21.04.0.tar.xz";
     };
   };
   akonadi-calendar-tools = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/akonadi-calendar-tools-20.08.3.tar.xz";
-      sha256 = "1pnm3xi26bnbjmnv9zwi9w5rkr1pdry50hzy3gxw7b0g11zz036w";
-      name = "akonadi-calendar-tools-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/akonadi-calendar-tools-21.04.0.tar.xz";
+      sha256 = "1g0k1c11lysk3mi6k83lw70d64x543pcdgc9af1hyckb6clzh2gm";
+      name = "akonadi-calendar-tools-21.04.0.tar.xz";
     };
   };
   akonadiconsole = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/akonadiconsole-20.08.3.tar.xz";
-      sha256 = "061r0p9pj22x0hiz6piz4vramll3w5xy92sx8nfhcp2gmnvj9890";
-      name = "akonadiconsole-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/akonadiconsole-21.04.0.tar.xz";
+      sha256 = "0l6famxpw64w7gmknx4szsg16hjydp3cr2mp0z0dfzi4m1i64gi7";
+      name = "akonadiconsole-21.04.0.tar.xz";
     };
   };
   akonadi-contacts = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/akonadi-contacts-20.08.3.tar.xz";
-      sha256 = "18n9x41fmh4q9q9lfv882iwk6j1hvgpl11y4qn873vwr9sdrcf4s";
-      name = "akonadi-contacts-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/akonadi-contacts-21.04.0.tar.xz";
+      sha256 = "1130dvx8dpfvqsydhx1qy83bqx4drgb762ycf10cqkjvm6sjg3jh";
+      name = "akonadi-contacts-21.04.0.tar.xz";
     };
   };
   akonadi-import-wizard = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/akonadi-import-wizard-20.08.3.tar.xz";
-      sha256 = "0gny0rxvyks5w4rdb73ly06lyvz7kcfvff1268bn6i96xr83kmim";
-      name = "akonadi-import-wizard-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/akonadi-import-wizard-21.04.0.tar.xz";
+      sha256 = "1idxpymfags4zrqlagndrkp9yvr24vvd4rzm7gm2zxwilw90smdh";
+      name = "akonadi-import-wizard-21.04.0.tar.xz";
     };
   };
   akonadi-mime = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/akonadi-mime-20.08.3.tar.xz";
-      sha256 = "12ps633y64mj72iryd9z2nmrf7lxbkqj7xnzj28549cvg6jizgl7";
-      name = "akonadi-mime-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/akonadi-mime-21.04.0.tar.xz";
+      sha256 = "037v29sq0q46i675n177ny3n5rvndvdpvydbika89gkiyag6hh1v";
+      name = "akonadi-mime-21.04.0.tar.xz";
     };
   };
   akonadi-notes = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/akonadi-notes-20.08.3.tar.xz";
-      sha256 = "1z90r37lqc7ydmily730idd4s8rcbr6i3a8x9m647snbala16z36";
-      name = "akonadi-notes-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/akonadi-notes-21.04.0.tar.xz";
+      sha256 = "0l0m3qpqj4g6j58kfc2xc48cwhhf0538h5bw5m8z123pcggp3w20";
+      name = "akonadi-notes-21.04.0.tar.xz";
     };
   };
   akonadi-search = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/akonadi-search-20.08.3.tar.xz";
-      sha256 = "0izpkvjybp6r79rai0p5j74bm0f8ksgsl3z34ggb51j6vj9rla7h";
-      name = "akonadi-search-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/akonadi-search-21.04.0.tar.xz";
+      sha256 = "189z9vqn05ph7c6sfr413hywrrqs1yn5sj84563bjf3rdzn4zp67";
+      name = "akonadi-search-21.04.0.tar.xz";
     };
   };
   akregator = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/akregator-20.08.3.tar.xz";
-      sha256 = "1gqh820s5by3r9lz7r16r0krh916idsks6sgy26hcrwfmva45wn5";
-      name = "akregator-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/akregator-21.04.0.tar.xz";
+      sha256 = "1px3sxsbhh98822i3yxs9sq019f78njfai07rsyf9wbawa6xj2sm";
+      name = "akregator-21.04.0.tar.xz";
     };
   };
   analitza = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/analitza-20.08.3.tar.xz";
-      sha256 = "16s6kjyclj73lq8z8mvrbsl75h1nrnv7syp6wpip6gvfs5ynai90";
-      name = "analitza-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/analitza-21.04.0.tar.xz";
+      sha256 = "1g4sfcdp13xsbfc1c64pgj7ax75z9cpqgy3sri4cm4qk9d2kkj0i";
+      name = "analitza-21.04.0.tar.xz";
     };
   };
   ark = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ark-20.08.3.tar.xz";
-      sha256 = "03kwjp2nj570k9ph8bgj042sjj4x0h9jwv8nwx0pfpcxkgxv5pzy";
-      name = "ark-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ark-21.04.0.tar.xz";
+      sha256 = "034ywf6favaj7cbfmcgz00yrmvpb8vxsw4yq8a7y6f40b590aphf";
+      name = "ark-21.04.0.tar.xz";
     };
   };
   artikulate = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/artikulate-20.08.3.tar.xz";
-      sha256 = "0bx97qi6zi7jmlzm3g7qamnzg0966g4w9xpskbxbr4cgjr312x19";
-      name = "artikulate-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/artikulate-21.04.0.tar.xz";
+      sha256 = "0pbsbhl1phfzrgb393qf60n8k20f1qkda7a0mk6rxp1zj00pg7zw";
+      name = "artikulate-21.04.0.tar.xz";
     };
   };
   audiocd-kio = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/audiocd-kio-20.08.3.tar.xz";
-      sha256 = "01n4nyda7l7by1nyx2sgxdl8qkdfndk0w6hj0qc6a7fllcfj5cpb";
-      name = "audiocd-kio-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/audiocd-kio-21.04.0.tar.xz";
+      sha256 = "1bbdw5gxjzpvvbq28zhazdr2ir1i3diy7rvz77cmw7jlj98x40m0";
+      name = "audiocd-kio-21.04.0.tar.xz";
     };
   };
   baloo-widgets = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/baloo-widgets-20.08.3.tar.xz";
-      sha256 = "0ciidrsvwc3ppxhw7w5116q4lfbsvij9jsvyzm292pmjln2vikrg";
-      name = "baloo-widgets-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/baloo-widgets-21.04.0.tar.xz";
+      sha256 = "08y590n7rrha28pyjmf3liishmfjyx422ryd5viwb21g3isdb5ir";
+      name = "baloo-widgets-21.04.0.tar.xz";
     };
   };
   blinken = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/blinken-20.08.3.tar.xz";
-      sha256 = "1gfw0w66nm3sx81bnr0p0yz1bhjj63lvd3cr86x3b2pny5rcw1da";
-      name = "blinken-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/blinken-21.04.0.tar.xz";
+      sha256 = "00fb1a98f6qs2pjcb2hc4rh2zgnqzhg21dal0rc4ddglm0mvgq27";
+      name = "blinken-21.04.0.tar.xz";
     };
   };
   bomber = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/bomber-20.08.3.tar.xz";
-      sha256 = "1nw1a9cf0nqgk00hvzcqch3bl97lx6bih0wsax5q0z1kzwlz0kgr";
-      name = "bomber-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/bomber-21.04.0.tar.xz";
+      sha256 = "0fkikbyayd5ickhjwgd57kb89698w9ni89218bc47gkqvgm7zdzy";
+      name = "bomber-21.04.0.tar.xz";
     };
   };
   bovo = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/bovo-20.08.3.tar.xz";
-      sha256 = "06pbivyvfgjx6zkadvwfwnrg9vjy4rf52k2a74qjcnl2ms16sr1g";
-      name = "bovo-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/bovo-21.04.0.tar.xz";
+      sha256 = "1k6k9hkzrnz2802k4pq0aabdbkwwdvqi8c669cjhxwqxrpxhlan3";
+      name = "bovo-21.04.0.tar.xz";
     };
   };
   calendarsupport = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/calendarsupport-20.08.3.tar.xz";
-      sha256 = "09w06n745764fs440nh0piy5sahfn50kh3zrljhgzadcij6165vd";
-      name = "calendarsupport-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/calendarsupport-21.04.0.tar.xz";
+      sha256 = "0m3x1pimy5sldgzkggwxyv3r0vn802bysf73nf6azgqachj1rm4g";
+      name = "calendarsupport-21.04.0.tar.xz";
     };
   };
   cantor = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/cantor-20.08.3.tar.xz";
-      sha256 = "1njqycx0v3zq5mdcvfdfgxs8vgl01v80s27qgapsxxrgr9hgxbhl";
-      name = "cantor-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/cantor-21.04.0.tar.xz";
+      sha256 = "0saz2xapfqmqlh9cmz8vkhsz5ai9fjgzp5y4rg4nc77b6wfwijpp";
+      name = "cantor-21.04.0.tar.xz";
     };
   };
   cervisia = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/cervisia-20.08.3.tar.xz";
-      sha256 = "1bsc72kxcmzx25408ngzqzj4a0168vqfr3a2gvmm6d8klbgpm3gv";
-      name = "cervisia-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/cervisia-21.04.0.tar.xz";
+      sha256 = "1r76mdrq4v8f850kgx6wamhhpnvj5giclnfp8ck0f86lqx228xhz";
+      name = "cervisia-21.04.0.tar.xz";
     };
   };
   dolphin = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/dolphin-20.08.3.tar.xz";
-      sha256 = "107n763qix95b1hgy86hddpj9x2clzhaiw8q8yjn9lzj1rz5facx";
-      name = "dolphin-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/dolphin-21.04.0.tar.xz";
+      sha256 = "1gmxrxs4h9bk1lxs2gn0gv44067wk19p8mq85n6dbpry9sfyb229";
+      name = "dolphin-21.04.0.tar.xz";
     };
   };
   dolphin-plugins = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/dolphin-plugins-20.08.3.tar.xz";
-      sha256 = "0fmay0sycfj9s7zyxbldgcal5lj2psi0n9zrgq812s5qr4rb5c8c";
-      name = "dolphin-plugins-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/dolphin-plugins-21.04.0.tar.xz";
+      sha256 = "1ll8yhglncbzdmq6kpzavgd2q9llfbcqjyz8x97nlwibqszrbcwz";
+      name = "dolphin-plugins-21.04.0.tar.xz";
     };
   };
   dragon = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/dragon-20.08.3.tar.xz";
-      sha256 = "14qsb7h8w58i9jsh1gpcj8pwjgy7y3mqfy51hca82yrd82z5b9rn";
-      name = "dragon-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/dragon-21.04.0.tar.xz";
+      sha256 = "00lnrskgvxclf75h89ycgafajkw1ddqg74lv38dv9yc21lh683k9";
+      name = "dragon-21.04.0.tar.xz";
     };
   };
   elisa = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/elisa-20.08.3.tar.xz";
-      sha256 = "0893nbj0jsapnfd09cp961k2m7lq6sjvzynpa4hfp9ch1jbc912c";
-      name = "elisa-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/elisa-21.04.0.tar.xz";
+      sha256 = "152i6748pkgnbpd192wd161w001l13gyinar1gphg46gb0z898sg";
+      name = "elisa-21.04.0.tar.xz";
     };
   };
   eventviews = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/eventviews-20.08.3.tar.xz";
-      sha256 = "158j5g3i0wbbxpg9jmr50dvbpms4c4vgcnpmn3b3vfbszzwsy6rg";
-      name = "eventviews-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/eventviews-21.04.0.tar.xz";
+      sha256 = "1zq97jfgl0k7k1nhv6zcnbicl1af86rz6hzski9hm387bh60rn5v";
+      name = "eventviews-21.04.0.tar.xz";
     };
   };
   ffmpegthumbs = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ffmpegthumbs-20.08.3.tar.xz";
-      sha256 = "186hpq949r3xx2a64nqjy4pcn67d6kdvsy80zr238lgb9qqcqygi";
-      name = "ffmpegthumbs-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ffmpegthumbs-21.04.0.tar.xz";
+      sha256 = "06ycd5q5b4j6xxvrfvvpfdbmzrk8xysv7k8m64yypxnv9r7h1rsa";
+      name = "ffmpegthumbs-21.04.0.tar.xz";
     };
   };
   filelight = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/filelight-20.08.3.tar.xz";
-      sha256 = "1jljsnjdhnqphh1kanj6hi2rswq3i9119iah1j33jy5pladcyf5q";
-      name = "filelight-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/filelight-21.04.0.tar.xz";
+      sha256 = "1bfpqc67mkqz1w7wwv3p28q0n55vc78l94nyg805zs9adk00886v";
+      name = "filelight-21.04.0.tar.xz";
     };
   };
   granatier = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/granatier-20.08.3.tar.xz";
-      sha256 = "195bc2rcz11v76c0cwa9mb7rfixjn7sb0a52wrzz0sf9624m0rcs";
-      name = "granatier-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/granatier-21.04.0.tar.xz";
+      sha256 = "0qcnr7n2401ykgwbz4lcsgp19fkb90lfbblbmrnbcslfc5pz8jz8";
+      name = "granatier-21.04.0.tar.xz";
     };
   };
   grantlee-editor = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/grantlee-editor-20.08.3.tar.xz";
-      sha256 = "1k2rdicd68jdk3pazyn3q0vj99n0vnkpzkrnacpymkjy85cjgrv9";
-      name = "grantlee-editor-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/grantlee-editor-21.04.0.tar.xz";
+      sha256 = "0rfcv63flw5izccqxz7mz43hvlim1cilnmrvk2vxc258vl1a226p";
+      name = "grantlee-editor-21.04.0.tar.xz";
     };
   };
   grantleetheme = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/grantleetheme-20.08.3.tar.xz";
-      sha256 = "07b7v5v2vyz3vyj1jjzryzaak8bbqg8a2caxwb6s7cwhy19y6my5";
-      name = "grantleetheme-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/grantleetheme-21.04.0.tar.xz";
+      sha256 = "1jxdi7as6c81sy7zs59y6a0gmsjz6xwh6vbcr3r64wx62hj6vyls";
+      name = "grantleetheme-21.04.0.tar.xz";
     };
   };
   gwenview = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/gwenview-20.08.3.tar.xz";
-      sha256 = "09mwp3z97hgd7c15w0hz8k61qn5icb81rj27nxzy877ph1xnrixc";
-      name = "gwenview-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/gwenview-21.04.0.tar.xz";
+      sha256 = "06yyf7f49xbcfzbm10rr0xcmyxmlafh188wq8bjc8mp7p6fq7yd5";
+      name = "gwenview-21.04.0.tar.xz";
     };
   };
   incidenceeditor = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/incidenceeditor-20.08.3.tar.xz";
-      sha256 = "15kkl8z1nig9qyxfrq54c3sqh1xs1lzlbm5rphj34y0yb8dbn8kx";
-      name = "incidenceeditor-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/incidenceeditor-21.04.0.tar.xz";
+      sha256 = "1fch2d5jgh3raf2zqc4vapgwf3gkdfsd71djvd626q3dsbh82qxz";
+      name = "incidenceeditor-21.04.0.tar.xz";
+    };
+  };
+  itinerary = {
+    version = "21.04.0";
+    src = fetchurl {
+      url = "${mirror}/stable/release-service/21.04.0/src/itinerary-21.04.0.tar.xz";
+      sha256 = "132y5v5qy89hfvp1j3x6rr6bg4wdzhd177isrs110w0aizdrbjcn";
+      name = "itinerary-21.04.0.tar.xz";
     };
   };
   juk = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/juk-20.08.3.tar.xz";
-      sha256 = "1jvj0r4grm55cnck4apnh4fh44mv1ycm0pprrkh57iwj1dlf7kif";
-      name = "juk-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/juk-21.04.0.tar.xz";
+      sha256 = "11plw0h56n4fmhi47rmjw8qdki3r5yf3v7zfc0svwkb12lrvcp6z";
+      name = "juk-21.04.0.tar.xz";
     };
   };
   k3b = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/k3b-20.08.3.tar.xz";
-      sha256 = "0qg2p6gdg0clgv6qab5vr0i451m9hqqmpwq335w8m9nwb6wg30cx";
-      name = "k3b-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/k3b-21.04.0.tar.xz";
+      sha256 = "1a6gm7bk486fr2haap6212vzx8hhrwkgjplyyq1nb27v61rpir2n";
+      name = "k3b-21.04.0.tar.xz";
     };
   };
   kaccounts-integration = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kaccounts-integration-20.08.3.tar.xz";
-      sha256 = "006cglw5ai274a1r5jbk109mdrvw8v6fp3cdyi1kbrq7lp3123a2";
-      name = "kaccounts-integration-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kaccounts-integration-21.04.0.tar.xz";
+      sha256 = "1znfyslk4w45923xfxflipf0zwxf91k949carnbhzfiplab30gpy";
+      name = "kaccounts-integration-21.04.0.tar.xz";
     };
   };
   kaccounts-providers = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kaccounts-providers-20.08.3.tar.xz";
-      sha256 = "1vpv366bzj0sk7dqyxrq06a8ixgaaqi125mf2gmybvhj5yvrn3fp";
-      name = "kaccounts-providers-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kaccounts-providers-21.04.0.tar.xz";
+      sha256 = "17rnqsagg60zd5nf7hag74kc9s7nj01ps3z411j8zwa1vlbqidg0";
+      name = "kaccounts-providers-21.04.0.tar.xz";
     };
   };
   kaddressbook = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kaddressbook-20.08.3.tar.xz";
-      sha256 = "00mia1jh2c5rcnsyx3wizjdg65pvpazfb8ayppjzv4rrc2nhr9nn";
-      name = "kaddressbook-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kaddressbook-21.04.0.tar.xz";
+      sha256 = "1p9lcs4jd8n52hd0mpckwiv23zivzflkih2lpdbqcw55s75g03bl";
+      name = "kaddressbook-21.04.0.tar.xz";
     };
   };
   kajongg = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kajongg-20.08.3.tar.xz";
-      sha256 = "0wr045xqm1q03vy0jbgrldpdc9k3lgnhd39yhi574la367ayffpa";
-      name = "kajongg-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kajongg-21.04.0.tar.xz";
+      sha256 = "11hxc0scc700zmw5736z3vcign09g5rgnfmg98z3j34bms7iff5n";
+      name = "kajongg-21.04.0.tar.xz";
     };
   };
   kalarm = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kalarm-20.08.3.tar.xz";
-      sha256 = "0194rapyvnpmhkba0rgclrai1ywx9anr8dski0j6z1yg0kgav8df";
-      name = "kalarm-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kalarm-21.04.0.tar.xz";
+      sha256 = "1zcyc6nlsdh9ixl10n6xlnfj78z6j218a9aipj1vws0jx7zahl12";
+      name = "kalarm-21.04.0.tar.xz";
     };
   };
   kalarmcal = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kalarmcal-20.08.3.tar.xz";
-      sha256 = "1i9hi3y4j2pmdmlj13kl13vfplxrh8w23fxz0mmawi1wn533fp66";
-      name = "kalarmcal-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kalarmcal-21.04.0.tar.xz";
+      sha256 = "0cp5mian3zkyb51l6h2j7dkdhhmhk9vh33yvfa9x5q998sknr1m3";
+      name = "kalarmcal-21.04.0.tar.xz";
     };
   };
   kalgebra = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kalgebra-20.08.3.tar.xz";
-      sha256 = "0k7miil5ilrw68j6xl9g6cf3zfw7g52h0gfwd5j248nx2nxr150c";
-      name = "kalgebra-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kalgebra-21.04.0.tar.xz";
+      sha256 = "1w9vy3130kxw68fnpvzvq2k40dyain0ncsflf24fmn7dzjl4wpxn";
+      name = "kalgebra-21.04.0.tar.xz";
     };
   };
   kalzium = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kalzium-20.08.3.tar.xz";
-      sha256 = "1r80bnpdrybsdwcblpj7cg32dv90l79gs0i42gpm6inilfr3vp5n";
-      name = "kalzium-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kalzium-21.04.0.tar.xz";
+      sha256 = "0fnqj1xnlgkb5wfx7j2zzbypyyql44srd555bdb1w0q37w1zxxgm";
+      name = "kalzium-21.04.0.tar.xz";
     };
   };
   kamera = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kamera-20.08.3.tar.xz";
-      sha256 = "06fwxdgbyywdrf1r0w17w3chfr0s8jhqswz9chmdfds9f2bb45cr";
-      name = "kamera-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kamera-21.04.0.tar.xz";
+      sha256 = "068ic1nf15x4h7h877q7by3hkd5dap9a2kdm7x2jwcqhwriiirw2";
+      name = "kamera-21.04.0.tar.xz";
     };
   };
   kamoso = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kamoso-20.08.3.tar.xz";
-      sha256 = "0zhl3va65ajz3hdggg0jvvgvj14s461pjw9adw9bnfcbs4jzkl2y";
-      name = "kamoso-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kamoso-21.04.0.tar.xz";
+      sha256 = "0npabci0x04g7v56x3pb5ps560d0xdshaznlci05bn3czxdas93h";
+      name = "kamoso-21.04.0.tar.xz";
     };
   };
   kanagram = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kanagram-20.08.3.tar.xz";
-      sha256 = "1cyx8yq03xaw34ic69ghz9gafk8l30qinp0kkp9a1wh4pry8rnxf";
-      name = "kanagram-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kanagram-21.04.0.tar.xz";
+      sha256 = "0ccnzrra54hqx7acsaiz8fk5gnax9y4j195hsbix7mghgb5ylz8r";
+      name = "kanagram-21.04.0.tar.xz";
     };
   };
   kapman = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kapman-20.08.3.tar.xz";
-      sha256 = "0nh1f0v026rib5ahj1mhvs99yabrgdq71bis465vfpm4favnirzy";
-      name = "kapman-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kapman-21.04.0.tar.xz";
+      sha256 = "1i7jr8xlh3v4wz9bbc335q79zx96nfp15hhqnhkgxsqc216zn8qm";
+      name = "kapman-21.04.0.tar.xz";
     };
   };
   kapptemplate = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kapptemplate-20.08.3.tar.xz";
-      sha256 = "1r98ym9sazjzknxfw58hjiyxhmi49fyhrdn02v0b8fm711vprxab";
-      name = "kapptemplate-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kapptemplate-21.04.0.tar.xz";
+      sha256 = "0l2y562s7rk99zr5vbp03gbv0fwbd211j4n51g3yry7vbk433aiw";
+      name = "kapptemplate-21.04.0.tar.xz";
     };
   };
   kate = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kate-20.08.3.tar.xz";
-      sha256 = "1m7ximinknc0l9zqv4p25ybn6zysz59l4vvdb9xkhjp53aqskdz9";
-      name = "kate-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kate-21.04.0.tar.xz";
+      sha256 = "1m11fh5c527d6b8a5wmglj9z0d2caak5bqh1g7fql1ygw06wr01p";
+      name = "kate-21.04.0.tar.xz";
     };
   };
   katomic = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/katomic-20.08.3.tar.xz";
-      sha256 = "1v31x6371r9ccvc676vq5dlpkp4829xf0r37dnvdxlfm22mgsdnk";
-      name = "katomic-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/katomic-21.04.0.tar.xz";
+      sha256 = "0hrlmzqnw03nv334q680zwk700c8pvnaw57gh1ixphzsbx871yrk";
+      name = "katomic-21.04.0.tar.xz";
     };
   };
   kbackup = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kbackup-20.08.3.tar.xz";
-      sha256 = "1sayzvj46ckhn5zgp7qi6zmrmd7bjh5mg05mcl5pfwv4dcvxkrng";
-      name = "kbackup-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kbackup-21.04.0.tar.xz";
+      sha256 = "1l3bk7dj2grbki41fhxawrwn4vpncf3m2b5bq5ivj4vj4jc6vlyz";
+      name = "kbackup-21.04.0.tar.xz";
     };
   };
   kblackbox = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kblackbox-20.08.3.tar.xz";
-      sha256 = "0vka2pswbza1z8f97nhxcjrczx4w1x0qyjpzs9ycn9a14smqpsrh";
-      name = "kblackbox-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kblackbox-21.04.0.tar.xz";
+      sha256 = "17ba03qmyaiqda064dhxl0kwvncll7fznjvnfvby9lgdpzfjj8j9";
+      name = "kblackbox-21.04.0.tar.xz";
     };
   };
   kblocks = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kblocks-20.08.3.tar.xz";
-      sha256 = "1jc063xn6dphydf49kv0izzy0nv06dr412xxjvkp7vccwv9qd5gf";
-      name = "kblocks-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kblocks-21.04.0.tar.xz";
+      sha256 = "01i24fizs8d6yvyldln905vnww8ajy3aswn55xhxinjwhx9dcy7n";
+      name = "kblocks-21.04.0.tar.xz";
     };
   };
   kbounce = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kbounce-20.08.3.tar.xz";
-      sha256 = "0863vlirljvf101mdv6jxprj9axs4cikrnld3wvxrcqw3w2dy6wy";
-      name = "kbounce-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kbounce-21.04.0.tar.xz";
+      sha256 = "05wy4my4hil72cmj3p2hf9bshpknyps8xmp0mrbigyrzg505zjj2";
+      name = "kbounce-21.04.0.tar.xz";
     };
   };
   kbreakout = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kbreakout-20.08.3.tar.xz";
-      sha256 = "14nd1dnbdyxv59y8iildhydhxgal38hvj7bk6544glwl8yalak8z";
-      name = "kbreakout-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kbreakout-21.04.0.tar.xz";
+      sha256 = "0084id4wwk31m7wjkl5grcpbyqyzqx6cxixhdy48v7djdnn43jfj";
+      name = "kbreakout-21.04.0.tar.xz";
     };
   };
   kbruch = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kbruch-20.08.3.tar.xz";
-      sha256 = "03s1hl4h8rsx0gn7wqfssi1ga4igx48jb47gpw6f9rfjm8f199vb";
-      name = "kbruch-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kbruch-21.04.0.tar.xz";
+      sha256 = "0qygd4zx039qckv4zzkgvz70wm8hg156bmb70g9g0nv5bzh4y02g";
+      name = "kbruch-21.04.0.tar.xz";
     };
   };
   kcachegrind = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kcachegrind-20.08.3.tar.xz";
-      sha256 = "17j06z9cpj5qhfbp1xgw4qmhi4jckf2i99c9brys4ifb3p0rkbrs";
-      name = "kcachegrind-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kcachegrind-21.04.0.tar.xz";
+      sha256 = "1bdlzp35914nvbzcf4n6qrjmg7c0dc7c13kwq9gr5q6i4lvf275r";
+      name = "kcachegrind-21.04.0.tar.xz";
     };
   };
   kcalc = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kcalc-20.08.3.tar.xz";
-      sha256 = "1mk30fkv51w3fqlpkzgm1yj5sp98h26kkphplqkjva5v6s1jzmjy";
-      name = "kcalc-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kcalc-21.04.0.tar.xz";
+      sha256 = "0x0b19yaif6mjh20lbvl87phna781ya3l9hpwj2941vgvffwwpsh";
+      name = "kcalc-21.04.0.tar.xz";
     };
   };
   kcalutils = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kcalutils-20.08.3.tar.xz";
-      sha256 = "1i2yh4gvdwlylj7f7p32g1z7lzh3p19rrbd96l1gqhy700f2whpw";
-      name = "kcalutils-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kcalutils-21.04.0.tar.xz";
+      sha256 = "0kvl8ghwcamxayvwbsyjzib5b19v3k5hch17lj2pjsj20dgfl4qv";
+      name = "kcalutils-21.04.0.tar.xz";
     };
   };
   kcharselect = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kcharselect-20.08.3.tar.xz";
-      sha256 = "1p6rijjfa2jk4vr0ivjn6p5qf2ys5kvhw0cwfyjs45ff7zg0s2ga";
-      name = "kcharselect-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kcharselect-21.04.0.tar.xz";
+      sha256 = "1gp75qkwphgxpjkc1fwqkrbkkmc45l55ck8mqvbpz4aq8bscc0nx";
+      name = "kcharselect-21.04.0.tar.xz";
     };
   };
   kcolorchooser = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kcolorchooser-20.08.3.tar.xz";
-      sha256 = "1874qa04whiivyydxfcn0f1xch515ga1af4ym42zqz64j3kq7i47";
-      name = "kcolorchooser-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kcolorchooser-21.04.0.tar.xz";
+      sha256 = "0cgzclfmcn7l98ycm313sp8fhmx46fbn88l9cykywi27idymmb9v";
+      name = "kcolorchooser-21.04.0.tar.xz";
     };
   };
   kcron = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kcron-20.08.3.tar.xz";
-      sha256 = "1piwssyg9fvah25gql6w0n8xf634f6gy475cz52gb1bl7rp72q6j";
-      name = "kcron-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kcron-21.04.0.tar.xz";
+      sha256 = "144y4cn8xpkmn1gsab8wpvhqrnfidcjrbp2cy9xhx18as5ckpjn3";
+      name = "kcron-21.04.0.tar.xz";
     };
   };
   kdebugsettings = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdebugsettings-20.08.3.tar.xz";
-      sha256 = "11xnvr9qib3hnp48whsw659c724s2114p5dr3fswvhm3hkw1aky7";
-      name = "kdebugsettings-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kdebugsettings-21.04.0.tar.xz";
+      sha256 = "1xpbw9v9ws9i7a6ag5f6z7d15svyyx34p5vibm4p4j70vd7q5rwk";
+      name = "kdebugsettings-21.04.0.tar.xz";
     };
   };
   kdeconnect-kde = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdeconnect-kde-20.08.3.tar.xz";
-      sha256 = "0x10ga81qlsahavmv356xzjxyds41y2b4v338rqcyqkxvfmxj01k";
-      name = "kdeconnect-kde-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kdeconnect-kde-21.04.0.tar.xz";
+      sha256 = "1zbn2hi245934ljxgrzc3s2rpyapwrrkzx5vcjhnf8ri9v6sxhgp";
+      name = "kdeconnect-kde-21.04.0.tar.xz";
     };
   };
   kde-dev-scripts = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kde-dev-scripts-20.08.3.tar.xz";
-      sha256 = "0x8ba4mlxx17vk674738xln2dy696b148fa3s87za4yb4jj9gc5n";
-      name = "kde-dev-scripts-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kde-dev-scripts-21.04.0.tar.xz";
+      sha256 = "0plg145hp3bpxb2x3j8hja6fjn7yzmvx8j7zw123xnmqbzi25f6s";
+      name = "kde-dev-scripts-21.04.0.tar.xz";
     };
   };
   kde-dev-utils = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kde-dev-utils-20.08.3.tar.xz";
-      sha256 = "0k7zb1km89nnqfi2p1mhp6dvwkhmgbcgw89301acag34yy954dvn";
-      name = "kde-dev-utils-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kde-dev-utils-21.04.0.tar.xz";
+      sha256 = "1cgzkhpb81s1zbx4rsfprmjn3cwqykyaaymg4bm7nqwnq97bbmc5";
+      name = "kde-dev-utils-21.04.0.tar.xz";
     };
   };
   kdeedu-data = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdeedu-data-20.08.3.tar.xz";
-      sha256 = "1k164h4n8r4yjlll5900fz764lr0qiy3q1fpcpkr8f1n7qs7f797";
-      name = "kdeedu-data-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kdeedu-data-21.04.0.tar.xz";
+      sha256 = "0s4x0n8skwn117iiffi8rp4l5ddizfdqlc9lm49ijlvzkvhz3g3p";
+      name = "kdeedu-data-21.04.0.tar.xz";
     };
   };
   kdegraphics-mobipocket = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdegraphics-mobipocket-20.08.3.tar.xz";
-      sha256 = "0ifxbwn7pmxr7y4ri617a303b27nqwqa418isgfrfk11jc4yyxhq";
-      name = "kdegraphics-mobipocket-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kdegraphics-mobipocket-21.04.0.tar.xz";
+      sha256 = "00pxfffc2xb7mszzgq6b3kp1h3m870k81rqarsy2igxxpbr3dr2p";
+      name = "kdegraphics-mobipocket-21.04.0.tar.xz";
     };
   };
   kdegraphics-thumbnailers = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdegraphics-thumbnailers-20.08.3.tar.xz";
-      sha256 = "0mbzkw7pxcfmkpb8ivhahnxkkrkjhmbjqy2l9gqx35gp5855gmxf";
-      name = "kdegraphics-thumbnailers-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kdegraphics-thumbnailers-21.04.0.tar.xz";
+      sha256 = "0yga4pa37zpgawq2hhc5w3scw40fwyp7901vbh6zspbdzya9lb50";
+      name = "kdegraphics-thumbnailers-21.04.0.tar.xz";
     };
   };
   kdenetwork-filesharing = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdenetwork-filesharing-20.08.3.tar.xz";
-      sha256 = "0id19wmiivdrx10r1hwbwi7bx6g1v9g5lpbhlmfrapvy82ijfmbg";
-      name = "kdenetwork-filesharing-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kdenetwork-filesharing-21.04.0.tar.xz";
+      sha256 = "07a9pflvjf7ffi9jqx43f43wykl7z92z3pr1ca9q36fxw7cdixad";
+      name = "kdenetwork-filesharing-21.04.0.tar.xz";
     };
   };
   kdenlive = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdenlive-20.08.3.tar.xz";
-      sha256 = "187d5khqq9ckmqp8amd7ghlvig1z97w2jzm9s4zsfhjzyqv3d3wz";
-      name = "kdenlive-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kdenlive-21.04.0.tar.xz";
+      sha256 = "1psb7mvffiqnv5n4b0wwa6s2ykcfkc4dxsvbxh2k67gmvq58zgmh";
+      name = "kdenlive-21.04.0.tar.xz";
     };
   };
   kdepim-addons = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdepim-addons-20.08.3.tar.xz";
-      sha256 = "17m8pwiig46pc6x4ylvymb3b6c7xcm2df3vjma665kcir1dr0q7p";
-      name = "kdepim-addons-20.08.3.tar.xz";
-    };
-  };
-  kdepim-apps-libs = {
-    version = "20.08.3";
-    src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdepim-apps-libs-20.08.3.tar.xz";
-      sha256 = "08iw1p9mv4jic7pk6skxc5anp7k46lhcdqxpq1i6wlhbrk6bpsvg";
-      name = "kdepim-apps-libs-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kdepim-addons-21.04.0.tar.xz";
+      sha256 = "02xlp9xm15462y02wz05kn5vkg11lkiblz0cx43i8rcyiqnxbldz";
+      name = "kdepim-addons-21.04.0.tar.xz";
     };
   };
   kdepim-runtime = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdepim-runtime-20.08.3.tar.xz";
-      sha256 = "0zz2zwq3gr177vgkwz6b70q4n2ra4ym58f167pgvi9kxv3884fib";
-      name = "kdepim-runtime-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kdepim-runtime-21.04.0.tar.xz";
+      sha256 = "1m1fshyivm1mz4hj9qaq33wdjkqxpjjbr0rkscb2b56a6jg4glza";
+      name = "kdepim-runtime-21.04.0.tar.xz";
     };
   };
   kdesdk-kioslaves = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdesdk-kioslaves-20.08.3.tar.xz";
-      sha256 = "1kwzms0qha058cm92d4f8pr89r3bqaqx5zfw6gz05s6lg892j5in";
-      name = "kdesdk-kioslaves-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kdesdk-kioslaves-21.04.0.tar.xz";
+      sha256 = "068hqm1f2wllq3gcpmsib8cky6fhgpmqvmzvymcfc19ccyzwayhf";
+      name = "kdesdk-kioslaves-21.04.0.tar.xz";
     };
   };
   kdesdk-thumbnailers = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdesdk-thumbnailers-20.08.3.tar.xz";
-      sha256 = "10fc0agpvzpqdxqynd70vzya0g1nbdw0ylbnl9w35n9jhww42jff";
-      name = "kdesdk-thumbnailers-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kdesdk-thumbnailers-21.04.0.tar.xz";
+      sha256 = "0cj6xsazqv94l02bp1pr5kny5id0kr5kqv3xkwv4jvmq317vfi3i";
+      name = "kdesdk-thumbnailers-21.04.0.tar.xz";
     };
   };
   kdf = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdf-20.08.3.tar.xz";
-      sha256 = "02k5nhsf1zzkx9cl3r2500pj2zfmvjhlfsb3smgpka6in7iivxyp";
-      name = "kdf-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kdf-21.04.0.tar.xz";
+      sha256 = "1vbc75z33gx8pvy0kbmrhcg209qxxnvw7ccw83wk9hhzqg7mj5gf";
+      name = "kdf-21.04.0.tar.xz";
     };
   };
   kdialog = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdialog-20.08.3.tar.xz";
-      sha256 = "0knl6176bjazjiacg1qqaldlqcjlb3bi829sliq1sdh4lzzwrbzk";
-      name = "kdialog-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kdialog-21.04.0.tar.xz";
+      sha256 = "0damdppa2hm18nd99nzx23nac3k5ps0f5kc04cgfip4cr34rpg5s";
+      name = "kdialog-21.04.0.tar.xz";
     };
   };
   kdiamond = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kdiamond-20.08.3.tar.xz";
-      sha256 = "0ls1kg3wank1al46knq12jilmp8gaa4rn7zbgflcrhgy5gw8l5px";
-      name = "kdiamond-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kdiamond-21.04.0.tar.xz";
+      sha256 = "1lpwghy8v4242rm2vzm3wng43h5ys6r7spzlv53h329kpzd2259v";
+      name = "kdiamond-21.04.0.tar.xz";
     };
   };
   keditbookmarks = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/keditbookmarks-20.08.3.tar.xz";
-      sha256 = "0m8ap5hvjgldj9hdk6shpkv8xylhhjla2xn1zs86pvj4la3zh4f8";
-      name = "keditbookmarks-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/keditbookmarks-21.04.0.tar.xz";
+      sha256 = "1adk2g9hg7mls2vrrslmmy0nfvpgri9jlmii4pqfwl9kilcnk7lc";
+      name = "keditbookmarks-21.04.0.tar.xz";
     };
   };
   kfind = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kfind-20.08.3.tar.xz";
-      sha256 = "10i5mw6q2parq5w7pi955kgfvdlw8hwis2p7r9vkvabjdk69nkdr";
-      name = "kfind-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kfind-21.04.0.tar.xz";
+      sha256 = "1122h7jmsf49j7388py6pp72gfkqqzv971n7dkzpyqhfirqaigvj";
+      name = "kfind-21.04.0.tar.xz";
     };
   };
   kfloppy = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kfloppy-20.08.3.tar.xz";
-      sha256 = "1cp0pwgldscc7va508gk43im3fv0lsxd5sbhpw8kxlzjlpbwlp8v";
-      name = "kfloppy-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kfloppy-21.04.0.tar.xz";
+      sha256 = "19maj0a469wnyindbrmqby8qikxcz38czagfygpq16y9bnkbvp3s";
+      name = "kfloppy-21.04.0.tar.xz";
     };
   };
   kfourinline = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kfourinline-20.08.3.tar.xz";
-      sha256 = "0h1n44dncr2siw447n7b0gkx3380vajvqjsgjvapkg7m7bmz7nsv";
-      name = "kfourinline-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kfourinline-21.04.0.tar.xz";
+      sha256 = "0yna3lydp0gii1rasij5593gaf4w9pbv7y5l6hz5qddb5y6r82ds";
+      name = "kfourinline-21.04.0.tar.xz";
     };
   };
   kgeography = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kgeography-20.08.3.tar.xz";
-      sha256 = "1mk5cip55chc8pmh8wfl7an5x076ywisr0i7isqcjaij2cv54283";
-      name = "kgeography-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kgeography-21.04.0.tar.xz";
+      sha256 = "1hcjp34jzz9qx8jp065gisnr9gn1v1ifnajfnaa3vc6sq1m1bvvi";
+      name = "kgeography-21.04.0.tar.xz";
     };
   };
   kget = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kget-20.08.3.tar.xz";
-      sha256 = "144ydk8bbfirph464mkkvwpnynj465i2ynhm8n9d330kcrhnaxd0";
-      name = "kget-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kget-21.04.0.tar.xz";
+      sha256 = "0lws94g3780kdnxw2wf8vl41fq8ffxwaafma3r7p15rs05cyl1rv";
+      name = "kget-21.04.0.tar.xz";
     };
   };
   kgoldrunner = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kgoldrunner-20.08.3.tar.xz";
-      sha256 = "101cdl04wb6xbq95b51ax36570y9ahkcy5gccqsyvc307ij9yg7r";
-      name = "kgoldrunner-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kgoldrunner-21.04.0.tar.xz";
+      sha256 = "02gldv7l8igzzmmyrkyixgzncsh0ysmfhx0lfc27pdj0mvfpm3m2";
+      name = "kgoldrunner-21.04.0.tar.xz";
     };
   };
   kgpg = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kgpg-20.08.3.tar.xz";
-      sha256 = "1ip21yal37yxg5i5sfy6lgfb3sz9lld0dwa7a1w4lbddf9w3akd6";
-      name = "kgpg-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kgpg-21.04.0.tar.xz";
+      sha256 = "0a5xik5wb0b15p612lxzwqr5b58d4d7v3c7ghxmm8g27k36igqff";
+      name = "kgpg-21.04.0.tar.xz";
     };
   };
   khangman = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/khangman-20.08.3.tar.xz";
-      sha256 = "1zwdd2gpjkld3vkawp0lj83il257ryxf8wpmbgzn1wz8sxxi01jj";
-      name = "khangman-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/khangman-21.04.0.tar.xz";
+      sha256 = "0pkqhbvw375v3cwn7ilfn7x93nadnxl07swcj5dbxn84gs33aj7c";
+      name = "khangman-21.04.0.tar.xz";
     };
   };
   khelpcenter = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/khelpcenter-20.08.3.tar.xz";
-      sha256 = "1xan4awwgs08k7ksfy80rfcxqd6bi8i1fjdgy55hh7wshv76zf5r";
-      name = "khelpcenter-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/khelpcenter-21.04.0.tar.xz";
+      sha256 = "04fvipc3dzjl2fsgbla8w7kmv239ch86da8539gwg7l54bdmb5pv";
+      name = "khelpcenter-21.04.0.tar.xz";
     };
   };
   kidentitymanagement = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kidentitymanagement-20.08.3.tar.xz";
-      sha256 = "0vkydvf4yw3qlqrg9m1zdm6j0c1crxdvc7l24yls9fjbj957vbls";
-      name = "kidentitymanagement-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kidentitymanagement-21.04.0.tar.xz";
+      sha256 = "1y83k7lzyzc5r6f7pqkbzqm1xnjv0z11vg8yazqwmfcv1whbzxda";
+      name = "kidentitymanagement-21.04.0.tar.xz";
     };
   };
   kig = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kig-20.08.3.tar.xz";
-      sha256 = "1dvizdfkvl7p7hr4xm4zh51lpr8qr3s5j5zz162s7arr7sws4w8h";
-      name = "kig-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kig-21.04.0.tar.xz";
+      sha256 = "0d4p7py3lf05dsfy9x98aq6fwk6fsvf97jwxsdz4z3r49qvcp3hp";
+      name = "kig-21.04.0.tar.xz";
     };
   };
   kigo = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kigo-20.08.3.tar.xz";
-      sha256 = "0sx3klivzn8h96mpnbkiv2nbi2l6w0j6fclj7q3ql3cm81jh6n15";
-      name = "kigo-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kigo-21.04.0.tar.xz";
+      sha256 = "0ans0mj9ql6vdmnc130sw0wkkm8rc1bpiww36a76nw8n28cfcyzi";
+      name = "kigo-21.04.0.tar.xz";
     };
   };
   killbots = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/killbots-20.08.3.tar.xz";
-      sha256 = "1j41my0brpqpvd8xibv39z4x4kmw1sqz7wy7ibhh0zir3jh64n83";
-      name = "killbots-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/killbots-21.04.0.tar.xz";
+      sha256 = "1qf2lahvi5g9cgvbgp6sj9vw1g8fcvcwaxgaqnc5akl03p51gz2k";
+      name = "killbots-21.04.0.tar.xz";
     };
   };
   kimagemapeditor = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kimagemapeditor-20.08.3.tar.xz";
-      sha256 = "1m9mrksdl08ijmpmx3lhdysnm70mrnqz9rlbcn1h95p2sq0bk8cg";
-      name = "kimagemapeditor-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kimagemapeditor-21.04.0.tar.xz";
+      sha256 = "1f3y10bk5541sgi2qfww56mfq245a9wg38vpw2c8ygf4lc5rh67s";
+      name = "kimagemapeditor-21.04.0.tar.xz";
     };
   };
   kimap = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kimap-20.08.3.tar.xz";
-      sha256 = "16paglkqgnyzwjydhn02qw7zg0d4casir4bsfch15wdmqv389mrg";
-      name = "kimap-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kimap-21.04.0.tar.xz";
+      sha256 = "0fbcwsiz1q5s9d70zn7y183p477ykyjpw27i3k2mxb9ggk0h8bnx";
+      name = "kimap-21.04.0.tar.xz";
     };
   };
   kio-extras = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kio-extras-20.08.3.tar.xz";
-      sha256 = "0i7k9asc97r9z4lfk5hyf7mcbx0za7j6v4dhqn43j5v4x2i0201c";
-      name = "kio-extras-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kio-extras-21.04.0.tar.xz";
+      sha256 = "1p5kd5c4p5yc9fmppa6sivgv5kn1l9krzzw5h5y8xmi9g896yjjg";
+      name = "kio-extras-21.04.0.tar.xz";
     };
   };
   kio-gdrive = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kio-gdrive-20.08.3.tar.xz";
-      sha256 = "0pp0nvsnfdm8vskw194qjfac4agnlsjm44w1704b5sqx6i27dafy";
-      name = "kio-gdrive-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kio-gdrive-21.04.0.tar.xz";
+      sha256 = "0p1y30syzbj7lg8hpxb5r255ba0v93gc219r1v7gb1ja5p7pjvsh";
+      name = "kio-gdrive-21.04.0.tar.xz";
     };
   };
   kipi-plugins = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kipi-plugins-20.08.3.tar.xz";
-      sha256 = "1pplhv8yjfl1ifx9ykf4w2lgma8jvshihmd5c5mz9liqk3lawq15";
-      name = "kipi-plugins-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kipi-plugins-21.04.0.tar.xz";
+      sha256 = "1x26yw1f47pylly2211kdld17m0p42a5miygwc7rnvasvh0dngwf";
+      name = "kipi-plugins-21.04.0.tar.xz";
     };
   };
   kirigami-gallery = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kirigami-gallery-20.08.3.tar.xz";
-      sha256 = "0l100ng8ai55s0vl8nkpq4vysy2nc6sk1dbisc2mp7br74ykyfp9";
-      name = "kirigami-gallery-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kirigami-gallery-21.04.0.tar.xz";
+      sha256 = "04hq0hikx692glb83xs8fg97dv53ayzd8lp776zv4p3sd6dpaysf";
+      name = "kirigami-gallery-21.04.0.tar.xz";
     };
   };
   kiriki = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kiriki-20.08.3.tar.xz";
-      sha256 = "1gddjii84cbz1dg8k0pnd3dyzar4lvj03j9v84vabggjjjbpir0f";
-      name = "kiriki-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kiriki-21.04.0.tar.xz";
+      sha256 = "0dlimwhw6ii9x4m7166hbl3n6zi5pcvbsg303jm8pjc2bj83izis";
+      name = "kiriki-21.04.0.tar.xz";
     };
   };
   kiten = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kiten-20.08.3.tar.xz";
-      sha256 = "0n9mq86gcl6s2f45l8lbp4gsdj356l78xjkdvm14f6qlh81vsqlc";
-      name = "kiten-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kiten-21.04.0.tar.xz";
+      sha256 = "0vvq75q7j4j2hzzwnsr5zafphqvhwggb0mbs6y1ccb6yfm5vy3a4";
+      name = "kiten-21.04.0.tar.xz";
     };
   };
   kitinerary = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kitinerary-20.08.3.tar.xz";
-      sha256 = "169pmy5fyjkbya8r2kdkd9s83sim0jplc3lx8bv2xh6r10mvzgm6";
-      name = "kitinerary-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kitinerary-21.04.0.tar.xz";
+      sha256 = "0sxzc2c0i1qjn5302a3cg7inx020r3n1pzjif6bhw4phynbzxliy";
+      name = "kitinerary-21.04.0.tar.xz";
     };
   };
   kjumpingcube = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kjumpingcube-20.08.3.tar.xz";
-      sha256 = "19246jwwd686x8i0jrvz2c8mpkf6qhm7rnskzin59dqzr76xrpgz";
-      name = "kjumpingcube-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kjumpingcube-21.04.0.tar.xz";
+      sha256 = "12khypxl87725zs5ykwcp1ag27v5q89n9cvn879d6lp7qqs7mjx8";
+      name = "kjumpingcube-21.04.0.tar.xz";
     };
   };
   kldap = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kldap-20.08.3.tar.xz";
-      sha256 = "1ihaazsnb9r30m2qhzcp2ns9f5fs7l3agsc9f9wxi4cyw73bq0n3";
-      name = "kldap-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kldap-21.04.0.tar.xz";
+      sha256 = "1mqqpzqpz0hlldb0nz3dnm33d1hwpxcwj9hdqik5bzbfnr7ww04g";
+      name = "kldap-21.04.0.tar.xz";
     };
   };
   kleopatra = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kleopatra-20.08.3.tar.xz";
-      sha256 = "1r879g7hw3c5cww58z0kvqj47pgzbiq1vpgxz847smrylqajcpyi";
-      name = "kleopatra-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kleopatra-21.04.0.tar.xz";
+      sha256 = "0w58nsklvc63ps0m92knf0n2wkmksq432ckx1959klimgqacffy0";
+      name = "kleopatra-21.04.0.tar.xz";
     };
   };
   klettres = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/klettres-20.08.3.tar.xz";
-      sha256 = "0irc0f7vjznlsczan30zzprbnvgnbg19vabr97cw9rkkfa28azx9";
-      name = "klettres-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/klettres-21.04.0.tar.xz";
+      sha256 = "1kxyisvmpgf4m5qzi7w6lfmnnpp96f4v72pls5k68q01ygf7mlrg";
+      name = "klettres-21.04.0.tar.xz";
     };
   };
   klickety = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/klickety-20.08.3.tar.xz";
-      sha256 = "1qsm9grmy0bnalpdghg48xi68zzk6ysmg6n0d74ldmmnirv3r0zf";
-      name = "klickety-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/klickety-21.04.0.tar.xz";
+      sha256 = "0jiaxfzvdbygmfd6d0bsakzsvzkjvlhhidjz1wmvxq0jla4qna6b";
+      name = "klickety-21.04.0.tar.xz";
     };
   };
   klines = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/klines-20.08.3.tar.xz";
-      sha256 = "1l95ph1sjp3r1q065k3rj18lm36krl7bh41zgqh021p692ywc48c";
-      name = "klines-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/klines-21.04.0.tar.xz";
+      sha256 = "1ay26by2hwn7b0i48xgsxdysqpwzkvsz6g974c93103f5ygn8wjl";
+      name = "klines-21.04.0.tar.xz";
     };
   };
   kmag = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kmag-20.08.3.tar.xz";
-      sha256 = "0y44gz3qn91vl840xz25l5kc5jj82k5qqxkgsvvyld2s99rif84k";
-      name = "kmag-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kmag-21.04.0.tar.xz";
+      sha256 = "06yw7397v5wcdx4jxpyc2mxgbxr744wgnqm7w2xb4771izlwq3qy";
+      name = "kmag-21.04.0.tar.xz";
     };
   };
   kmahjongg = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kmahjongg-20.08.3.tar.xz";
-      sha256 = "0wgp9m7xzf5ysmrrnyng4p4jypvzfnqkyw62gknl0qhk531cgq3h";
-      name = "kmahjongg-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kmahjongg-21.04.0.tar.xz";
+      sha256 = "0w4fpnafn9vir8c6ha6kl1x8vbmvmjax0p1qzxa7596hf3lvcncq";
+      name = "kmahjongg-21.04.0.tar.xz";
     };
   };
   kmail = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kmail-20.08.3.tar.xz";
-      sha256 = "0g59s7wl0n4bp8kw559rdlamlqxl47qvwfms9kr9ign35rvs0ghg";
-      name = "kmail-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kmail-21.04.0.tar.xz";
+      sha256 = "11ghi1bqc8ldsb04z7fs5ba9b9fvsmcxxjp8j837iv0qz5rwh0fw";
+      name = "kmail-21.04.0.tar.xz";
     };
   };
   kmail-account-wizard = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kmail-account-wizard-20.08.3.tar.xz";
-      sha256 = "0vama5a02dfgxrl4iz88lbi8dvq3d9b055xil770d90pwp0sljcz";
-      name = "kmail-account-wizard-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kmail-account-wizard-21.04.0.tar.xz";
+      sha256 = "0jalwjk5jyih765i7cpa0qidw3di17cz1fygmzgdz1v6kasg3h0c";
+      name = "kmail-account-wizard-21.04.0.tar.xz";
     };
   };
   kmailtransport = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kmailtransport-20.08.3.tar.xz";
-      sha256 = "07552qj3ngwvyss7f8cy87c0gmzc47agn54wk85qq0v1fwr73n6z";
-      name = "kmailtransport-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kmailtransport-21.04.0.tar.xz";
+      sha256 = "1jgw93q8jpgkg8ms7pjral1wz1ycs12ikjnsw2fiybd67syd2dns";
+      name = "kmailtransport-21.04.0.tar.xz";
     };
   };
   kmbox = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kmbox-20.08.3.tar.xz";
-      sha256 = "0ipmwcicn3qklybqy9v41lh7byn7j62ja8b0xf06z9nliwkk4b0b";
-      name = "kmbox-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kmbox-21.04.0.tar.xz";
+      sha256 = "01p1ihr08dnmzsq22ipy06grnz59nxyc2vfqbh6hc949mhl3kwx4";
+      name = "kmbox-21.04.0.tar.xz";
     };
   };
   kmime = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kmime-20.08.3.tar.xz";
-      sha256 = "1ndbx712vm4v0fi7p8j28d8z35h3bmsixc97z5r9dg03v1kzd36v";
-      name = "kmime-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kmime-21.04.0.tar.xz";
+      sha256 = "096vbbr8qnwcws7c6llxwk0klbfrhh4k83384bkhw5m5xawnqaq4";
+      name = "kmime-21.04.0.tar.xz";
     };
   };
   kmines = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kmines-20.08.3.tar.xz";
-      sha256 = "1mn5hip3vnzmkk1hy14glsplp7f5pm56yv0d5mz25icfgw0xa6lp";
-      name = "kmines-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kmines-21.04.0.tar.xz";
+      sha256 = "08dynl219n0jd58i01ccmgphc03z2x143l0a8v11x0m5cfazvzpp";
+      name = "kmines-21.04.0.tar.xz";
     };
   };
   kmix = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kmix-20.08.3.tar.xz";
-      sha256 = "00gm93faqmqx0hhkxi3k2pn6sq82k2f622vqgk7mwznkpg66mf4k";
-      name = "kmix-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kmix-21.04.0.tar.xz";
+      sha256 = "1s2cnbmpkchp1wc5217r17ramj7a8xrm4l9hb74lyw4fc78455z2";
+      name = "kmix-21.04.0.tar.xz";
     };
   };
   kmousetool = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kmousetool-20.08.3.tar.xz";
-      sha256 = "09qznykysr42rzz5cmqvhvz91cr8dbzwjd73hwaib2lfs3c2cgbl";
-      name = "kmousetool-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kmousetool-21.04.0.tar.xz";
+      sha256 = "0iaqgflnyl62ynxcip8zbxm25hgr82yc9d3z5v36mv0q3lq4bi92";
+      name = "kmousetool-21.04.0.tar.xz";
     };
   };
   kmouth = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kmouth-20.08.3.tar.xz";
-      sha256 = "0ajhnl1sjllfb42nyafpirmlgcs6waqp8qxvgsz5dk5zkb8daqmr";
-      name = "kmouth-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kmouth-21.04.0.tar.xz";
+      sha256 = "0sza7arw0nfga6g9fv7rbkgkxmn694awzhkjbklafdvcjyn3dw2v";
+      name = "kmouth-21.04.0.tar.xz";
     };
   };
   kmplot = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kmplot-20.08.3.tar.xz";
-      sha256 = "0cv7q1wmbb3fkf4s6ns4q1il5zr4q02b3xghpp661ma82d8jhjcy";
-      name = "kmplot-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kmplot-21.04.0.tar.xz";
+      sha256 = "1wpz5kb06ym920ghmrfb0jh6z4nadlb7d9z0l85vkm3y1rz0iisy";
+      name = "kmplot-21.04.0.tar.xz";
     };
   };
   knavalbattle = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/knavalbattle-20.08.3.tar.xz";
-      sha256 = "1028i8zl5ynm3vvqajsms2hq8gmmjmjc5dc6r3jyh6r964vxq3nq";
-      name = "knavalbattle-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/knavalbattle-21.04.0.tar.xz";
+      sha256 = "0xn7mkmcr4p6c8kdcdxk7k9ifv12l0fflg2nkgmr1gbjxkpyy435";
+      name = "knavalbattle-21.04.0.tar.xz";
     };
   };
   knetwalk = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/knetwalk-20.08.3.tar.xz";
-      sha256 = "13pspvi2p68irpbr3f2ck78qmvfl3vahm5qjw2fwhidhpindf9nl";
-      name = "knetwalk-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/knetwalk-21.04.0.tar.xz";
+      sha256 = "127s5fgjpcndgbg30wd9sv3jrskq7ib4rnrw5qdfsxv8c77kv74m";
+      name = "knetwalk-21.04.0.tar.xz";
     };
   };
   knights = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/knights-20.08.3.tar.xz";
-      sha256 = "0zqb87mr2x085hi3r9cvdrx2kvxmclh4ffi1ajcb8v1f79wiwzin";
-      name = "knights-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/knights-21.04.0.tar.xz";
+      sha256 = "09w3qqvp5k8z3bfwz6zlclagn11j1nar0bp2sgnjmi9cy2rs74n3";
+      name = "knights-21.04.0.tar.xz";
     };
   };
   knotes = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/knotes-20.08.3.tar.xz";
-      sha256 = "0ysw8js2s6njilg4v4vqrl1bzcmqvk42l68pzvyflr112zviqz28";
-      name = "knotes-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/knotes-21.04.0.tar.xz";
+      sha256 = "0zy10amznrkbj663h0b5a410ry65kh1sw2k9ra43zx45bpamh62q";
+      name = "knotes-21.04.0.tar.xz";
     };
   };
   kolf = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kolf-20.08.3.tar.xz";
-      sha256 = "1ywyny8iq2sxglsvpgw6p3w3w567k6cw6waywfcfy0lcnfarg1n0";
-      name = "kolf-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kolf-21.04.0.tar.xz";
+      sha256 = "0220b4mbphb7c7p3szhi976dx8ln0f64ghika7b9x2cmdxcizfcq";
+      name = "kolf-21.04.0.tar.xz";
     };
   };
   kollision = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kollision-20.08.3.tar.xz";
-      sha256 = "1l8a32bni40jz5jna0ip9ggbx7zp1hhiw2mip7v8f6qc4arbknl8";
-      name = "kollision-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kollision-21.04.0.tar.xz";
+      sha256 = "0cfn7l4ccl26rqm9i8rqp07yx6jc12xqhm16pgamrf8qv40vch9f";
+      name = "kollision-21.04.0.tar.xz";
     };
   };
   kolourpaint = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kolourpaint-20.08.3.tar.xz";
-      sha256 = "0d64gnnb553rxscr8710h5bx8ijxd87jrbix07k41y79i5x60irh";
-      name = "kolourpaint-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kolourpaint-21.04.0.tar.xz";
+      sha256 = "0xp1kas6hk279aqm5g36qlsylpd43p9pv6vdk2dy4cilds4fc3vw";
+      name = "kolourpaint-21.04.0.tar.xz";
     };
   };
   kompare = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kompare-20.08.3.tar.xz";
-      sha256 = "0r9m2vcw9hbdkfdy24pfpqs2b5r0jyxh1ma2h66hfv4ycd470ilc";
-      name = "kompare-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kompare-21.04.0.tar.xz";
+      sha256 = "17p1i4gfgzbps60zq3svicp6yz6w33wvcp145lq1iqkj80pf5qyf";
+      name = "kompare-21.04.0.tar.xz";
     };
   };
   konqueror = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/konqueror-20.08.3.tar.xz";
-      sha256 = "1ssjj83jcbcq8i7wx5zd12z7crh2zg6awbpy38maq3c7747nqz7k";
-      name = "konqueror-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/konqueror-21.04.0.tar.xz";
+      sha256 = "04mli5dv05v7fin58zrhm7jmddj8qa2qz7w3qdbjd3a4iz7y7z71";
+      name = "konqueror-21.04.0.tar.xz";
     };
   };
   konquest = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/konquest-20.08.3.tar.xz";
-      sha256 = "1wq0j02dzdah6yhx8r2cg191617hid9fs780yr317fprkwkgb8cb";
-      name = "konquest-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/konquest-21.04.0.tar.xz";
+      sha256 = "1ryh7d3ndvrw8vjaraxyzyw08sx9w4yny7hdj1ss7319y041a07s";
+      name = "konquest-21.04.0.tar.xz";
     };
   };
   konsole = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/konsole-20.08.3.tar.xz";
-      sha256 = "0jjidy756x8n456qbm977a73l8229kk8i489jh52296k8pkh6yjx";
-      name = "konsole-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/konsole-21.04.0.tar.xz";
+      sha256 = "1dlr0w77sccibhp37xi49bi6g4679fymgziznqxjvhk5l141f2i6";
+      name = "konsole-21.04.0.tar.xz";
     };
   };
   kontact = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kontact-20.08.3.tar.xz";
-      sha256 = "0qasgxvq7xps0zxk4hf2sizmy90mxyq70m2pq49pq17ij2pa9ynl";
-      name = "kontact-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kontact-21.04.0.tar.xz";
+      sha256 = "08d1837kkcqc8gp9hmd351yymjdl31vg6nk1vcrlb7xsndqcsb79";
+      name = "kontact-21.04.0.tar.xz";
     };
   };
   kontactinterface = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kontactinterface-20.08.3.tar.xz";
-      sha256 = "1ah2814js08sm49ykarqdw7z03w4fbym5cc4vwmzimcvh2bc78j3";
-      name = "kontactinterface-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kontactinterface-21.04.0.tar.xz";
+      sha256 = "1h4v7jz4d5nl23fyjz946qszmidvdkayhsb1ffzk53bv8wpjh76m";
+      name = "kontactinterface-21.04.0.tar.xz";
+    };
+  };
+  kontrast = {
+    version = "21.04.0";
+    src = fetchurl {
+      url = "${mirror}/stable/release-service/21.04.0/src/kontrast-21.04.0.tar.xz";
+      sha256 = "1bjkmhal9prizv1dlz8gdlki096a8d09bwksc0xxq3kml1r5gmfm";
+      name = "kontrast-21.04.0.tar.xz";
+    };
+  };
+  konversation = {
+    version = "21.04.0";
+    src = fetchurl {
+      url = "${mirror}/stable/release-service/21.04.0/src/konversation-21.04.0.tar.xz";
+      sha256 = "1fq4w0awg2xj6f7ivvpqrcch68ss01vnh0diwagryhrb0g0a37n7";
+      name = "konversation-21.04.0.tar.xz";
+    };
+  };
+  kopeninghours = {
+    version = "21.04.0";
+    src = fetchurl {
+      url = "${mirror}/stable/release-service/21.04.0/src/kopeninghours-21.04.0.tar.xz";
+      sha256 = "11gkri2sk1dz4hndpid4c84pxkdzc1fdpzw8h2x0141njl62421c";
+      name = "kopeninghours-21.04.0.tar.xz";
     };
   };
   kopete = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kopete-20.08.3.tar.xz";
-      sha256 = "1lsab66k0xq1g0w0cxcpadmf9kkc09x8wwbv4i8y3aj2mn7849gh";
-      name = "kopete-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kopete-21.04.0.tar.xz";
+      sha256 = "14ypdl4xy4izg14nbdczif5i8q5kjly5gnyz032iy0cgnkarhi4q";
+      name = "kopete-21.04.0.tar.xz";
     };
   };
   korganizer = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/korganizer-20.08.3.tar.xz";
-      sha256 = "112h6vn2y9d3q3z62cwg3zrak3xgx9affibc9cvr6fzhp4z0x9ps";
-      name = "korganizer-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/korganizer-21.04.0.tar.xz";
+      sha256 = "0znbwnzn35q4fdlj9n7hdqvq9rz3g8dyan9v1z9rh11cmdn4pc6h";
+      name = "korganizer-21.04.0.tar.xz";
+    };
+  };
+  kosmindoormap = {
+    version = "21.04.0";
+    src = fetchurl {
+      url = "${mirror}/stable/release-service/21.04.0/src/kosmindoormap-21.04.0.tar.xz";
+      sha256 = "1c31f7b79xq9sxmfqxfs3082yrbqwkmw02brja8dg1h2avn0r3cy";
+      name = "kosmindoormap-21.04.0.tar.xz";
     };
   };
   kpat = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kpat-20.08.3.tar.xz";
-      sha256 = "1id4b9jkphi8pp29gc2vb3n9f0g8kl9yy5v8cnyv3jq673aj0fs9";
-      name = "kpat-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kpat-21.04.0.tar.xz";
+      sha256 = "043apdv55kc8d2dih65vb4fkwmaqybz167z0g5nfrrg0ilnqhifn";
+      name = "kpat-21.04.0.tar.xz";
     };
   };
   kpimtextedit = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kpimtextedit-20.08.3.tar.xz";
-      sha256 = "1m4r5zbhbjvj3za78xfp3dibyf7mp9gan5ir5zd0k2p7adp3i652";
-      name = "kpimtextedit-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kpimtextedit-21.04.0.tar.xz";
+      sha256 = "1acj6w164xg3v1svzlf4qa10kkzbhlnzrl4cp0brak81gal7bnrp";
+      name = "kpimtextedit-21.04.0.tar.xz";
     };
   };
   kpkpass = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kpkpass-20.08.3.tar.xz";
-      sha256 = "0zw3xx5mi38za0xbvld97f5bqvwwgyz47kybyrdm7jrhvmmiiiis";
-      name = "kpkpass-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kpkpass-21.04.0.tar.xz";
+      sha256 = "0s1f9j3n3ki71kzi8zw95q4v8y3dcgi5cnpq5rk03qb69yqf45xi";
+      name = "kpkpass-21.04.0.tar.xz";
+    };
+  };
+  kpmcore = {
+    version = "21.04.0";
+    src = fetchurl {
+      url = "${mirror}/stable/release-service/21.04.0/src/kpmcore-21.04.0.tar.xz";
+      sha256 = "0cb71d0w2jhbpm0da9rzn484930c022gxn2m4y9bgimaz0cgzcp7";
+      name = "kpmcore-21.04.0.tar.xz";
+    };
+  };
+  kpublictransport = {
+    version = "21.04.0";
+    src = fetchurl {
+      url = "${mirror}/stable/release-service/21.04.0/src/kpublictransport-21.04.0.tar.xz";
+      sha256 = "18zmsq9585d8sx6qvcfw6wb183nzga9l0b6mm06cl89bwpr2bdbb";
+      name = "kpublictransport-21.04.0.tar.xz";
     };
   };
   kqtquickcharts = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kqtquickcharts-20.08.3.tar.xz";
-      sha256 = "0l7v8vrc7by0w0yshnh21jaqhspmhkvm5cd0hpay6jc9v2azkcf3";
-      name = "kqtquickcharts-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kqtquickcharts-21.04.0.tar.xz";
+      sha256 = "09lw31sx93gw3s6hmwi0xaxyjnfx2nhij8iayam1sg644vx9a7ws";
+      name = "kqtquickcharts-21.04.0.tar.xz";
     };
   };
   krdc = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/krdc-20.08.3.tar.xz";
-      sha256 = "1g9lxdldljh5a2s4g7g9b98lij168l99ah0vr6nvdl53n35pfr8n";
-      name = "krdc-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/krdc-21.04.0.tar.xz";
+      sha256 = "08iqydss6lyc6823762fq1p5c1hs7hv2crwv609gw97cvxvc8ww1";
+      name = "krdc-21.04.0.tar.xz";
     };
   };
   kreversi = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kreversi-20.08.3.tar.xz";
-      sha256 = "0d3y072q61xcik9lf0pz0c9njvarwlvf6hqv5fp5jyqaf2902pmi";
-      name = "kreversi-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kreversi-21.04.0.tar.xz";
+      sha256 = "02zk0bwjmhgpk7fbvzwxap0xda2vxfyfjy38zagm5wgpgd4acsj4";
+      name = "kreversi-21.04.0.tar.xz";
     };
   };
   krfb = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/krfb-20.08.3.tar.xz";
-      sha256 = "13nypbcdhh53wq72w59z5q46a09g1w4yyi1pmsjwa8r7jnk8cafk";
-      name = "krfb-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/krfb-21.04.0.tar.xz";
+      sha256 = "0vjf10fg8nqbc7dr19i1hlqpgi1z2bcm1zrpf2rs85fi4pxrw7lg";
+      name = "krfb-21.04.0.tar.xz";
     };
   };
   kross-interpreters = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kross-interpreters-20.08.3.tar.xz";
-      sha256 = "0mr5vpbbcv66s6dyrrypy1ai6ba744z8cn4r0iwys35p6am075qj";
-      name = "kross-interpreters-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kross-interpreters-21.04.0.tar.xz";
+      sha256 = "1203gmm6pcv37k2m3yah1qgazja8qxkn18dqxmnw7fj3903mqxjw";
+      name = "kross-interpreters-21.04.0.tar.xz";
     };
   };
   kruler = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kruler-20.08.3.tar.xz";
-      sha256 = "1vhl8acccdqfdj7lci8r2mig9qf1js4f8v7b4fqljpnc3gdg8749";
-      name = "kruler-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kruler-21.04.0.tar.xz";
+      sha256 = "0yrpkb755g2xy329336dl9yarl6dhcj5cwgv1sy75w1k3gibsz5y";
+      name = "kruler-21.04.0.tar.xz";
     };
   };
   kshisen = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kshisen-20.08.3.tar.xz";
-      sha256 = "1vy8qh8s60a4ikyw3sh4cbr3p3fk35d4dwdqc263gn4skyrsb1l9";
-      name = "kshisen-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kshisen-21.04.0.tar.xz";
+      sha256 = "087vynb6gr3l2291nvxcdk27ib10063fyhhxa7ibvfw68j612fri";
+      name = "kshisen-21.04.0.tar.xz";
     };
   };
   ksirk = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ksirk-20.08.3.tar.xz";
-      sha256 = "1kxc1b05r8x6pvaiwpvjpgrr88qkm5qs4d3s1ym8rki60c724qpl";
-      name = "ksirk-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ksirk-21.04.0.tar.xz";
+      sha256 = "1qrgkzgm7vnjz6mk7gqkxkx6i7p1dfnlw8fhxa6h1ihvgfmxr6kr";
+      name = "ksirk-21.04.0.tar.xz";
     };
   };
   ksmtp = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ksmtp-20.08.3.tar.xz";
-      sha256 = "1p9clzvmsym2fijwvs3s0zqx57bk82mlks52j5ni3il6lvklaayc";
-      name = "ksmtp-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ksmtp-21.04.0.tar.xz";
+      sha256 = "0mn4ciyg0c8rxbcc3d99slm03jbca7b6gaplh8zz54p2krf86my5";
+      name = "ksmtp-21.04.0.tar.xz";
     };
   };
   ksnakeduel = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ksnakeduel-20.08.3.tar.xz";
-      sha256 = "03ydbwknn20gadjpwcw0z8zw777hgj8j10w4gvp2dwpb07rdg1pn";
-      name = "ksnakeduel-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ksnakeduel-21.04.0.tar.xz";
+      sha256 = "1s3k4k2a27rfp300bgxm1qhsg0dnlz72ip3csdixkidwcig7v017";
+      name = "ksnakeduel-21.04.0.tar.xz";
     };
   };
   kspaceduel = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kspaceduel-20.08.3.tar.xz";
-      sha256 = "1ii3lnxd11d3ihl8j1abh9qn9q0qq8ra9hbrwjs5df2kk36bnirj";
-      name = "kspaceduel-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kspaceduel-21.04.0.tar.xz";
+      sha256 = "0acgmh4blmp2vmzqnxvphixbjmfv12al99hxwv1iavdfyl88yfqz";
+      name = "kspaceduel-21.04.0.tar.xz";
     };
   };
   ksquares = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ksquares-20.08.3.tar.xz";
-      sha256 = "1ch7lbylzb9ngdzvpzqq5f30gkm2l4rzk6iqa8xm53rawr7jjqcy";
-      name = "ksquares-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ksquares-21.04.0.tar.xz";
+      sha256 = "1y23c86qz1qcmjzfsrj974c4ccai4rrp7ajmwxi7wgzgzwypflir";
+      name = "ksquares-21.04.0.tar.xz";
     };
   };
   ksudoku = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ksudoku-20.08.3.tar.xz";
-      sha256 = "0hnqbd3krxi3zwj8p4n9ydhwfwhw8wljhjdfv0llv0nhj1wb89p9";
-      name = "ksudoku-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ksudoku-21.04.0.tar.xz";
+      sha256 = "0r6m6jpjpz759gq40bxh5n7lg89gn2kfmiik2i06d1slz9v54iv0";
+      name = "ksudoku-21.04.0.tar.xz";
     };
   };
   ksystemlog = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ksystemlog-20.08.3.tar.xz";
-      sha256 = "11fc2mn4hkcibpxp7s2gihpp05yix7ws84a0bm6vjiqlidmrk192";
-      name = "ksystemlog-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ksystemlog-21.04.0.tar.xz";
+      sha256 = "06az8kfsp468hr3xzcfbra81xbfv12w2jzhd4n2cirsi6k8vhx14";
+      name = "ksystemlog-21.04.0.tar.xz";
     };
   };
   kteatime = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kteatime-20.08.3.tar.xz";
-      sha256 = "1vj738s2a7nnrvxi847mdmn1vg79kh9k8gqaflcwnvyxanf6n4f7";
-      name = "kteatime-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kteatime-21.04.0.tar.xz";
+      sha256 = "1zk7gbdsxyw59lfr0r2nnxm08jjls0zcp7wqkm4sq2gyczs73vy5";
+      name = "kteatime-21.04.0.tar.xz";
     };
   };
   ktimer = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktimer-20.08.3.tar.xz";
-      sha256 = "1rc1z93s24b7p2ixr4xbpg0sj8ls90gzfijwj9f8b0lrwd905ysv";
-      name = "ktimer-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktimer-21.04.0.tar.xz";
+      sha256 = "0czwbd0id7a9w8wwpfsv2s06xc9my996bcdj0bn37091yik1wqzr";
+      name = "ktimer-21.04.0.tar.xz";
     };
   };
   ktnef = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktnef-20.08.3.tar.xz";
-      sha256 = "1lj93sqyi522k91jiyf7d26vx5sgn5njhyaf8plsfz5rj82dw1m4";
-      name = "ktnef-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktnef-21.04.0.tar.xz";
+      sha256 = "0zs0bfb2g7rxcxc7ngjzszrcnj9qarpnig7b29xcrmnsxppa9z8y";
+      name = "ktnef-21.04.0.tar.xz";
+    };
+  };
+  ktorrent = {
+    version = "21.04.0";
+    src = fetchurl {
+      url = "${mirror}/stable/release-service/21.04.0/src/ktorrent-21.04.0.tar.xz";
+      sha256 = "0f28iyb2mrin2n5f6msxib9lh38qxid1sz5p5dq1g703gyqgr345";
+      name = "ktorrent-21.04.0.tar.xz";
     };
   };
   ktouch = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktouch-20.08.3.tar.xz";
-      sha256 = "1ssxd7f75866rn5k192bnm016d8674q13ibcgmaxqsmr7wqkyd39";
-      name = "ktouch-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktouch-21.04.0.tar.xz";
+      sha256 = "0f46dsjcgqqg1f24sl3za624h5kpynqdi480hnc0fc6yaf3nm2mm";
+      name = "ktouch-21.04.0.tar.xz";
     };
   };
   ktp-accounts-kcm = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktp-accounts-kcm-20.08.3.tar.xz";
-      sha256 = "0039svbzx7fphyk6cw4hb8k4h7l6q31pbwvp6pvls450rycz8i8y";
-      name = "ktp-accounts-kcm-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktp-accounts-kcm-21.04.0.tar.xz";
+      sha256 = "1vvnk9nfq4z3m73yr59y65v0nvqwn4xjx6lrm754dnqr6vldv01p";
+      name = "ktp-accounts-kcm-21.04.0.tar.xz";
     };
   };
   ktp-approver = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktp-approver-20.08.3.tar.xz";
-      sha256 = "1kqsdw7vkcd0ka98y2r7qz7dp5hsrr2m8k1xlh3gpj7fdxpla2bh";
-      name = "ktp-approver-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktp-approver-21.04.0.tar.xz";
+      sha256 = "0j407a3bfmi4gn5v3gfazfidyp1kxn4vbs40xm5pkgxr4ykvzqj5";
+      name = "ktp-approver-21.04.0.tar.xz";
     };
   };
   ktp-auth-handler = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktp-auth-handler-20.08.3.tar.xz";
-      sha256 = "0wbhg458ysipwma8sygimasq71sbrzmx3vwqi51ai8y5hwrx04j4";
-      name = "ktp-auth-handler-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktp-auth-handler-21.04.0.tar.xz";
+      sha256 = "1lqjb3mawdvwrx7b2q2f3kr132shbgs9lvlzdn450pn9cn1c4z7i";
+      name = "ktp-auth-handler-21.04.0.tar.xz";
     };
   };
   ktp-call-ui = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktp-call-ui-20.08.3.tar.xz";
-      sha256 = "1fh8bz9kc6f8v28x12xp3vw19swgcq07zyjzhd6qcnwf1bv6gl7i";
-      name = "ktp-call-ui-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktp-call-ui-21.04.0.tar.xz";
+      sha256 = "1f2rzm5jfw12b6v2yfzjs152sq2ak3k7zk3nwipyiy86n0f25yqp";
+      name = "ktp-call-ui-21.04.0.tar.xz";
     };
   };
   ktp-common-internals = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktp-common-internals-20.08.3.tar.xz";
-      sha256 = "193yx4g1fwlwysy5scb7m24wqmvwmfyyb9sv7arw7zn5czlg480z";
-      name = "ktp-common-internals-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktp-common-internals-21.04.0.tar.xz";
+      sha256 = "0j3fnvyln6w7m3z416blpvrk1bpcbd5403h6pyjyq3dsvswzd21x";
+      name = "ktp-common-internals-21.04.0.tar.xz";
     };
   };
   ktp-contact-list = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktp-contact-list-20.08.3.tar.xz";
-      sha256 = "0093z17r1xqlb1zlgxfayrnrkyl8zmnnasfd8i97dx712wmbbxxa";
-      name = "ktp-contact-list-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktp-contact-list-21.04.0.tar.xz";
+      sha256 = "1bym3sf3szmgi3nbczlilcazkjd1jfy7v0p0c3844c33fid6ln4q";
+      name = "ktp-contact-list-21.04.0.tar.xz";
     };
   };
   ktp-contact-runner = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktp-contact-runner-20.08.3.tar.xz";
-      sha256 = "063jylnq3gm0s0jh1xs6b591a161sb6gdi840l40mqlhhg7i8x55";
-      name = "ktp-contact-runner-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktp-contact-runner-21.04.0.tar.xz";
+      sha256 = "1afcsc8bfvyqy9y32a73x01xar50g48q9jbvnsggmjb20qbgk6fz";
+      name = "ktp-contact-runner-21.04.0.tar.xz";
     };
   };
   ktp-desktop-applets = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktp-desktop-applets-20.08.3.tar.xz";
-      sha256 = "1i69qzfa455phjnd5ycflyggcbq7ycn2cc7a3ni5195isjzq6r6s";
-      name = "ktp-desktop-applets-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktp-desktop-applets-21.04.0.tar.xz";
+      sha256 = "1achgl8prdl33hw73nfjcm0djxzf9xy76n365kqzfz757fvy025w";
+      name = "ktp-desktop-applets-21.04.0.tar.xz";
     };
   };
   ktp-filetransfer-handler = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktp-filetransfer-handler-20.08.3.tar.xz";
-      sha256 = "0a26ziacl3fkd0a0h1579jnwjzjlsz0zymj9k4da4sb60zad5y72";
-      name = "ktp-filetransfer-handler-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktp-filetransfer-handler-21.04.0.tar.xz";
+      sha256 = "0mhvx3x4mf9b1mmn901995107ixz9qd80ydx468k30w13k8hwjpg";
+      name = "ktp-filetransfer-handler-21.04.0.tar.xz";
     };
   };
   ktp-kded-module = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktp-kded-module-20.08.3.tar.xz";
-      sha256 = "105vh6b7a0v02arksbwxn30slpcg11cpvb7dqmvf041iyr13sqsv";
-      name = "ktp-kded-module-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktp-kded-module-21.04.0.tar.xz";
+      sha256 = "1d3rpbqks6x6bv12mzpd6g5x2h35hf4xfx871i23pq7p2n4nna8f";
+      name = "ktp-kded-module-21.04.0.tar.xz";
     };
   };
   ktp-send-file = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktp-send-file-20.08.3.tar.xz";
-      sha256 = "08pp3029jplc6rcbav40cgy787gn3jjl312gbgvnwzglxaqvcg4b";
-      name = "ktp-send-file-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktp-send-file-21.04.0.tar.xz";
+      sha256 = "1lyshgan77cia7cnirjfyg0hw0wgazjw9z21ig0czs3hr6qqf277";
+      name = "ktp-send-file-21.04.0.tar.xz";
     };
   };
   ktp-text-ui = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktp-text-ui-20.08.3.tar.xz";
-      sha256 = "1anxl9wa5ndyi9r9w0kpivx8nv1xpx28xjvkdplkc75cc1wl88sw";
-      name = "ktp-text-ui-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktp-text-ui-21.04.0.tar.xz";
+      sha256 = "04k2m4f873hz783szmkgpc0y6mjpwld5z3xcbdqippfzcdn4hg0v";
+      name = "ktp-text-ui-21.04.0.tar.xz";
     };
   };
   ktuberling = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/ktuberling-20.08.3.tar.xz";
-      sha256 = "0q6ynmn6w5q65a77fq8n9vxqswrimln22b1zfgxmb2i3qwnhkrmz";
-      name = "ktuberling-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/ktuberling-21.04.0.tar.xz";
+      sha256 = "14yg3pghm4l3qgpi1i5zicjyak62w2ci4b36914kn5b3yfxh132i";
+      name = "ktuberling-21.04.0.tar.xz";
     };
   };
   kturtle = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kturtle-20.08.3.tar.xz";
-      sha256 = "0riv76vwvz94zixqhhwkxw8sz2r2xqai39yh9hr31d28q9rza384";
-      name = "kturtle-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kturtle-21.04.0.tar.xz";
+      sha256 = "1l8drllf7a1d3zra23ysyli8jl6xgl3xciqfkhc1fxhdkncx24cd";
+      name = "kturtle-21.04.0.tar.xz";
     };
   };
   kubrick = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kubrick-20.08.3.tar.xz";
-      sha256 = "03k73gr33dr3va69vc70fsfcdwkqz70bg87yk2l2j33x8wsgl4wx";
-      name = "kubrick-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kubrick-21.04.0.tar.xz";
+      sha256 = "0m8ps0yxqijshgx09cypzd3l1n0zlrqcrkjcd725zwxarpm0z0hk";
+      name = "kubrick-21.04.0.tar.xz";
     };
   };
   kwalletmanager = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kwalletmanager-20.08.3.tar.xz";
-      sha256 = "1l07vxl2x3jl8553rbvr3p0k3rc95nmrw4vhxxynl3102xshrg5i";
-      name = "kwalletmanager-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kwalletmanager-21.04.0.tar.xz";
+      sha256 = "1rh7xdwn0kdw8j936asxy8llar144144xgvp7sjlpi5y93ayf8vk";
+      name = "kwalletmanager-21.04.0.tar.xz";
     };
   };
   kwave = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kwave-20.08.3.tar.xz";
-      sha256 = "0zk8ik03qcc6y0vhpih8sk2jpkxwxalmqmaan2767k9h92grdpc8";
-      name = "kwave-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kwave-21.04.0.tar.xz";
+      sha256 = "1wy6sxmf9pk2677xdsbpgy01p284rzqwiyzm1hr971xbra5h4k6i";
+      name = "kwave-21.04.0.tar.xz";
     };
   };
   kwordquiz = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/kwordquiz-20.08.3.tar.xz";
-      sha256 = "1kiqk3xyd0l7kqdxqjqs8mw4drcdbdri9xxi5gcav57ndcinknqb";
-      name = "kwordquiz-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/kwordquiz-21.04.0.tar.xz";
+      sha256 = "0wnihn75yvhz2j310vr806vkbfywhr26wny07fpbzcishyjb89vi";
+      name = "kwordquiz-21.04.0.tar.xz";
     };
   };
   libgravatar = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libgravatar-20.08.3.tar.xz";
-      sha256 = "09dvx2rb1j7q4r0gkbhz0vjk8ya3njqprpjqdhwcq7xwc2j9h0hr";
-      name = "libgravatar-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libgravatar-21.04.0.tar.xz";
+      sha256 = "0li6p9df000bmkqgmwiix7ab4sah05r1n4gm109jjglh0a41bfvr";
+      name = "libgravatar-21.04.0.tar.xz";
     };
   };
   libkcddb = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libkcddb-20.08.3.tar.xz";
-      sha256 = "0r36hs79hmq0znsds0d04lj7ffs6l2d866kyn1z1fdwr9b3crirg";
-      name = "libkcddb-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libkcddb-21.04.0.tar.xz";
+      sha256 = "1fzbhn0rnlmxdglfb48f4f3ddagkgny2665mgv8gdbcq3vg62zwr";
+      name = "libkcddb-21.04.0.tar.xz";
     };
   };
   libkcompactdisc = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libkcompactdisc-20.08.3.tar.xz";
-      sha256 = "1nglk3kbx5czqla3cnpnf1fk71pf2cl9h6rgb40ak1xw4z31d456";
-      name = "libkcompactdisc-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libkcompactdisc-21.04.0.tar.xz";
+      sha256 = "1skaic0vfspdkv0q574ia4jszq1a5smf4s9ls4flfk5qxmkv6862";
+      name = "libkcompactdisc-21.04.0.tar.xz";
     };
   };
   libkdcraw = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libkdcraw-20.08.3.tar.xz";
-      sha256 = "1806i99qsrmixdg5b0hyi8h55fk00q6wxsnrblbwcmsb268jddp7";
-      name = "libkdcraw-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libkdcraw-21.04.0.tar.xz";
+      sha256 = "1ir6m61yb8f0ic39jxxnzjd9jjkb0ksln3fkls5v0af6g546bgab";
+      name = "libkdcraw-21.04.0.tar.xz";
     };
   };
   libkdegames = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libkdegames-20.08.3.tar.xz";
-      sha256 = "1ccbcwwqb53bgqlr1rq9plpw21mipxp8rsi1f7l0p1jzpw054p08";
-      name = "libkdegames-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libkdegames-21.04.0.tar.xz";
+      sha256 = "1q0m4kq32gsllxz8vx0qj9qii5y2lbd6wclwlykhayx1fcncwrj7";
+      name = "libkdegames-21.04.0.tar.xz";
     };
   };
   libkdepim = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libkdepim-20.08.3.tar.xz";
-      sha256 = "1v77g02v5sdqprh8psx5xpjgf8v91il60ca59yivm5jvc3hdf3f6";
-      name = "libkdepim-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libkdepim-21.04.0.tar.xz";
+      sha256 = "1ai5l9qcjnpwndvv744sx85b0yyg4wz01r0v9b0b62zwx8i35clb";
+      name = "libkdepim-21.04.0.tar.xz";
     };
   };
   libkeduvocdocument = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libkeduvocdocument-20.08.3.tar.xz";
-      sha256 = "0ghkx6x5sn5fl934ybhl32knwv9zky0n1vkjw2w93lpms45xmw76";
-      name = "libkeduvocdocument-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libkeduvocdocument-21.04.0.tar.xz";
+      sha256 = "0264i01w44fjdh14psmw8ynmb8vzkw94lqqff1ia8bw5n0ihr914";
+      name = "libkeduvocdocument-21.04.0.tar.xz";
     };
   };
   libkexiv2 = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libkexiv2-20.08.3.tar.xz";
-      sha256 = "1lh3947w6xgzl2r1wm6m4kd478q6bv89f0c3c38ldv30imfw7rfl";
-      name = "libkexiv2-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libkexiv2-21.04.0.tar.xz";
+      sha256 = "0grhibpq47yba9mjdhr1p0sbw62vxsrwfydi5ybpa8fjgvbbbprr";
+      name = "libkexiv2-21.04.0.tar.xz";
     };
   };
   libkgapi = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libkgapi-20.08.3.tar.xz";
-      sha256 = "1kmgf9v9rvb67l7aw5xsx7v44l4pz8rl6p09lk26irq7gd4k68la";
-      name = "libkgapi-20.08.3.tar.xz";
-    };
-  };
-  libkgeomap = {
-    version = "20.08.3";
-    src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libkgeomap-20.08.3.tar.xz";
-      sha256 = "14ipksxnvgk2s1sw7a70153iy9aik9mf4i7k8y3pzdr3l3155ayk";
-      name = "libkgeomap-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libkgapi-21.04.0.tar.xz";
+      sha256 = "1x811g0mbgjz8spngdsqdxfhkyic9kqxkhx9nq592zihaqkl3ifz";
+      name = "libkgapi-21.04.0.tar.xz";
     };
   };
   libkipi = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libkipi-20.08.3.tar.xz";
-      sha256 = "1b5qby7xm926qnzrf1zpb89fwx1a2syhqnznmdjxifj499p1jqjb";
-      name = "libkipi-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libkipi-21.04.0.tar.xz";
+      sha256 = "0gk8bfhq1z9f82mnjm2xjabgxn0qjrabw53bb67lwvrrgaliliqb";
+      name = "libkipi-21.04.0.tar.xz";
     };
   };
   libkleo = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libkleo-20.08.3.tar.xz";
-      sha256 = "1d6dal4qnrikg6ma2ird4b2sdivqqkkhamvd3s1srcxppc3aiq79";
-      name = "libkleo-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libkleo-21.04.0.tar.xz";
+      sha256 = "073ghnw1s09fvai22ag37n20mmhkbl4gp4y58nbgw43gfy5gsv6z";
+      name = "libkleo-21.04.0.tar.xz";
     };
   };
   libkmahjongg = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libkmahjongg-20.08.3.tar.xz";
-      sha256 = "0xabp1vzbzs52m3bb9nzm1d9md1n4j4pr13izn6nv28ja7477nnm";
-      name = "libkmahjongg-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libkmahjongg-21.04.0.tar.xz";
+      sha256 = "1n2jswdvpvc9jcqsvqf0nniaf893432v123my2q6msk2zvss6pcb";
+      name = "libkmahjongg-21.04.0.tar.xz";
     };
   };
   libkomparediff2 = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libkomparediff2-20.08.3.tar.xz";
-      sha256 = "0nk0jkf0jwaz1yqzzp44c6xyjgw42gclkcvw8w61w1f8sdl40wb8";
-      name = "libkomparediff2-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libkomparediff2-21.04.0.tar.xz";
+      sha256 = "13kpaasyhrhhrgk8a5qg9qv65wdv6qvnz2gjbjv8qgp4k4jmwv7h";
+      name = "libkomparediff2-21.04.0.tar.xz";
     };
   };
   libksane = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libksane-20.08.3.tar.xz";
-      sha256 = "0d2cnmvk16g1vnx9jd7jvp3bpw07ss54khmhqip8iskkvcfll9j0";
-      name = "libksane-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libksane-21.04.0.tar.xz";
+      sha256 = "17a5i21h99qvv8sig7xh5n149ji8fqch5m0w6fqirrwf0iz66363";
+      name = "libksane-21.04.0.tar.xz";
     };
   };
   libksieve = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/libksieve-20.08.3.tar.xz";
-      sha256 = "0bhpdqynazssql2iivvpb9l8npa441345gcn59fc0va6barl9sam";
-      name = "libksieve-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/libksieve-21.04.0.tar.xz";
+      sha256 = "04zyiqmkr78rnilv5zmmbr09k1nycgpc3qw3a9qy4xzh5amkl8wl";
+      name = "libksieve-21.04.0.tar.xz";
+    };
+  };
+  libktorrent = {
+    version = "21.04.0";
+    src = fetchurl {
+      url = "${mirror}/stable/release-service/21.04.0/src/libktorrent-21.04.0.tar.xz";
+      sha256 = "0c8hbsk2vjkmdvnws4kaa9bylzyzmx12fxm354qm65n4j6pdd59v";
+      name = "libktorrent-21.04.0.tar.xz";
     };
   };
   lokalize = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/lokalize-20.08.3.tar.xz";
-      sha256 = "0iab8sd1qh7h0zna7lc3v43z6rcmxba9v4nynhl5miiac4r6ddr8";
-      name = "lokalize-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/lokalize-21.04.0.tar.xz";
+      sha256 = "1wb95y89qi4z7hsldyq75w69rgdca3m0ji85khfvsb4h3cgilana";
+      name = "lokalize-21.04.0.tar.xz";
     };
   };
   lskat = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/lskat-20.08.3.tar.xz";
-      sha256 = "1rcmh592w5gd5b69czfxycypidj74y2d91cw92rccariadz9vnjz";
-      name = "lskat-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/lskat-21.04.0.tar.xz";
+      sha256 = "1acxbsldcjk3d84ip5z15y8x6nngj2vnb40s5p3mv47r6vgbh0qd";
+      name = "lskat-21.04.0.tar.xz";
     };
   };
   mailcommon = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/mailcommon-20.08.3.tar.xz";
-      sha256 = "0bhs60cz4qcrqkmw2sm6cd2laq8lzj9vcwi8kjqkajsidh342wdv";
-      name = "mailcommon-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/mailcommon-21.04.0.tar.xz";
+      sha256 = "1ljchkfrnknlzgjrrpwszzyv8m066d29xwns1yp8smqzk723g0gx";
+      name = "mailcommon-21.04.0.tar.xz";
     };
   };
   mailimporter = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/mailimporter-20.08.3.tar.xz";
-      sha256 = "0w6yfgqx0adlkwx32vmb23kl6n50737jiabmad3pnhqw8rv41h80";
-      name = "mailimporter-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/mailimporter-21.04.0.tar.xz";
+      sha256 = "06zvaq3ccrgsd6idnd9m201924bnm72nvcg66v1salcdk93a8sv5";
+      name = "mailimporter-21.04.0.tar.xz";
     };
   };
   marble = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/marble-20.08.3.tar.xz";
-      sha256 = "1xpxgy724z97k063fdk0l3mrl8i6nvnhj35b4987jqji76i92ffb";
-      name = "marble-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/marble-21.04.0.tar.xz";
+      sha256 = "1c63x75fzhkqgvijd1pmpywq4dx7gkyw9x90aj54fzkgjzwzqzhq";
+      name = "marble-21.04.0.tar.xz";
+    };
+  };
+  markdownpart = {
+    version = "21.04.0";
+    src = fetchurl {
+      url = "${mirror}/stable/release-service/21.04.0/src/markdownpart-21.04.0.tar.xz";
+      sha256 = "0xgnj2g0hqwflw550fj6jzq36pc8j9vwb6p9cbvfljd8yv8va9kq";
+      name = "markdownpart-21.04.0.tar.xz";
     };
   };
   mbox-importer = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/mbox-importer-20.08.3.tar.xz";
-      sha256 = "1qh0f93df228cqlcqdwc7g6im3g0gkfmzir3ccsmb5iv0ygvjl6f";
-      name = "mbox-importer-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/mbox-importer-21.04.0.tar.xz";
+      sha256 = "0rxrf1sxb5pzrkr8m2n1f3xgpwsihn6b6d5nilxmmsl5c60ya8j8";
+      name = "mbox-importer-21.04.0.tar.xz";
     };
   };
   messagelib = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/messagelib-20.08.3.tar.xz";
-      sha256 = "16amni6qrq96h8jr313gc7k9frwr20d4pk9y2i61a1xm2w3xsqd4";
-      name = "messagelib-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/messagelib-21.04.0.tar.xz";
+      sha256 = "1qsvqrkh30vyfrsxkpriqkzizxg9mx6v2xx7j6gyhz7pmrskx8rg";
+      name = "messagelib-21.04.0.tar.xz";
     };
   };
   minuet = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/minuet-20.08.3.tar.xz";
-      sha256 = "1l45g7labnyz0pkwcfhjl5a3ypr7cy3bsshr06ab85364yjwazvi";
-      name = "minuet-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/minuet-21.04.0.tar.xz";
+      sha256 = "0djqp807g47fy163bp0pkrhb7j37ijqdfyafz74871j2frrmnc97";
+      name = "minuet-21.04.0.tar.xz";
     };
   };
   okular = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/okular-20.08.3.tar.xz";
-      sha256 = "1q59ikcwsfgjc0202daingxv15iarnzba6szdncznzcafd6hhk9z";
-      name = "okular-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/okular-21.04.0.tar.xz";
+      sha256 = "0l0vrglxy9331sqn3lx76hvbh7b0znsafl5ia61srk48kb0w9rqy";
+      name = "okular-21.04.0.tar.xz";
     };
   };
   palapeli = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/palapeli-20.08.3.tar.xz";
-      sha256 = "107z3izfznrq7g5aqb5a7r8a4ibaia90g334d7wwvd7prm7hdgfp";
-      name = "palapeli-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/palapeli-21.04.0.tar.xz";
+      sha256 = "0f7ylr46alafp2gz9sf7xgnjm9vgyx5r7nipbqjl4wi8w908rklw";
+      name = "palapeli-21.04.0.tar.xz";
     };
   };
   parley = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/parley-20.08.3.tar.xz";
-      sha256 = "0wli09zkk5z50y1gzp5wc9k056xjaadlq97j09lf6lqyg6kb56ya";
-      name = "parley-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/parley-21.04.0.tar.xz";
+      sha256 = "0a186zqpi815apf2grlj11xp64kw80i43779z99r665jpp6189z3";
+      name = "parley-21.04.0.tar.xz";
+    };
+  };
+  partitionmanager = {
+    version = "21.04.0";
+    src = fetchurl {
+      url = "${mirror}/stable/release-service/21.04.0/src/partitionmanager-21.04.0.tar.xz";
+      sha256 = "02dgbqx1a6wahds04jcjdjh56pyrm47165hwv98ccarakrvn8yqm";
+      name = "partitionmanager-21.04.0.tar.xz";
     };
   };
   picmi = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/picmi-20.08.3.tar.xz";
-      sha256 = "1lkpazsi9dyb2y9q5bk56d80x7x035rf4hdap25i8qfj3ilykv3w";
-      name = "picmi-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/picmi-21.04.0.tar.xz";
+      sha256 = "1pwswzc02blvf49v4i2grw9mlm9y1ydmms6mg50iyi6qrnzbv6r3";
+      name = "picmi-21.04.0.tar.xz";
     };
   };
   pimcommon = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/pimcommon-20.08.3.tar.xz";
-      sha256 = "0mpl7li2y5xjzk4hdb85d1x7cz15cicd91c1krlw74q7pbrjinlq";
-      name = "pimcommon-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/pimcommon-21.04.0.tar.xz";
+      sha256 = "0bprmk20pmngvxxxpygajnlr4yx9acrz7dw6bfnn6d8kig281qdn";
+      name = "pimcommon-21.04.0.tar.xz";
     };
   };
   pim-data-exporter = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/pim-data-exporter-20.08.3.tar.xz";
-      sha256 = "0f08c16d3730fbdsbrwlr9w5c4l9xcmd1bdbv5m38h5r2ddlkvzr";
-      name = "pim-data-exporter-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/pim-data-exporter-21.04.0.tar.xz";
+      sha256 = "0rbkr1vgl14q4hi4byn20kfhkz3yzmrydhb3f1i2amp08ca4x71n";
+      name = "pim-data-exporter-21.04.0.tar.xz";
     };
   };
   pim-sieve-editor = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/pim-sieve-editor-20.08.3.tar.xz";
-      sha256 = "1falzw2a2v912fdzlyljsw9rcy1whrn9ys9ccrskkpvjn8y444x4";
-      name = "pim-sieve-editor-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/pim-sieve-editor-21.04.0.tar.xz";
+      sha256 = "1yxc4i0bsgrj9wsn44k7w3z1zkcm4y9qd8zd7shsqpca9lb9n13y";
+      name = "pim-sieve-editor-21.04.0.tar.xz";
     };
   };
   poxml = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/poxml-20.08.3.tar.xz";
-      sha256 = "0gzg3vbsjrfhs1jg59g7b3gf3b4qajiffkb94njkz8v1f0fadlxp";
-      name = "poxml-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/poxml-21.04.0.tar.xz";
+      sha256 = "0yhygizd0i6az1pd34lh4ij2x8867svbh2bic9lgcpmqbza9054g";
+      name = "poxml-21.04.0.tar.xz";
     };
   };
   print-manager = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/print-manager-20.08.3.tar.xz";
-      sha256 = "18nl9gpmzz4g9fqzyvbh858nxz23b2vyi505qacqvcrz13r0l78z";
-      name = "print-manager-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/print-manager-21.04.0.tar.xz";
+      sha256 = "1k5pqh264jy698jdzsk7d6bhadnwvgx1g3rpji06pb0igr1zn820";
+      name = "print-manager-21.04.0.tar.xz";
     };
   };
   rocs = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/rocs-20.08.3.tar.xz";
-      sha256 = "0bd9x7kh2s4z79ff9byd3ly7k040c574zwrrgi8sq21yd531hxhj";
-      name = "rocs-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/rocs-21.04.0.tar.xz";
+      sha256 = "11yzgrmb15zv24pfr3096g9zgsvgdlw43vnbjgbr7s8xvnprlh5l";
+      name = "rocs-21.04.0.tar.xz";
     };
   };
   signon-kwallet-extension = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/signon-kwallet-extension-20.08.3.tar.xz";
-      sha256 = "1s0syq9aw2q34k1wxrpjqqi12xay1h0vc4s2d8l184hzzg8qq71i";
-      name = "signon-kwallet-extension-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/signon-kwallet-extension-21.04.0.tar.xz";
+      sha256 = "05jaa74j6rd89cj8szfgw5izjlkakbjmz7qiwlswyjd4lafjz65n";
+      name = "signon-kwallet-extension-21.04.0.tar.xz";
     };
   };
   spectacle = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/spectacle-20.08.3.tar.xz";
-      sha256 = "16dwbsk9hik7gmz9s4x78hibz4x9d1fpx8x2i2giry5hwzknfcw4";
-      name = "spectacle-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/spectacle-21.04.0.tar.xz";
+      sha256 = "0cqf9p7mc5wyl5qy6866m7xhndwmgd3hmw7amkpzngmmz4h9i2p0";
+      name = "spectacle-21.04.0.tar.xz";
     };
   };
   step = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/step-20.08.3.tar.xz";
-      sha256 = "05ljsmgpra1az64yddy8idi46cv3afaf2v4n7d5j81a8vvlz7fj1";
-      name = "step-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/step-21.04.0.tar.xz";
+      sha256 = "169ka33nkzrxdk874180v6yzmrngl98gzyql4p5ssmmdh0vrkg25";
+      name = "step-21.04.0.tar.xz";
     };
   };
   svgpart = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/svgpart-20.08.3.tar.xz";
-      sha256 = "0wwq576dblqmfknr0qs8kskw7nar6hah95fqicdn97xdy4nvzhc6";
-      name = "svgpart-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/svgpart-21.04.0.tar.xz";
+      sha256 = "0chfyxl94kp5pif6lzhlm7q8rg9l4lg74x4y04wslrfqcn1gghdj";
+      name = "svgpart-21.04.0.tar.xz";
     };
   };
   sweeper = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/sweeper-20.08.3.tar.xz";
-      sha256 = "0i4zvbljdzkj47vh8kizam7vsc9k7mvf8dqd2j6ixr4p0cqvw5a8";
-      name = "sweeper-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/sweeper-21.04.0.tar.xz";
+      sha256 = "1iysxrfdp8bv0vgssv062yllsq4w3jf9vdi66jm9ka8i9w8wqpsv";
+      name = "sweeper-21.04.0.tar.xz";
     };
   };
   umbrello = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/umbrello-20.08.3.tar.xz";
-      sha256 = "1hh5gyggb4f3pjip8dfvx00hi83gj65c92jgzkzahj7p35mkplgl";
-      name = "umbrello-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/umbrello-21.04.0.tar.xz";
+      sha256 = "17xwsjc1ph2glscv41x4f5bagw1q5ackqpy1wcg8m9jrg9ipqpqx";
+      name = "umbrello-21.04.0.tar.xz";
     };
   };
   yakuake = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/yakuake-20.08.3.tar.xz";
-      sha256 = "05zd2xm5vgrgz0bxbkh1mpiknlqzpzk5jb74lnd5x7wn5b80ngv0";
-      name = "yakuake-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/yakuake-21.04.0.tar.xz";
+      sha256 = "1jkwcc4pdb06v4q7bnqppdkjf8n8qpfp9mk02l77brnxxf8i9r3b";
+      name = "yakuake-21.04.0.tar.xz";
     };
   };
   zeroconf-ioslave = {
-    version = "20.08.3";
+    version = "21.04.0";
     src = fetchurl {
-      url = "${mirror}/stable/release-service/20.08.3/src/zeroconf-ioslave-20.08.3.tar.xz";
-      sha256 = "1afga0liiy9n98kb0gmxzbb6ckhdgbrdc4ig1x9pwp98wr1fzmcg";
-      name = "zeroconf-ioslave-20.08.3.tar.xz";
+      url = "${mirror}/stable/release-service/21.04.0/src/zeroconf-ioslave-21.04.0.tar.xz";
+      sha256 = "03cmz3y8f48y26aybyygwssqicp0kz4ry9xm30rvvc5hiv0n6hj7";
+      name = "zeroconf-ioslave-21.04.0.tar.xz";
     };
   };
 }

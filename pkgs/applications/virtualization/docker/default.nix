@@ -1,22 +1,23 @@
-{ lib, callPackage }:
+{ lib, callPackage, fetchFromGitHub }:
 
 with lib;
 
 rec {
   dockerGen = {
       version, rev, sha256
-      , mobyRev, mobySha256
+      , moby-src
       , runcRev, runcSha256
       , containerdRev, containerdSha256
       , tiniRev, tiniSha256, buildxSupport ? false
       # package dependencies
-      , stdenv, fetchFromGitHub, fetchpatch, buildGoPackage
+      , stdenv, fetchFromGitHub, buildGoPackage
       , makeWrapper, installShellFiles, pkg-config
       , go-md2man, go, containerd, runc, docker-proxy, tini, libtool
-      , sqlite, iproute, lvm2, systemd, docker-buildx
+      , sqlite, iproute2, lvm2, systemd, docker-buildx
       , btrfs-progs, iptables, e2fsprogs, xz, util-linux, xfsprogs, git
       , procps, libseccomp
       , nixosTests
+      , clientOnly ? !stdenv.isLinux
     }:
   let
     docker-runc = runc.overrideAttrs (oldAttrs: {
@@ -65,19 +66,14 @@ rec {
       inherit version;
       inherit docker-runc docker-containerd docker-proxy docker-tini;
 
-      src = fetchFromGitHub {
-        owner = "moby";
-        repo = "moby";
-        rev = mobyRev;
-        sha256 = mobySha256;
-      };
+      src = moby-src;
 
       goPackagePath = "github.com/docker/docker";
 
       nativeBuildInputs = [ makeWrapper pkg-config go-md2man go libtool installShellFiles ];
       buildInputs = [ sqlite lvm2 btrfs-progs systemd libseccomp ];
 
-      extraPath = optionals (stdenv.isLinux) (makeBinPath [ iproute iptables e2fsprogs xz xfsprogs procps util-linux git ]);
+      extraPath = optionals (stdenv.isLinux) (makeBinPath [ iproute2 iptables e2fsprogs xz xfsprogs procps util-linux git ]);
 
       buildPhase = ''
         export GOCACHE="$TMPDIR/go-cache"
@@ -110,6 +106,8 @@ rec {
 
         # systemd
         install -Dm644 ./contrib/init/systemd/docker.service $out/etc/systemd/system/docker.service
+        substituteInPlace $out/etc/systemd/system/docker.service --replace /usr/bin/dockerd $out/bin/dockerd
+        install -Dm644 ./contrib/init/systemd/docker.socket $out/etc/systemd/system/docker.socket
       '';
 
       DOCKER_BUILDTAGS = []
@@ -119,14 +117,14 @@ rec {
         ++ optional (libseccomp != null) "seccomp";
     });
   in
-    buildGoPackage ((optionalAttrs (stdenv.isLinux) {
+    buildGoPackage ((optionalAttrs (!clientOnly) {
 
     inherit docker-runc docker-containerd docker-proxy docker-tini moby;
 
    }) // rec {
     inherit version rev;
 
-    name = "docker-${version}";
+    pname = "docker";
 
     src = fetchFromGitHub {
       owner = "docker";
@@ -137,10 +135,10 @@ rec {
 
     goPackagePath = "github.com/docker/cli";
 
-    nativeBuildInputs = [ pkg-config go-md2man go libtool installShellFiles ];
-    buildInputs = [
-      makeWrapper
-    ] ++ optionals (stdenv.isLinux) [
+    nativeBuildInputs = [
+      makeWrapper pkg-config go-md2man go libtool installShellFiles
+    ];
+    buildInputs = optionals (!clientOnly) [
       sqlite lvm2 btrfs-progs systemd libseccomp
     ] ++ optionals (buildxSupport) [ docker-buildx ];
 
@@ -165,8 +163,6 @@ rec {
     postPatch = ''
       patchShebangs .
       substituteInPlace ./scripts/build/.variables --replace "set -eu" ""
-      substituteInPlace ./scripts/docs/generate-man.sh --replace "-v md2man" "-v go-md2man"
-      substituteInPlace ./man/md2man-all.sh            --replace md2man go-md2man
     '' + optionalString buildxSupport ''
       substituteInPlace ./cli-plugins/manager/manager_unix.go --replace /usr/libexec/docker/cli-plugins \
           ${lib.strings.makeSearchPathOutput "bin" "libexec/docker/cli-plugins" [docker-buildx]}
@@ -180,9 +176,14 @@ rec {
 
       makeWrapper $out/libexec/docker/docker $out/bin/docker \
         --prefix PATH : "$out/libexec/docker:$extraPath"
-    '' + optionalString (stdenv.isLinux) ''
+    '' + optionalString (!clientOnly) ''
       # symlink docker daemon to docker cli derivation
       ln -s ${moby}/bin/dockerd $out/bin/dockerd
+
+      # systemd
+      mkdir -p $out/etc/systemd/system
+      ln -s ${moby}/etc/systemd/system/docker.service $out/etc/systemd/system/docker.service
+      ln -s ${moby}/etc/systemd/system/docker.socket $out/etc/systemd/system/docker.socket
     '' + ''
       # completion (cli)
       installShellCompletion --bash ./contrib/completion/bash/docker
@@ -202,7 +203,7 @@ rec {
       installManPage man/*/*.[1-9]
     '';
 
-    passthru.tests = { inherit (nixosTests) docker; };
+    passthru.tests = lib.optionals (!clientOnly) { inherit (nixosTests) docker; };
 
     meta = {
       homepage = "https://www.docker.com/";
@@ -211,20 +212,27 @@ rec {
       maintainers = with maintainers; [ offline tailhook vdemeester periklis ];
       platforms = with platforms; linux ++ darwin;
     };
+
+    # Exposed for tarsum build on non-linux systems (build-support/docker/default.nix)
+    inherit moby-src;
   });
 
   # Get revisions from
   # https://github.com/moby/moby/tree/${version}/hack/dockerfile/install/*
   docker_20_10 = callPackage dockerGen rec {
-    version = "20.10.2";
+    version = "20.10.6";
     rev = "v${version}";
-    sha256 = "0z0hpm5hrqh7p8my8lmiwpym2shs48my6p0zv2cc34wym0hcly51";
-    mobyRev = "v${version}";
-    mobySha256 = "0c2zycpnwj4kh8m8xckv1raj3fx07q9bfaj46rr85jihm4p2dp5w";
-    runcRev = "ff819c7e9184c13b7c2607fe6c30ae19403a7aff"; # v1.0.0-rc92
-    runcSha256 = "0r4zbxbs03xr639r7848282j1ybhibfdhnxyap9p76j5w8ixms94";
-    containerdRev = "269548fa27e0089a8b8278fc4fc781d7f65a939b"; # v1.4.3
-    containerdSha256 = "09xvhjg5f8h90w1y94kqqnqzhbhd62dcdd9wb9sdqakisjk6zrl0";
+    sha256 = "15kknb26vyzjgqmn8r81a1sy1i5br6bvngqd5xljihppnxvp2gvl";
+    moby-src = fetchFromGitHub {
+      owner = "moby";
+      repo = "moby";
+      rev = "v${version}";
+      sha256 = "1l4ra9bsvydaxd2fy7dgxp7ynpp0mrlwvcdhxiafw596559ab6qk";
+    };
+    runcRev = "b9ee9c6314599f1b4a7f497e1f1f856fe433d3b7"; # v1.0.0-rc95
+    runcSha256 = "18sbvmlvb6kird4w3rqsfrjdj7n25firabvdxsl0rxjfy9r1g2xb";
+    containerdRev = "12dca9790f4cb6b18a6a7a027ce420145cb98ee7"; # v1.5.1
+    containerdSha256 = "16q34yiv5q98b9d5vgy1lmmppg8agrmnfd1kzpakkf4czkws0p4d";
     tiniRev = "de40ad007797e0dcd8b7126f27bb87401d224240"; # v0.19.0
     tiniSha256 = "1h20i3wwlbd8x4jr2gz68hgklh0lb0jj7y5xk1wvr8y58fip1rdn";
   };

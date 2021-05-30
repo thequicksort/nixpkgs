@@ -315,7 +315,7 @@ stdenv.mkDerivation rec {
   src_for_updater = stdenv.mkDerivation rec {
     name = "updater-sources";
     inherit src;
-    buildInputs = [ unzip ];
+    nativeBuildInputs = [ unzip ];
     inherit sourceRoot;
     installPhase = ''
       cp -r . "$out"
@@ -388,7 +388,7 @@ stdenv.mkDerivation rec {
 
       # libcxx includes aren't added by libcxx hook
       # https://github.com/NixOS/nixpkgs/pull/41589
-      export NIX_CFLAGS_COMPILE="$NIX_CFLAGS_COMPILE -isystem ${libcxx}/include/c++/v1"
+      export NIX_CFLAGS_COMPILE="$NIX_CFLAGS_COMPILE -isystem ${lib.getDev libcxx}/include/c++/v1"
 
       # don't use system installed Xcode to run clang, use Nix clang instead
       sed -i -E "s;/usr/bin/xcrun (--sdk macosx )?clang;${stdenv.cc}/bin/clang $NIX_CFLAGS_COMPILE $(bazelLinkFlags) -framework CoreFoundation;g" \
@@ -560,6 +560,13 @@ stdenv.mkDerivation rec {
     ${python3}/bin/python3 ./bazel_src/scripts/generate_fish_completion.py \
         --bazel=./bazel_src/output/bazel \
         --output=./bazel_src/output/bazel-complete.fish
+
+    # need to change directory for bazel to find the workspace
+    cd ./bazel_src
+    # build execlog tooling
+    export HOME=$(mktemp -d)
+    ./output/bazel build  src/tools/execlog:parser_deploy.jar
+    cd -
   '';
 
   installPhase = ''
@@ -571,6 +578,14 @@ stdenv.mkDerivation rec {
     # file.
     cp ./bazel_src/scripts/packages/bazel.sh $out/bin/bazel
     mv ./bazel_src/output/bazel $out/bin/bazel-${version}-${system}-${arch}
+
+    mkdir $out/share
+    cp ./bazel_src/bazel-bin/src/tools/execlog/parser_deploy.jar $out/share/parser_deploy.jar
+    cat <<EOF > $out/bin/bazel-execlog
+    #!${runtimeShell} -e
+    ${runJdk}/bin/java -jar $out/share/parser_deploy.jar \$@
+    EOF
+    chmod +x $out/bin/bazel-execlog
 
     # shell completion files
     installShellCompletion --bash \

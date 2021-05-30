@@ -60,7 +60,7 @@ in
 
     configureFlags = let
       isCross = stdenv.hostPlatform != stdenv.buildPlatform;
-      inherit (stdenv.hostPlatform) gcc isArch32;
+      inherit (stdenv.hostPlatform) gcc isAarch32;
     in sharedConfigureFlags ++ [
       "--without-dtrace"
     ] ++ (optionals isCross [
@@ -142,6 +142,7 @@ in
       license = licenses.mit;
       maintainers = with maintainers; [ goibhniu gilligan cko marsam ];
       platforms = platforms.linux ++ platforms.darwin;
+      mainProgram = "node";
     };
 
     passthru.python = python; # to ensure nodeEnv uses the same version

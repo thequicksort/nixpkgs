@@ -34,16 +34,16 @@ let
 
 in rustPlatform.buildRustPackage rec {
   pname = "Ajour";
-  version = "0.7.1";
+  version = "1.2.0";
 
   src = fetchFromGitHub {
     owner = "casperstorm";
     repo = "ajour";
     rev = version;
-    sha256 = "sha256-ZN62RIQEokailZRBQUq8nX4Eq/b9GGPmxln8j5KGW+8=";
+    sha256 = "0xmjr8brjmkk13dsn3yvcl5ss6b214hpka0idk072n46qsyhg2wh";
   };
 
-  cargoSha256 = "sha256-tcC8GfEeHaM7XcAXw56/wdygfGPj4vOgn5sZd0KuGkA=";
+  cargoSha256 = "06d1h2c2abg56567znxh65d4ddpi6wvxip9rbzkmdnzgy3b3y2wl";
 
   nativeBuildInputs = [
     autoPatchelfHook

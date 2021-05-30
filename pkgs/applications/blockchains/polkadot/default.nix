@@ -7,20 +7,20 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "polkadot";
-  version = "0.8.28-1";
+  version = "0.9.3";
 
   src = fetchFromGitHub {
     owner = "paritytech";
     repo = "polkadot";
     rev = "v${version}";
-    sha256 = "sha256-a+w/909PZuHsgIQEtO2IWQijsERfAKJUZ8K30+PhD3k=";
+    sha256 = "sha256-BxBrgcAJm6KM6ha494xlwiLYOSAr71gDFgqlH5RPqMM=";
   };
 
-  cargoSha256 = "sha256-Zz844XDx5qj2hQlf99uvHV6e5wmDAlYh3zBvcpdoiIo=";
+  cargoSha256 = "131fkdazcspblzblmd9nhkymwn7qh6lhaqvi1jqnsq4951l9f4ms";
 
   nativeBuildInputs = [ clang ];
 
-  LIBCLANG_PATH = "${llvmPackages.libclang}/lib";
+  LIBCLANG_PATH = "${llvmPackages.libclang.lib}/lib";
   PROTOC = "${protobuf}/bin/protoc";
 
   # NOTE: We don't build the WASM runtimes since this would require a more
@@ -35,8 +35,8 @@ rustPlatform.buildRustPackage rec {
   meta = with lib; {
     description = "Polkadot Node Implementation";
     homepage = "https://polkadot.network";
-    license = licenses.gpl3;
-    maintainers = with maintainers; [ akru andresilva RaghavSood ];
+    license = licenses.gpl3Only;
+    maintainers = with maintainers; [ akru andresilva asymmetric FlorianFranzen RaghavSood ];
     platforms = platforms.linux;
   };
 }

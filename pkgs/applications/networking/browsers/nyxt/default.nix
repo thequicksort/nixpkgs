@@ -1,4 +1,4 @@
-{ stdenv, lib, lispPackages, sbcl
+{ stdenv, lib, lispPackages
 , makeWrapper, wrapGAppsHook, gst_all_1
 , glib, gdk-pixbuf, cairo
 , mime-types, pango, gtk3
@@ -51,7 +51,7 @@ stdenv.mkDerivation rec {
     description = "Infinitely extensible web-browser (with Lisp development files using WebKitGTK platform port)";
     homepage = "https://nyxt.atlas.engineer";
     license = licenses.bsd3;
-    maintainers = with maintainers; [ lewo ];
-    platforms = [ "x86_64-linux" ];
+    maintainers = with maintainers; [ lewo payas ];
+    platforms = platforms.all;
   };
 }

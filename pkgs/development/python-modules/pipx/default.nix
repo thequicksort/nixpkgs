@@ -6,12 +6,13 @@
 , argcomplete
 , packaging
 , importlib-metadata
+, colorama
 , pytestCheckHook
 }:
 
 buildPythonPackage rec {
   pname = "pipx";
-  version = "0.16.0.0";
+  version = "0.16.2.1";
 
   disabled = pythonOlder "3.6";
 
@@ -20,13 +21,14 @@ buildPythonPackage rec {
     owner = "pipxproject";
     repo = pname;
     rev = version;
-    sha256 = "08mn7vm8iw20pg0gfn491y1jx8wcyjijps6f1hy7ipzd5ckynscn";
+    sha256 = "1agdp8j4lw6z0lk2vv1m8d49r5vwfkpal3hdgq67vnjyp9904pf6";
   };
 
   propagatedBuildInputs = [
     userpath
     argcomplete
     packaging
+    colorama
   ] ++ lib.optionals (pythonOlder "3.8") [
     importlib-metadata
   ];
@@ -52,6 +54,7 @@ buildPythonPackage rec {
     "suffix"
     "legacy_venv"
     "determination"
+    "json"
   ];
 
   meta = with lib; {

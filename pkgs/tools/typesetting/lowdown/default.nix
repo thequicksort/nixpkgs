@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "lowdown";
-  version = "0.8.1";
+  version = "0.8.4";
 
   outputs = [ "out" "lib" "dev" "man" ];
 
   src = fetchurl {
     url = "https://kristaps.bsd.lv/lowdown/snapshots/lowdown-${version}.tar.gz";
-    sha512 = "28kwj053lm3510cq7pg4rqx6linv5zphhm2h6r9icigclfq7j9ybnd7vqbn2v4ay0r8ghac5cjbqab5zy8cjlgllwhwsxg0dnk75x2i";
+    sha512 = "1rbsngfw36lyc8s6qxl8hgb1pzj0gdzlb7yqkfblb8fpgs2z0ggyhnfszrqfir8s569i7a9yk9bdx2ggwqhjj56hmi2i4inlnb3rmni";
   };
 
   nativeBuildInputs = [ which ]
@@ -29,6 +29,9 @@ stdenv.mkDerivation rec {
   '';
 
   patches = lib.optional (!stdenv.hostPlatform.isStatic) ./shared.patch;
+
+  doCheck = stdenv.hostPlatform == stdenv.buildPlatform;
+  checkTarget = "regress";
 
   meta = with lib; {
     homepage = "https://kristaps.bsd.lv/lowdown/";

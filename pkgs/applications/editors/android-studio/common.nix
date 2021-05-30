@@ -65,15 +65,15 @@ let
       sha256 = sha256Hash;
     };
 
+    nativeBuildInputs = [ unzip ];
     buildInputs = [
       makeWrapper
-      unzip
     ];
     installPhase = ''
       cp -r . $out
       wrapProgram $out/bin/studio.sh \
+        --set-default JAVA_HOME "$out/jre" \
         --set ANDROID_EMULATOR_USE_SYSTEM_LIBS 1 \
-        --set JAVA_HOME "$out/jre" \
         --set QT_XKB_CONFIG_ROOT "${xkeyboard_config}/share/X11/xkb" \
         --set FONTCONFIG_FILE ${fontsConf} \
         --prefix PATH : "${lib.makeBinPath [
@@ -145,7 +145,7 @@ let
         ]}"
 
       # AS launches LLDBFrontend with a custom LD_LIBRARY_PATH
-      wrapProgram $out/bin/lldb/bin/LLDBFrontend --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath [
+      wrapProgram $(find $out -name LLDBFrontend) --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath [
         ncurses5
         zlib
       ]}"

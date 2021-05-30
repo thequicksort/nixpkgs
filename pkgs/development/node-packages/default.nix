@@ -1,4 +1,4 @@
-{ pkgs, nodejs, stdenv }:
+{ pkgs, nodejs, stdenv, fetchFromGitHub }:
 
 let
   since = (version: pkgs.lib.versionAtLeast nodejs.version version);
@@ -13,6 +13,19 @@ let
         export NG_CLI_ANALYTICS=false
       '';
     };
+
+    aws-azure-login = super.aws-azure-login.override {
+      meta.platforms = pkgs.lib.platforms.linux;
+      nativeBuildInputs = [ pkgs.makeWrapper ];
+      prePatch = ''
+        export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
+      '';
+      postInstall = ''
+        wrapProgram $out/bin/aws-azure-login \
+            --set PUPPETEER_EXECUTABLE_PATH ${pkgs.chromium}/bin/chromium
+      '';
+    };
+
     bower2nix = super.bower2nix.override {
       buildInputs = [ pkgs.makeWrapper ];
       postInstall = ''
@@ -47,8 +60,9 @@ let
       };
     });
 
-    bitwarden-cli = pkgs.lib.overrideDerivation super."@bitwarden/cli" (drv: {
+    bitwarden-cli = super."@bitwarden/cli".override (drv: {
       name = "bitwarden-cli-${drv.version}";
+      meta.mainProgram = "bw";
     });
 
     fast-cli = super."fast-cli-1.x".override {
@@ -61,12 +75,17 @@ let
 
     flood = super.flood.override {
       buildInputs = [ self.node-pre-gyp ];
+      meta.mainProgram = "flood";
     };
 
     expo-cli = super."expo-cli".override (attrs: {
       # The traveling-fastlane-darwin optional dependency aborts build on Linux.
       dependencies = builtins.filter (d: d.packageName != "@expo/traveling-fastlane-${if stdenv.isLinux then "darwin" else "linux"}") attrs.dependencies;
     });
+
+    "@electron-forge/cli" = super."@electron-forge/cli".override {
+      buildInputs = [ self.node-pre-gyp self.rimraf ];
+    };
 
     git-ssb = super.git-ssb.override {
       buildInputs = [ self.node-gyp-build ];
@@ -100,10 +119,14 @@ let
       '';
     };
 
+    markdownlint-cli = super.markdownlint-cli.override {
+      meta.mainProgram = "markdownlint";
+    };
+
     mirakurun = super.mirakurun.override rec {
       nativeBuildInputs = with pkgs; [ makeWrapper ];
       postInstall = let
-        runtimeDeps = [ nodejs ] ++ (with pkgs; [ bash which v4l_utils ]);
+        runtimeDeps = [ nodejs ] ++ (with pkgs; [ bash which v4l-utils ]);
       in
       ''
         substituteInPlace $out/lib/node_modules/mirakurun/processes.json \
@@ -191,6 +214,26 @@ let
       '';
     };
 
+    netlify-cli =
+      let
+        esbuild = pkgs.esbuild.overrideAttrs (old: rec {
+          version = "0.11.14";
+
+          src = fetchFromGitHub {
+            owner = "evanw";
+            repo = "esbuild";
+            rev = "v${version}";
+            sha256 = "sha256-N7WNam0zF1t++nLVhuxXSDGV/JaFtlFhufp+etinvmM=";
+          };
+
+        });
+      in
+      super.netlify-cli.override {
+        preRebuild = ''
+          export ESBUILD_BINARY_PATH="${esbuild}/bin/esbuild"
+        '';
+      };
+
     ssb-server = super.ssb-server.override {
       buildInputs = [ pkgs.automake pkgs.autoconf self.node-gyp-build ];
       meta.broken = since "10";
@@ -222,6 +265,10 @@ let
         wrapProgram "$out/bin/typescript-language-server" \
           --prefix PATH : ${pkgs.lib.makeBinPath [ self.typescript ]}
       '';
+    };
+
+    teck-programmer = super.teck-programmer.override {
+      buildInputs = [ pkgs.libusb ];
     };
 
     vega-cli = super.vega-cli.override {
@@ -264,6 +311,9 @@ let
         libsecret
         self.node-gyp-build
         self.node-pre-gyp
+      ] ++ lib.optionals stdenv.isDarwin [
+        darwin.apple_sdk.frameworks.AppKit
+        darwin.apple_sdk.frameworks.Security
       ];
     };
 

@@ -9,7 +9,7 @@
 , pyphen
 , pytest
 , requests
-, scikitlearn
+, scikit-learn
 , scipy
 , spacy
 , srsly
@@ -35,7 +35,7 @@ buildPythonPackage rec {
     pyemd
     pyphen
     requests
-    scikitlearn
+    scikit-learn
     scipy
     spacy
     srsly
@@ -51,6 +51,9 @@ buildPythonPackage rec {
   '';
 
   meta = with lib; {
+    # scikit-learn in pythonPackages is too new for textacy
+    # remove as soon as textacy support scikit-learn >= 0.24
+    broken = true;
     description = "Higher-level text processing, built on spaCy";
     homepage = "https://textacy.readthedocs.io/";
     license = licenses.asl20;

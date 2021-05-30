@@ -6,29 +6,42 @@
 , dbus
 , libpulseaudio
 , notmuch
+, openssl
 , ethtool
 }:
 
 rustPlatform.buildRustPackage rec {
   pname = "i3status-rust";
-  version = "0.14.3";
+  version = "0.20.1";
 
   src = fetchFromGitHub {
     owner = "greshake";
     repo = pname;
     rev = "v${version}";
-    sha256 = "1k9dgmd4wz9950kr35da31rhph43gmvg8dif7hg1xw41xch6bi60";
+    sha256 = "00gzm3g297s9bfp13vnb623p7dfac3g6cdhz2b3lc6l0kmnnqs1s";
   };
 
-  cargoSha256 = "0qqkcgl9iz4kxl1a2vv2p7vy7wxn970y28jynf3n7hfp16i3liy2";
+  cargoSha256 = "1dpklyv1b9h4n4k3ar5qbzivds8r4mml76986ic8zj71fy5fxn08";
 
   nativeBuildInputs = [ pkg-config makeWrapper ];
 
-  buildInputs = [ dbus libpulseaudio notmuch ];
+  buildInputs = [ dbus libpulseaudio notmuch openssl ];
 
   cargoBuildFlags = [
     "--features=notmuch"
+    "--features=maildir"
+    "--features=pulseaudio"
   ];
+
+  prePatch = ''
+    substituteInPlace src/util.rs \
+      --replace "/usr/share/i3status-rust" "$out/share"
+  '';
+
+  postInstall = ''
+    mkdir -p $out/share
+    cp -R files/* $out/share
+  '';
 
   postFixup = ''
     wrapProgram $out/bin/i3status-rs --prefix PATH : "${ethtool}/bin"

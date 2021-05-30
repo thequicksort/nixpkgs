@@ -2,6 +2,8 @@
 , bzip2, zlib, libX11, libXext, libXt, fontconfig, freetype, ghostscript, libjpeg, djvulibre
 , lcms2, openexr, libpng, librsvg, libtiff, libxml2, openjpeg, libwebp, libheif
 , ApplicationServices
+, Foundation
+, testVersion, imagemagick
 }:
 
 let
@@ -9,29 +11,21 @@ let
     if stdenv.hostPlatform.system == "i686-linux" then "i686"
     else if stdenv.hostPlatform.system == "x86_64-linux" || stdenv.hostPlatform.system == "x86_64-darwin" then "x86-64"
     else if stdenv.hostPlatform.system == "armv7l-linux" then "armv7l"
-    else if stdenv.hostPlatform.system == "aarch64-linux" then "aarch64"
+    else if stdenv.hostPlatform.system == "aarch64-linux"  || stdenv.hostPlatform.system == "aarch64-darwin" then "aarch64"
     else if stdenv.hostPlatform.system == "powerpc64le-linux" then "ppc64le"
     else throw "ImageMagick is not supported on this platform.";
-
-  cfg = {
-    version = "7.0.10-61";
-    sha256 = "sha256-c/90N5H9iz5JYmn7/ynHgSOAmO5NTtkxajChZvjfMP8=";
-    patches = [];
-  };
 in
 
-stdenv.mkDerivation {
+stdenv.mkDerivation rec {
   pname = "imagemagick";
-  inherit (cfg) version;
+  version = "7.0.11-9";
 
   src = fetchFromGitHub {
     owner = "ImageMagick";
     repo = "ImageMagick";
-    rev = cfg.version;
-    inherit (cfg) sha256;
+    rev = version;
+    sha256 = "sha256-eL9zFrgkLb3pS8/UlQB5+p50UG8j3Q7TNDwcO/3BuXo=";
   };
-
-  patches = cfg.patches;
 
   outputs = [ "out" "dev" "doc" ]; # bin/ isn't really big
   outputMan = "out"; # it's tiny
@@ -58,7 +52,10 @@ stdenv.mkDerivation {
     ]
     ++ lib.optionals (!stdenv.hostPlatform.isMinGW)
       [ openexr librsvg openjpeg ]
-    ++ lib.optional stdenv.isDarwin ApplicationServices;
+    ++ lib.optionals stdenv.isDarwin [
+      ApplicationServices
+      Foundation
+    ];
 
   propagatedBuildInputs =
     [ bzip2 freetype libjpeg lcms2 ]
@@ -80,10 +77,15 @@ stdenv.mkDerivation {
     done
   '';
 
+  passthru.tests.version =
+    testVersion { package = imagemagick; };
+
   meta = with lib; {
     homepage = "http://www.imagemagick.org/";
     description = "A software suite to create, edit, compose, or convert bitmap images";
     platforms = platforms.linux ++ platforms.darwin;
+    maintainers = with maintainers; [ erictapen ];
     license = licenses.asl20;
+    mainProgram = "magick";
   };
 }

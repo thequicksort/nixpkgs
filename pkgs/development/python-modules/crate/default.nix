@@ -6,6 +6,7 @@
 , isPy3k
 , sqlalchemy
 , pytestCheckHook
+, stdenv
 }:
 
 buildPythonPackage rec {
@@ -27,6 +28,11 @@ buildPythonPackage rec {
   checkInputs = [
     pytestCheckHook
   ];
+
+  disabledTests = [
+    "RequestsCaBundleTest"
+  ];
+  disabledTestPaths = lib.optionals stdenv.isDarwin [ "src/crate/client/test_http.py" ];
 
   meta = with lib; {
     homepage = "https://github.com/crate/crate-python";

@@ -2,16 +2,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "gifski";
-  version = "1.3.3";
+  version = "1.4.3";
 
   src = fetchFromGitHub {
     owner = "ImageOptim";
     repo = "gifski";
     rev = version;
-    sha256 = "sha256-dBgDIS6U2iKzyo5nO0NOD488zfEbaZJH7luJN6khrnc=";
+    sha256 = "034csv43vc0q2ycwjfskv1zx08c40ykf1m22fh9wvms0860k2ysn";
   };
 
-  cargoSha256 = "sha256-/i5ZBCWFlhoheHsCI5f9yJ7sa6l/DB4AJckq5orinwI=";
+  cargoSha256 = "0jgwf30gqwwpaf2g5zbsglcmsa00vixrnlizvcd41afi1wkjgiyd";
 
   nativeBuildInputs = [ pkg-config ];
 
